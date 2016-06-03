@@ -1,0 +1,316 @@
+# 1 "./greytobinary4bit.va"
+
+
+
+
+
+
+
+
+
+
+
+# 1 "disciplines.vams"
+
+
+
+
+
+
+# 9 "disciplines.vams"
+
+
+
+
+discipline logic
+  domain discrete;
+enddiscipline
+
+
+
+
+
+
+nature Current
+  units = "A";
+  access = I;
+  idt_nature = Charge;
+# 29 "disciplines.vams"
+  abstol = 1e-12;
+
+endnature
+
+nature Charge
+  units = "coul";
+  access = Q;
+  ddt_nature = Current;
+# 40 "disciplines.vams"
+  abstol = 1e-14;
+
+endnature
+
+nature Voltage
+  units = "V";
+  access = V;
+  idt_nature = Flux;
+# 51 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Flux
+  units = "Wb";
+  access = Phi;
+  ddt_nature = Voltage;
+# 62 "disciplines.vams"
+  abstol = 1e-9;
+
+endnature
+
+discipline electrical
+  potential Voltage;
+  flow Current;
+enddiscipline
+
+discipline voltage
+  potential Voltage;
+enddiscipline
+discipline current
+  potential Current;
+enddiscipline
+
+
+nature Magneto_Motive_Force
+  units = "A*turn";
+  access = MMF;
+# 85 "disciplines.vams"
+  abstol = 1e-12;
+
+endnature
+
+discipline magnetic
+  potential Magneto_Motive_Force;
+  flow Flux;
+enddiscipline
+
+
+nature Temperature
+  units = "K";
+  access = Temp;
+# 101 "disciplines.vams"
+  abstol = 1e-4;
+
+endnature
+
+nature Power
+  units = "W";
+  access = Pwr;
+# 111 "disciplines.vams"
+  abstol = 1e-9;
+
+endnature
+
+discipline thermal
+  potential Temperature;
+  flow Power;
+enddiscipline
+
+
+nature Position
+  units = "m";
+  access = Pos;
+  ddt_nature = Velocity;
+# 128 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Velocity
+  units = "m/s";
+  access = Vel;
+  ddt_nature = Acceleration;
+  idt_nature = Position;
+# 140 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Acceleration
+  units = "m/s^2";
+  access = Acc;
+  ddt_nature = Impulse;
+  idt_nature = Velocity;
+# 152 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Impulse
+  units = "m/s^3";
+  access = Imp;
+  idt_nature = Acceleration;
+# 163 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Force
+  units = "N";
+  access = F;
+# 173 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+discipline kinematic
+  potential Position;
+  flow Force;
+enddiscipline
+discipline kinematic_v
+  potential Velocity;
+  flow Force;
+enddiscipline
+
+
+nature Angle
+  units = "rads";
+  access = Theta;
+  ddt_nature = Angular_Velocity;
+# 194 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Angular_Velocity
+  units = "rads/s";
+  access = Omega;
+  ddt_nature = Angular_Acceleration;
+  idt_nature = Angle;
+# 206 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Angular_Acceleration
+  units = "rads/s^2";
+  access = Alpha;
+  idt_nature = Angular_Velocity;
+# 217 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Angular_Force
+  units = "N*m";
+  access = Tau;
+# 227 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+discipline rotational
+  potential Angle;
+  flow Angular_Force;
+enddiscipline
+discipline rotational_omega
+  potential Angular_Velocity;
+  flow Angular_Force;
+enddiscipline
+
+
+# 13 "./greytobinary4bit.va"
+# 1 "constants.vams"
+
+
+
+
+
+
+
+# 10 "constants.vams"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 14 "./greytobinary4bit.va"
+module greytobinary4bit (G0, G1, G2, G3, B3, B2, B1, B0 );
+ inout G0, G1, G2, G3, B3, B2, B1, B0 ;
+ electrical G0, G1, G2, G3, B3, B2, B1, B0 ;
+ electrical B0n1, B0n2, B1n1, B1n2, B2n1, B2n2, B3n1, B3n2;
+
+
+ parameter real TR=6 from [1.0:20.0]  (*info="transfer function scaling factor"*);
+ parameter real Delay = 1e-9 from [0: inf]  (*info="output delay" unit="s"*);
+
+ real Rd, Cd;
+ real m0, m1, m2, m3;
+
+analog begin
+@(initial_model)
+  begin
+    Rd = 1e3;
+    Cd= Delay*1.43/Rd;
+  end
+m0 = V(G0)*(1-V(B1))+(1-V(G0))*V(B1);
+m1 = V(G1)*(1-V(B2))+(1-V(G1))*V(B2);
+m2 = V(G2)*(1-V(G3))+(1-V(G2))*V(G3);
+m3 = V(G3);
+I(B0n1) <+ -0.5*(1+tanh(TR*(m0-0.5)));
+I(B0n1) <+ V(B0n1);
+I(B0n1, B0n2) <+ V(B0n1,B0n2)/Rd;
+I(B0n2) <+ ddt(Cd*V(B0n2));
+I(B0)  <+ -V(B0n2);
+I(B0) <+ V(B0);
+
+I(B1n1) <+ -0.5*(1+tanh(TR*(m1-0.5)));
+I(B1n1) <+ V(B1n1);
+I(B1n1, B1n2) <+ V(B1n1,B1n2)/Rd;
+I(B1n2) <+ ddt(Cd*V(B1n2));
+I(B1)  <+ -V(B1n2);
+I(B1) <+ V(B1);
+
+I(B2n1) <+ -0.5*(1+tanh(TR*(m2-0.5)));
+I(B2n1) <+ V(B2n1);
+I(B2n1, B2n2) <+ V(B2n1,B2n2)/Rd;
+I(B2n2) <+ ddt(Cd*V(B2n2));
+I(B2)  <+ -V(B2n2);
+I(B2) <+ V(B2);
+
+I(B3n1) <+ -0.5*(1+tanh(TR*(m3-0.5)));
+I(B3n1) <+ V(B3n1);
+I(B3n1, B3n2) <+ V(B3n1,B3n2)/Rd;
+I(B3n2) <+ ddt(Cd*V(B3n2));
+I(B3)  <+ -V(B3n2);
+I(B3) <+ V(B3);
+end
+endmodule

@@ -1,0 +1,43 @@
+﻿生成启动时间为 2015/12/19 21:12:01。
+     1>项目“D:\xuliang\work\EDA\qucs_vs\qucs-0.0.18\qucs\paintings\libpaintings.vcxproj”在节点 4 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“.\Opt\libpaintings.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       CustomBuild:
+         MOC'ing arrowdialog.h ...
+         MOC'ing filldialog.h ...
+         MOC'ing graphictextdialog.h ...
+         MOC'ing id_dialog.h ...
+       ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I.. /I../.. /ID:\Qt\4.8.6/include /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D __MINGW32__ /D __STDC__=0 /D QT_THREAD_SUPPORT /D _REENTRANT /D UNICODE /D QT_DLL /D QT_NO_DEBUG /D QT3_SUPPORT /D _VC80_UPGRADE=0x0600 /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Opt\\" /Fd".\Opt\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt arrowdialog.moc.cpp filldialog.moc.cpp graphictextdialog.moc.cpp id_dialog.moc.cpp
+         arrowdialog.moc.cpp
+         filldialog.moc.cpp
+         graphictextdialog.moc.cpp
+         id_dialog.moc.cpp
+         正在生成代码...
+       Lib:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:".\Opt\libpaintings.lib" /NOLOGO .\Opt\arrow.obj
+         .\Opt\arrowdialog.obj
+         .\Opt\arrowdialog.moc.obj
+         .\Opt\ellipse.obj
+         .\Opt\ellipsearc.obj
+         .\Opt\filldialog.obj
+         .\Opt\filldialog.moc.obj
+         .\Opt\graphicline.obj
+         .\Opt\graphictext.obj
+         .\Opt\graphictextdialog.obj
+         .\Opt\graphictextdialog.moc.obj
+         .\Opt\id_dialog.obj
+         .\Opt\id_dialog.moc.obj
+         .\Opt\id_text.obj
+         .\Opt\painting.obj
+         .\Opt\portsymbol.obj
+         .\Opt\rectangle.obj
+         libpaintings.vcxproj -> D:\xuliang\work\EDA\qucs_vs\qucs-0.0.18\qucs\paintings\.\Opt\libpaintings.lib
+       FinalizeBuildStatus:
+         正在删除文件“.\Opt\libpaintings.unsuccessfulbuild”。
+         正在对“.\Opt\libpaintings.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“D:\xuliang\work\EDA\qucs_vs\qucs-0.0.18\qucs\paintings\libpaintings.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:14.95

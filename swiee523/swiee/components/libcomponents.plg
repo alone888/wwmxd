@@ -1,0 +1,726 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: libcomponents - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\ADMINI~1.JCS\AppData\Local\Temp\RSP43A8.tmp" with contents
+[
+/nologo /MDd /W3 /GX /ZI /Od /I ".." /I "../.." /I "C:\QT334/include" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "__MINGW32__" /D "HAVE_CONFIG_H" /D __STDC__=0 /D "QT_THREAD_SUPPORT" /D "_REENTRANT" /D "UNICODE" /D "QT_DLL" /D "DEBUG" /Fo"Dbg/" /Fd"Dbg/" /FD /c 
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\ac_sim.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\am_modulator.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\ampere_ac.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\ampere_dc.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\ampere_noise.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\amplifier.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\andor4x2.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\andor4x3.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\andor4x4.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\attenuator.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\biast.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\binarytogrey4bit.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\bjt.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\bjtsub.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\bondwire.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\capacitor.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\cccs.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\ccvs.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\circulator.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\coaxialline.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\comp_1bit.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\comp_2bit.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\comp_4bit.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\componentdialog.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\componentdialog.moc.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\coplanar.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\coupler.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\cpwgap.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\cpwopen.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\cpwshort.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\cpwstep.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\ctline.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\d_flipflop.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\dc_sim.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\dcblock.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\dcfeed.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\dff_SR.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\diac.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\digi_sim.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\digi_source.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\diode.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\DLS_1ton.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\DLS_nto1.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\dmux2to4.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\dmux3to8.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\dmux4to16.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\EKV26MOS.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\eqndefined.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\equation.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\fa1b.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\fa2b.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\gatedDlatch.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\greytobinary4bit.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\ground.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\gyrator.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\ha1b.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\hb_sim.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\HBT_X.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\hic0_full.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\hic2_full.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\hicumL0V1p2.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\hicumL0V1p2g.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\hicumL0V1p3.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\hicumL2V2p1.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\hicumL2V2p23.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\hicumL2V2p24.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\hpribin4bit.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\hybrid.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\iexp.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\ifile.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\inductor.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\iprobe.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\ipulse.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\irect.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\isolator.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\jfet.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\jk_flipflop.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\jkff_SR.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\libcomp.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\log_amp.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\logic_0.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\logic_1.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\logical_and.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\logical_buf.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\logical_inv.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\logical_nand.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\logical_nor.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\logical_or.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\logical_xnor.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\logical_xor.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\MESFET.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\mod_amp.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\mosfet.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\mosfet_sub.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\mscorner.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\mscoupled.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\mscross.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\msgap.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\mslange.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\msline.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\msmbend.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\msopen.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\msrstub.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\msstep.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\mstee.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\msvia.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\mutual.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\mutual2.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\mux2to1.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\mux4to1.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\mux8to1.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\nigbt.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\noise_ii.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\noise_iv.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\noise_vv.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\opamp.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\opt_sim.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\optimizedialog.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\optimizedialog.moc.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\pad2bit.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\pad3bit.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\pad4bit.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\param_sweep.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\phaseshifter.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\photodiode.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\phototransistor.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\pm_modulator.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\potentiometer.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\rectline.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\relais.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\resistor.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\rfedd.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\rfedd2p.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\rlcg.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\rs_flipflop.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\source_ac.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\sp_sim.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\sparamfile.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\spicedialog.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\spicedialog.moc.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\spicefile.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\spicefile.moc.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\subcircuit.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\subcirport.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\substrate.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\switch.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\symtrafo.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\tff_SR.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\thyristor.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\tline.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\tline_4port.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\tr_sim.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\transformer.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\triac.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\tunneldiode.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\twistedpair.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\vafile.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\vccs.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\vcvs.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\verilogfile.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\vexp.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\vfile.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\vhdlfile.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\volt_ac.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\volt_dc.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\volt_noise.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\vprobe.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\vpulse.cpp"
+"C:\cygwin\home\qucs\qucs-0.0.18\qucs\components\vrect.cpp"
+]
+Creating command line "cl.exe @C:\Users\ADMINI~1.JCS\AppData\Local\Temp\RSP43A8.tmp" 
+Creating temporary file "C:\Users\ADMINI~1.JCS\AppData\Local\Temp\RSP43A9.tmp" with contents
+[
+/nologo /out:"Dbg\libcomponents.lib" 
+".\Dbg\ac_sim.obj"
+".\Dbg\am_modulator.obj"
+".\Dbg\ampere_ac.obj"
+".\Dbg\ampere_dc.obj"
+".\Dbg\ampere_noise.obj"
+".\Dbg\amplifier.obj"
+".\Dbg\andor4x2.obj"
+".\Dbg\andor4x3.obj"
+".\Dbg\andor4x4.obj"
+".\Dbg\attenuator.obj"
+".\Dbg\biast.obj"
+".\Dbg\binarytogrey4bit.obj"
+".\Dbg\bjt.obj"
+".\Dbg\bjtsub.obj"
+".\Dbg\bondwire.obj"
+".\Dbg\capacitor.obj"
+".\Dbg\cccs.obj"
+".\Dbg\ccvs.obj"
+".\Dbg\circulator.obj"
+".\Dbg\coaxialline.obj"
+".\Dbg\comp_1bit.obj"
+".\Dbg\comp_2bit.obj"
+".\Dbg\comp_4bit.obj"
+".\Dbg\component.obj"
+".\Dbg\componentdialog.obj"
+".\Dbg\componentdialog.moc.obj"
+".\Dbg\coplanar.obj"
+".\Dbg\coupler.obj"
+".\Dbg\cpwgap.obj"
+".\Dbg\cpwopen.obj"
+".\Dbg\cpwshort.obj"
+".\Dbg\cpwstep.obj"
+".\Dbg\ctline.obj"
+".\Dbg\d_flipflop.obj"
+".\Dbg\dc_sim.obj"
+".\Dbg\dcblock.obj"
+".\Dbg\dcfeed.obj"
+".\Dbg\dff_SR.obj"
+".\Dbg\diac.obj"
+".\Dbg\digi_sim.obj"
+".\Dbg\digi_source.obj"
+".\Dbg\diode.obj"
+".\Dbg\DLS_1ton.obj"
+".\Dbg\DLS_nto1.obj"
+".\Dbg\dmux2to4.obj"
+".\Dbg\dmux3to8.obj"
+".\Dbg\dmux4to16.obj"
+".\Dbg\EKV26MOS.obj"
+".\Dbg\eqndefined.obj"
+".\Dbg\equation.obj"
+".\Dbg\fa1b.obj"
+".\Dbg\fa2b.obj"
+".\Dbg\gatedDlatch.obj"
+".\Dbg\greytobinary4bit.obj"
+".\Dbg\ground.obj"
+".\Dbg\gyrator.obj"
+".\Dbg\ha1b.obj"
+".\Dbg\hb_sim.obj"
+".\Dbg\HBT_X.obj"
+".\Dbg\hic0_full.obj"
+".\Dbg\hic2_full.obj"
+".\Dbg\hicumL0V1p2.obj"
+".\Dbg\hicumL0V1p2g.obj"
+".\Dbg\hicumL0V1p3.obj"
+".\Dbg\hicumL2V2p1.obj"
+".\Dbg\hicumL2V2p23.obj"
+".\Dbg\hicumL2V2p24.obj"
+".\Dbg\hpribin4bit.obj"
+".\Dbg\hybrid.obj"
+".\Dbg\iexp.obj"
+".\Dbg\ifile.obj"
+".\Dbg\inductor.obj"
+".\Dbg\iprobe.obj"
+".\Dbg\ipulse.obj"
+".\Dbg\irect.obj"
+".\Dbg\isolator.obj"
+".\Dbg\jfet.obj"
+".\Dbg\jk_flipflop.obj"
+".\Dbg\jkff_SR.obj"
+".\Dbg\libcomp.obj"
+".\Dbg\log_amp.obj"
+".\Dbg\logic_0.obj"
+".\Dbg\logic_1.obj"
+".\Dbg\logical_and.obj"
+".\Dbg\logical_buf.obj"
+".\Dbg\logical_inv.obj"
+".\Dbg\logical_nand.obj"
+".\Dbg\logical_nor.obj"
+".\Dbg\logical_or.obj"
+".\Dbg\logical_xnor.obj"
+".\Dbg\logical_xor.obj"
+".\Dbg\MESFET.obj"
+".\Dbg\mod_amp.obj"
+".\Dbg\mosfet.obj"
+".\Dbg\mosfet_sub.obj"
+".\Dbg\mscorner.obj"
+".\Dbg\mscoupled.obj"
+".\Dbg\mscross.obj"
+".\Dbg\msgap.obj"
+".\Dbg\mslange.obj"
+".\Dbg\msline.obj"
+".\Dbg\msmbend.obj"
+".\Dbg\msopen.obj"
+".\Dbg\msrstub.obj"
+".\Dbg\msstep.obj"
+".\Dbg\mstee.obj"
+".\Dbg\msvia.obj"
+".\Dbg\mutual.obj"
+".\Dbg\mutual2.obj"
+".\Dbg\mux2to1.obj"
+".\Dbg\mux4to1.obj"
+".\Dbg\mux8to1.obj"
+".\Dbg\nigbt.obj"
+".\Dbg\noise_ii.obj"
+".\Dbg\noise_iv.obj"
+".\Dbg\noise_vv.obj"
+".\Dbg\opamp.obj"
+".\Dbg\opt_sim.obj"
+".\Dbg\optimizedialog.obj"
+".\Dbg\optimizedialog.moc.obj"
+".\Dbg\pad2bit.obj"
+".\Dbg\pad3bit.obj"
+".\Dbg\pad4bit.obj"
+".\Dbg\param_sweep.obj"
+".\Dbg\phaseshifter.obj"
+".\Dbg\photodiode.obj"
+".\Dbg\phototransistor.obj"
+".\Dbg\pm_modulator.obj"
+".\Dbg\potentiometer.obj"
+".\Dbg\rectline.obj"
+".\Dbg\relais.obj"
+".\Dbg\resistor.obj"
+".\Dbg\rfedd.obj"
+".\Dbg\rfedd2p.obj"
+".\Dbg\rlcg.obj"
+".\Dbg\rs_flipflop.obj"
+".\Dbg\source_ac.obj"
+".\Dbg\sp_sim.obj"
+".\Dbg\sparamfile.obj"
+".\Dbg\spicedialog.obj"
+".\Dbg\spicedialog.moc.obj"
+".\Dbg\spicefile.obj"
+".\Dbg\spicefile.moc.obj"
+".\Dbg\subcircuit.obj"
+".\Dbg\subcirport.obj"
+".\Dbg\substrate.obj"
+".\Dbg\switch.obj"
+".\Dbg\symtrafo.obj"
+".\Dbg\tff_SR.obj"
+".\Dbg\thyristor.obj"
+".\Dbg\tline.obj"
+".\Dbg\tline_4port.obj"
+".\Dbg\tr_sim.obj"
+".\Dbg\transformer.obj"
+".\Dbg\triac.obj"
+".\Dbg\tunneldiode.obj"
+".\Dbg\twistedpair.obj"
+".\Dbg\vafile.obj"
+".\Dbg\vccs.obj"
+".\Dbg\vcvs.obj"
+".\Dbg\verilogfile.obj"
+".\Dbg\vexp.obj"
+".\Dbg\vfile.obj"
+".\Dbg\vhdlfile.obj"
+".\Dbg\volt_ac.obj"
+".\Dbg\volt_dc.obj"
+".\Dbg\volt_noise.obj"
+".\Dbg\vprobe.obj"
+".\Dbg\vpulse.obj"
+".\Dbg\vrect.obj"
+]
+Creating command line "link.exe -lib @C:\Users\ADMINI~1.JCS\AppData\Local\Temp\RSP43A9.tmp"
+<h3>Output Window</h3>
+Compiling...
+ac_sim.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\ac_sim.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+am_modulator.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+ampere_ac.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+ampere_dc.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+ampere_noise.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+amplifier.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+andor4x2.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\andor4x2.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+andor4x3.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\andor4x3.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+andor4x4.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\andor4x4.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+attenuator.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+biast.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+binarytogrey4bit.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\binarytogrey4bit.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+bjt.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+bjtsub.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+bondwire.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+capacitor.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+cccs.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+ccvs.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+circulator.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\circulator.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+coaxialline.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+Generating Code...
+Compiling...
+comp_1bit.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\comp_1bit.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+comp_2bit.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\comp_2bit.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+comp_4bit.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\comp_4bit.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+component.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+componentdialog.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\componentdialog.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+componentdialog.moc.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\componentdialog.h(20) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+coplanar.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+coupler.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+cpwgap.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+cpwopen.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+cpwshort.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+cpwstep.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+ctline.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+d_flipflop.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\d_flipflop.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+dc_sim.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\dc_sim.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+dcblock.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+dcfeed.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+dff_SR.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\dff_sr.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+diac.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+digi_sim.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\digi_sim.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+Generating Code...
+Compiling...
+digi_source.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\digi_source.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+diode.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+DLS_1ton.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+DLS_nto1.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+dmux2to4.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\dmux2to4.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+dmux3to8.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\dmux3to8.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+dmux4to16.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\dmux4to16.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+EKV26MOS.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\ekv26mos.cpp(10) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+eqndefined.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\eqndefined.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+equation.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\equation.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+fa1b.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\fa1b.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+fa2b.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\fa2b.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+gatedDlatch.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\gateddlatch.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+greytobinary4bit.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\greytobinary4bit.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+ground.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+gyrator.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+ha1b.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\ha1b.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+hb_sim.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\hb_sim.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+HBT_X.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+hic0_full.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\hic0_full.cpp(10) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+Generating Code...
+Compiling...
+hic2_full.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+hicumL0V1p2.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\hicuml0v1p2.cpp(10) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+hicumL0V1p2g.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\hicuml0v1p2g.cpp(10) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+hicumL0V1p3.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\hicuml0v1p3.cpp(10) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+hicumL2V2p1.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+hicumL2V2p23.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+hicumL2V2p24.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+hpribin4bit.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\hpribin4bit.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+hybrid.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+iexp.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+ifile.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\ifile.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+inductor.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+iprobe.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+ipulse.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+irect.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+isolator.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+jfet.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+jk_flipflop.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\jk_flipflop.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+jkff_SR.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\jkff_sr.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+libcomp.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\libcomp.cpp(19) : fatal error C1083: Cannot open include file: 'config.h': No such file or directory
+Generating Code...
+Compiling...
+log_amp.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+logic_0.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\logic_0.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+logic_1.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\logic_1.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+logical_and.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+logical_buf.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\logical_buf.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+logical_inv.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\logical_inv.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+logical_nand.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+logical_nor.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+logical_or.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+logical_xnor.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+logical_xor.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+MESFET.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+mod_amp.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+mosfet.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+mosfet_sub.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+mscorner.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+mscoupled.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+mscross.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+msgap.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+mslange.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+Generating Code...
+Compiling...
+msline.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+msmbend.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+msopen.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+msrstub.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+msstep.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+mstee.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\mstee.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+msvia.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+mutual.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+mutual2.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+mux2to1.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\mux2to1.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+mux4to1.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\mux4to1.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+mux8to1.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\mux8to1.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+nigbt.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+noise_ii.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+noise_iv.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+noise_vv.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+opamp.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+opt_sim.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\opt_sim.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+optimizedialog.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\optimizedialog.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+optimizedialog.moc.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\optimizedialog.h(21) : fatal error C1083: Cannot open include file: 'QDialog': No such file or directory
+Generating Code...
+Compiling...
+pad2bit.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\pad2bit.cpp(11) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+pad3bit.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\pad3bit.cpp(11) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+pad4bit.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\pad4bit.cpp(11) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+param_sweep.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\param_sweep.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+phaseshifter.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+photodiode.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+phototransistor.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+pm_modulator.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+potentiometer.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+rectline.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+relais.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+resistor.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\resistor.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+rfedd.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\rfedd.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+rfedd2p.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\rfedd2p.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+rlcg.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\rlcg.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+rs_flipflop.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\rs_flipflop.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+source_ac.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+sp_sim.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\sp_sim.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+sparamfile.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\sparamfile.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+spicedialog.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\spicedialog.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+Generating Code...
+Compiling...
+spicedialog.moc.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\spicedialog.h(21) : fatal error C1083: Cannot open include file: 'QDialog': No such file or directory
+spicefile.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\spicefile.cpp(19) : fatal error C1083: Cannot open include file: 'config.h': No such file or directory
+spicefile.moc.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\spicefile.h(20) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+subcircuit.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\subcircuit.cpp(19) : fatal error C1083: Cannot open include file: 'config.h': No such file or directory
+subcirport.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\subcirport.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+substrate.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+switch.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\switch.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+symtrafo.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+tff_SR.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\tff_sr.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+thyristor.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+tline.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+tline_4port.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+tr_sim.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\tr_sim.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+transformer.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+triac.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+tunneldiode.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+twistedpair.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+vafile.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\vafile.cpp(18) : fatal error C1083: Cannot open include file: 'QString': No such file or directory
+vccs.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+vcvs.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+Generating Code...
+Compiling...
+verilogfile.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\verilogfile.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+vexp.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+vfile.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\vfile.cpp(18) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+vhdlfile.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\vhdlfile.cpp(17) : fatal error C1083: Cannot open include file: 'QtGui': Permission denied
+volt_ac.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+volt_dc.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+volt_noise.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+vprobe.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+vpulse.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+vrect.cpp
+c:\cygwin\home\qucs\qucs-0.0.18\qucs\components\component.h(21) : fatal error C1083: Cannot open include file: 'Q3PtrList': No such file or directory
+Generating Code...
+Error executing cl.exe.
+
+
+
+<h3>Results</h3>
+libcomponents.lib - 170 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

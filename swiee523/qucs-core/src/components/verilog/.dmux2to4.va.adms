@@ -1,0 +1,319 @@
+# 1 "./dmux2to4.va"
+
+
+
+
+
+
+
+
+
+
+
+# 1 "disciplines.vams"
+
+
+
+
+
+
+# 9 "disciplines.vams"
+
+
+
+
+discipline logic
+  domain discrete;
+enddiscipline
+
+
+
+
+
+
+nature Current
+  units = "A";
+  access = I;
+  idt_nature = Charge;
+# 29 "disciplines.vams"
+  abstol = 1e-12;
+
+endnature
+
+nature Charge
+  units = "coul";
+  access = Q;
+  ddt_nature = Current;
+# 40 "disciplines.vams"
+  abstol = 1e-14;
+
+endnature
+
+nature Voltage
+  units = "V";
+  access = V;
+  idt_nature = Flux;
+# 51 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Flux
+  units = "Wb";
+  access = Phi;
+  ddt_nature = Voltage;
+# 62 "disciplines.vams"
+  abstol = 1e-9;
+
+endnature
+
+discipline electrical
+  potential Voltage;
+  flow Current;
+enddiscipline
+
+discipline voltage
+  potential Voltage;
+enddiscipline
+discipline current
+  potential Current;
+enddiscipline
+
+
+nature Magneto_Motive_Force
+  units = "A*turn";
+  access = MMF;
+# 85 "disciplines.vams"
+  abstol = 1e-12;
+
+endnature
+
+discipline magnetic
+  potential Magneto_Motive_Force;
+  flow Flux;
+enddiscipline
+
+
+nature Temperature
+  units = "K";
+  access = Temp;
+# 101 "disciplines.vams"
+  abstol = 1e-4;
+
+endnature
+
+nature Power
+  units = "W";
+  access = Pwr;
+# 111 "disciplines.vams"
+  abstol = 1e-9;
+
+endnature
+
+discipline thermal
+  potential Temperature;
+  flow Power;
+enddiscipline
+
+
+nature Position
+  units = "m";
+  access = Pos;
+  ddt_nature = Velocity;
+# 128 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Velocity
+  units = "m/s";
+  access = Vel;
+  ddt_nature = Acceleration;
+  idt_nature = Position;
+# 140 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Acceleration
+  units = "m/s^2";
+  access = Acc;
+  ddt_nature = Impulse;
+  idt_nature = Velocity;
+# 152 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Impulse
+  units = "m/s^3";
+  access = Imp;
+  idt_nature = Acceleration;
+# 163 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Force
+  units = "N";
+  access = F;
+# 173 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+discipline kinematic
+  potential Position;
+  flow Force;
+enddiscipline
+discipline kinematic_v
+  potential Velocity;
+  flow Force;
+enddiscipline
+
+
+nature Angle
+  units = "rads";
+  access = Theta;
+  ddt_nature = Angular_Velocity;
+# 194 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Angular_Velocity
+  units = "rads/s";
+  access = Omega;
+  ddt_nature = Angular_Acceleration;
+  idt_nature = Angle;
+# 206 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Angular_Acceleration
+  units = "rads/s^2";
+  access = Alpha;
+  idt_nature = Angular_Velocity;
+# 217 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Angular_Force
+  units = "N*m";
+  access = Tau;
+# 227 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+discipline rotational
+  potential Angle;
+  flow Angular_Force;
+enddiscipline
+discipline rotational_omega
+  potential Angular_Velocity;
+  flow Angular_Force;
+enddiscipline
+
+
+# 13 "./dmux2to4.va"
+# 1 "constants.vams"
+
+
+
+
+
+
+
+# 10 "constants.vams"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 14 "./dmux2to4.va"
+module dmux2to4 (EN, A, B, Y3, Y2, Y1, Y0); 
+ inout EN, A, B, Y3, Y2, Y1, Y0;
+ electrical EN, A, B, Y3, Y2, Y1, Y0;
+ electrical Y0n1, Y0n2, Y1n1, Y1n2, Y2n1, Y2n2, Y3n1, Y3n2;
+
+
+ parameter real TR=6 from [1.0:20.0]  (*info="transfer function high scaling factor"*);
+ parameter real Delay = 1n from [0: inf]  (*info="output delay" unit="s"*);
+
+ real Rd, Cd, VENI, VAI, VBI, IY0, IY1, IY2, IY3;
+
+analog begin
+@(initial_model)
+  begin
+    Rd = 1e3;
+    Cd= Delay*1.43/Rd;
+  end
+VENI = 1-V(EN);
+VAI  = 1-V(A);
+VBI  = 1-V(B);
+
+IY0 = VENI*VBI*VAI;
+I(Y0n1) <+ -0.5*(1+tanh(TR*(IY0-0.5)));
+I(Y0n1) <+ V(Y0n1);
+I(Y0n1, Y0n2) <+ V(Y0n1,Y0n2)/Rd;
+I(Y0n2) <+ ddt(Cd*V(Y0n2));
+I(Y0)  <+ -V(Y0n2);
+I(Y0) <+ V(Y0);
+
+IY1 = VENI*VBI*V(A);
+I(Y1n1) <+ -0.5*(1+tanh(TR*(IY1-0.5)));
+I(Y1n1) <+ V(Y1n1);
+I(Y1n1, Y1n2) <+ V(Y1n1,Y1n2)/Rd;
+I(Y1n2) <+ ddt(Cd*V(Y1n2));
+I(Y1)  <+ -V(Y1n2);
+I(Y1) <+ V(Y1);
+
+IY2= VENI*V(B)*VAI;
+I(Y2n1) <+ -0.5*(1+tanh(TR*(IY2-0.5)));
+I(Y2n1) <+ V(Y2n1);
+I(Y2n1, Y2n2) <+ V(Y2n1,Y2n2)/Rd;
+I(Y2n2) <+ ddt(Cd*V(Y2n2));
+I(Y2)  <+ -V(Y2n2);
+I(Y2) <+ V(Y2);
+
+IY3 = VENI*V(B)*V(A);
+I(Y3n1) <+ -0.5*(1+tanh(TR*(IY3-0.5)));
+I(Y3n1) <+ V(Y3n1);
+I(Y3n1, Y3n2) <+ V(Y3n1,Y3n2)/Rd;
+I(Y3n2) <+ ddt(Cd*V(Y3n2));
+I(Y3)  <+ -V(Y3n2);
+I(Y3) <+ V(Y3);
+end
+endmodule

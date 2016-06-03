@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libcomponents", "swiee\components\libcomponents.vcxproj", "{552972A0-3E56-CFE7-8239-B57980BDBA33}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libdiagrams", "swiee\diagrams\libdiagrams.vcxproj", "{1D25ECAA-2A0B-B092-8484-4714A9B558D8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libdialogs", "swiee\dialogs\libdialogs.vcxproj", "{B048E839-E24D-02AF-B6E9-AD2F093BA714}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libpaintings", "swiee\paintings\libpaintings.vcxproj", "{893EDE7B-B6CB-C707-C53F-F7E0FEAAB774}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "swiee", "swiee\swiee.vcxproj", "{1E0D60A7-AEE6-FC0F-FA57-C2323411544C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{552972A0-3E56-CFE7-8239-B57980BDBA33} = {552972A0-3E56-CFE7-8239-B57980BDBA33}
+		{1D25ECAA-2A0B-B092-8484-4714A9B558D8} = {1D25ECAA-2A0B-B092-8484-4714A9B558D8}
+		{893EDE7B-B6CB-C707-C53F-F7E0FEAAB774} = {893EDE7B-B6CB-C707-C53F-F7E0FEAAB774}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+		Template|Win32 = Template|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{552972A0-3E56-CFE7-8239-B57980BDBA33}.Debug|Win32.ActiveCfg = Debug|Win32
+		{552972A0-3E56-CFE7-8239-B57980BDBA33}.Release|Win32.ActiveCfg = Release|Win32
+		{552972A0-3E56-CFE7-8239-B57980BDBA33}.Release|Win32.Build.0 = Release|Win32
+		{552972A0-3E56-CFE7-8239-B57980BDBA33}.Template|Win32.ActiveCfg = Release|Win32
+		{552972A0-3E56-CFE7-8239-B57980BDBA33}.Template|Win32.Build.0 = Release|Win32
+		{1D25ECAA-2A0B-B092-8484-4714A9B558D8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1D25ECAA-2A0B-B092-8484-4714A9B558D8}.Release|Win32.ActiveCfg = Release|Win32
+		{1D25ECAA-2A0B-B092-8484-4714A9B558D8}.Release|Win32.Build.0 = Release|Win32
+		{1D25ECAA-2A0B-B092-8484-4714A9B558D8}.Template|Win32.ActiveCfg = Template|Win32
+		{1D25ECAA-2A0B-B092-8484-4714A9B558D8}.Template|Win32.Build.0 = Template|Win32
+		{B048E839-E24D-02AF-B6E9-AD2F093BA714}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B048E839-E24D-02AF-B6E9-AD2F093BA714}.Release|Win32.ActiveCfg = Release|Win32
+		{B048E839-E24D-02AF-B6E9-AD2F093BA714}.Release|Win32.Build.0 = Release|Win32
+		{B048E839-E24D-02AF-B6E9-AD2F093BA714}.Template|Win32.ActiveCfg = Template|Win32
+		{B048E839-E24D-02AF-B6E9-AD2F093BA714}.Template|Win32.Build.0 = Template|Win32
+		{893EDE7B-B6CB-C707-C53F-F7E0FEAAB774}.Debug|Win32.ActiveCfg = Debug|Win32
+		{893EDE7B-B6CB-C707-C53F-F7E0FEAAB774}.Release|Win32.ActiveCfg = Release|Win32
+		{893EDE7B-B6CB-C707-C53F-F7E0FEAAB774}.Release|Win32.Build.0 = Release|Win32
+		{893EDE7B-B6CB-C707-C53F-F7E0FEAAB774}.Template|Win32.ActiveCfg = Template|Win32
+		{893EDE7B-B6CB-C707-C53F-F7E0FEAAB774}.Template|Win32.Build.0 = Template|Win32
+		{1E0D60A7-AEE6-FC0F-FA57-C2323411544C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1E0D60A7-AEE6-FC0F-FA57-C2323411544C}.Debug|Win32.Build.0 = Debug|Win32
+		{1E0D60A7-AEE6-FC0F-FA57-C2323411544C}.Release|Win32.ActiveCfg = Release|Win32
+		{1E0D60A7-AEE6-FC0F-FA57-C2323411544C}.Release|Win32.Build.0 = Release|Win32
+		{1E0D60A7-AEE6-FC0F-FA57-C2323411544C}.Template|Win32.ActiveCfg = Template|Win32
+		{1E0D60A7-AEE6-FC0F-FA57-C2323411544C}.Template|Win32.Build.0 = Template|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

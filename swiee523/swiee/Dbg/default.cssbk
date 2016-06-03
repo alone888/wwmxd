@@ -1,0 +1,64 @@
+QDialog{
+	background-image: url("bg.png");
+	background:rgb(229, 255, 239);
+	border: 1px solid #999;
+	border-radius: 5px;
+}
+
+QPushButton{
+	color:white;
+	border-radius:3px;
+	background-color: black;
+}
+QLabel{
+	color:red;
+}
+
+QLineEdit{
+	text-align: center;
+	color:blue;
+	background-color: transparent;
+	border: 1px solid white;
+	selection-color:yellow;
+	selection-background-color:green;
+}
+QRadioButton{
+	color: slateblue;
+}
+QRadioButton::indicator:on{
+	background-image: url("1.gif");
+}
+QComboBox{
+	min-width: 4em;
+	background-color: transparent;
+}
+QComboBox:on{
+	color:red;
+}
+QComboBox:off{
+	color:black;
+}
+QComboBox QAbstractItemView {
+    border: 1px solid black;
+    color:black;
+    selection-color: red;
+    selection-background-color: green;
+}
+
+QProgressBar{
+	border: 1px solid #999;
+	border-radius:5px;
+	text-align: center;
+	background-color: transparent;
+}
+
+QProgressBar::chunk {
+    background-color: #CD96CD;
+    width: 10px;
+}
+QFrame, QLabel, QToolTip {
+    border: 2px solid green;
+    border-radius: 4px;
+    padding: 2px;
+    background-image: url(images/welcome.png);
+}

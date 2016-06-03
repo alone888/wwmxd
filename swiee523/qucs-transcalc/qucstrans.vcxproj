@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Dbg\</OutDir>
+    <IntDir>.\Dbg\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\Qt3Support;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtScript;$(IncludePath)</IncludePath>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Opt\</OutDir>
+    <IntDir>.\Opt\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..;../..;D:\Qt\Qt5.5.1\5.5\msvc2013_64\include;D:\Qt\Qt5.5.1\5.5\msvc2013_64\include\QtGui;D:\Qt\Qt5.5.1\5.5\msvc2013_64\include\QtCore;D:\Qt\Qt5.5.1\5.5\msvc2013_64\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;__MINGW32__;__STDC__=0;QT_THREAD_SUPPORT;_REENTRANT;UNICODE;QT_DLL;DEBUG;QT3_SUPPORT;PACKAGE_VERSION="1.100";LANGUAGEDIR="D:/xuliang/work/EDA/qucs_vs/qucs-install";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Dbg\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Dbg\qucstrans.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Dbg\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Dbg\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Dbg\qucstrans.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Dbg\qucstrans.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\Dbg\qucstrans.exe</OutputFile>
+      <AdditionalLibraryDirectories>./Dbg;$(QTDIR)/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>qtmaind.lib;QTCOREd4.LIB;QTGUId4.LIB;libtranscalc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>.;..;$(QTDIR)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;__MINGW32__;HAVE_CONFIG_H;__STDC__=0;QT_THREAD_SUPPORT;_REENTRANT;UNICODE;QT_DLL;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Opt\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Opt\qucstrans.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Opt\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Opt\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Opt\qucstrans.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Opt\qucstrans.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>msvcrtd;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <OutputFile>.\Opt\qucstrans.exe</OutputFile>
+      <AdditionalLibraryDirectories>./Opt;$(QTDIR)/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libtranscalc.lib;qtmain.lib;qt-mt3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="helpdialog.cpp" />
+    <ClCompile Include="helpdialog.moc.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="optionsdialog.cpp" />
+    <ClCompile Include="optionsdialog.moc.cpp" />
+    <ClCompile Include="qucstrans.cpp" />
+    <ClCompile Include="qucstrans.moc.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="helpdialog.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC%27ing helpdialog.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC%27ing helpdialog.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="optionsdialog.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC%27ing optionsdialog.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC%27ing optionsdialog.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="qucstrans.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC%27ing qucstrans.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC%27ing qucstrans.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

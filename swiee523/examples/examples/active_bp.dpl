@@ -1,0 +1,41 @@
+<Qucs Schematic 0.0.18>
+<Properties>
+  <View=0,-3299,800,800,1,0,3299>
+  <Grid=10,10,0>
+  <DataSet=active_bp.dat>
+  <DataDisplay=active_bp.sch>
+  <OpenDisplay=1>
+  <Script=active_bp.m>
+  <RunScript=0>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Rect 70 220 240 160 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "">
+	<"acfrequency" #0000ff 0 3 0 0 0>
+	<"V1.i" #ff0000 0 3 0 0 0>
+  </Rect>
+  <Rect 370 230 240 160 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "">
+	<"V1.i" #0000ff 0 3 0 0 0>
+  </Rect>
+  <PS 70 510 200 200 3 #c0c0c0 1 00 1 0 1 1 1 0 4 1 1 0 0.5 1 315 0 225 "" "" "">
+	<"V1.i" #0000ff 0 3 0 0 0>
+  </PS>
+  <SP 380 500 200 200 3 #c0c0c0 1 00 1 0 1 1 1 0 0.5 1 1 0 4 1 315 0 225 "" "" "">
+	<"V1.i" #0000ff 0 3 0 0 0>
+  </SP>
+  <RichText 40 590 300 3849 3 #c0c0c0 1 00 1 0 1 1 1 0 1 1 1 0 1 1 315 0 225 "" "" "">
+	<"V1.i" #0000ff 0 0 0 0 0>
+  </RichText>
+</Diagrams>
+<Paintings>
+</Paintings>

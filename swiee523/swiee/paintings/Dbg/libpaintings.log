@@ -1,0 +1,46 @@
+﻿生成启动时间为 2016/5/14 16:29:35。
+     1>项目“C:\WorkFile\DoSomeThing\qucs资料\swiee0430\swiee\swiee\paintings\libpaintings.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“.\Dbg\libpaintings.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       CustomBuild:
+         MOC'ing arrowdialog.h ...
+         MOC'ing filldialog.h ...
+         MOC'ing graphictextdialog.h ...
+         MOC'ing id_dialog.h ...
+       ClCompile:
+         d:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I.. /I../.. /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D __MINGW32__ /D __STDC__=0 /D QT_THREAD_SUPPORT /D _REENTRANT /D UNICODE /D QT_DLL /D DEBUG /D QT3_SUPPORT /D _VC80_UPGRADE=0x0600 /Gm- /EHsc /MDd /GS /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Dbg\\" /Fd".\Dbg\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt arrowdialog.moc.cpp filldialog.moc.cpp graphictext.cpp graphictextdialog.cpp graphictextdialog.moc.cpp id_dialog.moc.cpp portsymbol.cpp
+         arrowdialog.moc.cpp
+         filldialog.moc.cpp
+         graphictext.cpp
+         graphictextdialog.cpp
+         graphictextdialog.moc.cpp
+         id_dialog.moc.cpp
+         portsymbol.cpp
+         正在生成代码...
+       Lib:
+         d:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:".\Dbg\libpaintings.lib" /NOLOGO .\Dbg\arrow.obj
+         .\Dbg\arrowdialog.obj
+         .\Dbg\arrowdialog.moc.obj
+         .\Dbg\ellipse.obj
+         .\Dbg\ellipsearc.obj
+         .\Dbg\filldialog.obj
+         .\Dbg\filldialog.moc.obj
+         .\Dbg\graphicline.obj
+         .\Dbg\graphictext.obj
+         .\Dbg\graphictextdialog.obj
+         .\Dbg\graphictextdialog.moc.obj
+         .\Dbg\id_dialog.obj
+         .\Dbg\id_dialog.moc.obj
+         .\Dbg\id_text.obj
+         .\Dbg\painting.obj
+         .\Dbg\portsymbol.obj
+         .\Dbg\rectangle.obj
+         libpaintings.vcxproj -> C:\WorkFile\DoSomeThing\qucs资料\swiee0430\swiee\swiee\paintings\.\Dbg\libpaintings.lib
+       FinalizeBuildStatus:
+         正在删除文件“.\Dbg\libpaintings.unsuccessfulbuild”。
+         正在对“.\Dbg\libpaintings.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“C:\WorkFile\DoSomeThing\qucs资料\swiee0430\swiee\swiee\paintings\libpaintings.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:29.90

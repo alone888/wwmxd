@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Dbg\</OutDir>
+    <IntDir>.\Dbg\</IntDir>
+    <IncludePath>$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\Qt3Support;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtScript;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Opt\</OutDir>
+    <IntDir>.\Opt\</IntDir>
+    <IncludePath>$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\Qt3Support;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtScript;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..;../..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;__MINGW32__;__STDC__=0;QT_THREAD_SUPPORT;_REENTRANT;UNICODE;QT_DLL;DEBUG;QT3_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Dbg\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Dbg\libcomponents.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Dbg\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Dbg\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Dbg\libcomponents.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Dbg\libcomponents.lib</OutputFile>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>..;../..;$(QTDIR)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;__MINGW32__;__STDC__=0;QT_THREAD_SUPPORT;_REENTRANT;UNICODE;QT_DLL;QT_NO_DEBUG;QT3_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Opt\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Opt\libcomponents.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Opt\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Opt\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Opt\libcomponents.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Opt\libcomponents.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ac_sim.cpp" />
+    <ClCompile Include="am_modulator.cpp" />
+    <ClCompile Include="ampere_ac.cpp" />
+    <ClCompile Include="ampere_dc.cpp" />
+    <ClCompile Include="ampere_noise.cpp" />
+    <ClCompile Include="amplifier.cpp" />
+    <ClCompile Include="andor4x2.cpp" />
+    <ClCompile Include="andor4x3.cpp" />
+    <ClCompile Include="andor4x4.cpp" />
+    <ClCompile Include="attenuator.cpp" />
+    <ClCompile Include="biast.cpp" />
+    <ClCompile Include="binarytogrey4bit.cpp" />
+    <ClCompile Include="bjt.cpp" />
+    <ClCompile Include="bjtsub.cpp" />
+    <ClCompile Include="bondwire.cpp" />
+    <ClCompile Include="bsim3v34nMOS.cpp" />
+    <ClCompile Include="bsim3v34pMOS.cpp" />
+    <ClCompile Include="bsim4v30nMOS.cpp" />
+    <ClCompile Include="bsim4v30pMOS.cpp" />
+    <ClCompile Include="capacitor.cpp" />
+    <ClCompile Include="cccs.cpp" />
+    <ClCompile Include="ccvs.cpp" />
+    <ClCompile Include="circulator.cpp" />
+    <ClCompile Include="coaxialline.cpp" />
+    <ClCompile Include="comp_1bit.cpp" />
+    <ClCompile Include="comp_2bit.cpp" />
+    <ClCompile Include="comp_4bit.cpp" />
+    <ClCompile Include="component.cpp" />
+    <ClCompile Include="componentdialog.cpp" />
+    <ClCompile Include="componentdialog.moc.cpp" />
+    <ClCompile Include="coplanar.cpp" />
+    <ClCompile Include="coupler.cpp" />
+    <ClCompile Include="cpwgap.cpp" />
+    <ClCompile Include="cpwopen.cpp" />
+    <ClCompile Include="cpwshort.cpp" />
+    <ClCompile Include="cpwstep.cpp" />
+    <ClCompile Include="ctline.cpp" />
+    <ClCompile Include="d_flipflop.cpp" />
+    <ClCompile Include="dc_sim.cpp" />
+    <ClCompile Include="dcblock.cpp" />
+    <ClCompile Include="dcfeed.cpp" />
+    <ClCompile Include="dff_SR.cpp" />
+    <ClCompile Include="diac.cpp" />
+    <ClCompile Include="digi_sim.cpp" />
+    <ClCompile Include="digi_source.cpp" />
+    <ClCompile Include="diode.cpp" />
+    <ClCompile Include="DLS_1ton.cpp" />
+    <ClCompile Include="DLS_nto1.cpp" />
+    <ClCompile Include="dmux2to4.cpp" />
+    <ClCompile Include="dmux3to8.cpp" />
+    <ClCompile Include="dmux4to16.cpp" />
+    <ClCompile Include="ecvs.cpp" />
+    <ClCompile Include="EKV26MOS.cpp" />
+    <ClCompile Include="eqndefined.cpp" />
+    <ClCompile Include="equation.cpp" />
+    <ClCompile Include="etr_sim.cpp" />
+    <ClCompile Include="fa1b.cpp" />
+    <ClCompile Include="fa2b.cpp" />
+    <ClCompile Include="gatedDlatch.cpp" />
+    <ClCompile Include="greytobinary4bit.cpp" />
+    <ClCompile Include="ground.cpp" />
+    <ClCompile Include="gyrator.cpp" />
+    <ClCompile Include="ha1b.cpp" />
+    <ClCompile Include="hb_sim.cpp" />
+    <ClCompile Include="HBT_X.cpp" />
+    <ClCompile Include="hic0_full.cpp" />
+    <ClCompile Include="hic2_full.cpp" />
+    <ClCompile Include="hicumL0V1p2.cpp" />
+    <ClCompile Include="hicumL0V1p2g.cpp" />
+    <ClCompile Include="hicumL0V1p3.cpp" />
+    <ClCompile Include="hicumL2V2p1.cpp" />
+    <ClCompile Include="hicumL2V2p23.cpp" />
+    <ClCompile Include="hicumL2V2p24.cpp" />
+    <ClCompile Include="hicumL2V2p31n.cpp" />
+    <ClCompile Include="hpribin4bit.cpp" />
+    <ClCompile Include="hybrid.cpp" />
+    <ClCompile Include="iexp.cpp" />
+    <ClCompile Include="ifile.cpp" />
+    <ClCompile Include="inductor.cpp" />
+    <ClCompile Include="iprobe.cpp" />
+    <ClCompile Include="ipulse.cpp" />
+    <ClCompile Include="irect.cpp" />
+    <ClCompile Include="isolator.cpp" />
+    <ClCompile Include="jfet.cpp" />
+    <ClCompile Include="jk_flipflop.cpp" />
+    <ClCompile Include="jkff_SR.cpp" />
+    <ClCompile Include="libcomp.cpp" />
+    <ClCompile Include="log_amp.cpp" />
+    <ClCompile Include="logic_0.cpp" />
+    <ClCompile Include="logic_1.cpp" />
+    <ClCompile Include="logical_and.cpp" />
+    <ClCompile Include="logical_buf.cpp" />
+    <ClCompile Include="logical_inv.cpp" />
+    <ClCompile Include="logical_nand.cpp" />
+    <ClCompile Include="logical_nor.cpp" />
+    <ClCompile Include="logical_or.cpp" />
+    <ClCompile Include="logical_xnor.cpp" />
+    <ClCompile Include="logical_xor.cpp" />
+    <ClCompile Include="MESFET.cpp" />
+    <ClCompile Include="mod_amp.cpp" />
+    <ClCompile Include="mosfet.cpp" />
+    <ClCompile Include="mosfet_sub.cpp" />
+    <ClCompile Include="mscorner.cpp" />
+    <ClCompile Include="mscoupled.cpp" />
+    <ClCompile Include="mscross.cpp" />
+    <ClCompile Include="msgap.cpp" />
+    <ClCompile Include="mslange.cpp" />
+    <ClCompile Include="msline.cpp" />
+    <ClCompile Include="msmbend.cpp" />
+    <ClCompile Include="msopen.cpp" />
+    <ClCompile Include="msrstub.cpp" />
+    <ClCompile Include="msstep.cpp" />
+    <ClCompile Include="mstee.cpp" />
+    <ClCompile Include="msvia.cpp" />
+    <ClCompile Include="mutual.cpp" />
+    <ClCompile Include="mutual2.cpp" />
+    <ClCompile Include="mux2to1.cpp" />
+    <ClCompile Include="mux4to1.cpp" />
+    <ClCompile Include="mux8to1.cpp" />
+    <ClCompile Include="nigbt.cpp" />
+    <ClCompile Include="noise_ii.cpp" />
+    <ClCompile Include="noise_iv.cpp" />
+    <ClCompile Include="noise_vv.cpp" />
+    <ClCompile Include="opamp.cpp" />
+    <ClCompile Include="opt_sim.cpp" />
+    <ClCompile Include="optimizedialog.cpp" />
+    <ClCompile Include="optimizedialog.moc.cpp" />
+    <ClCompile Include="pad2bit.cpp" />
+    <ClCompile Include="pad3bit.cpp" />
+    <ClCompile Include="pad4bit.cpp" />
+    <ClCompile Include="param_sweep.cpp" />
+    <ClCompile Include="phaseshifter.cpp" />
+    <ClCompile Include="photodiode.cpp" />
+    <ClCompile Include="phototransistor.cpp" />
+    <ClCompile Include="pm_modulator.cpp" />
+    <ClCompile Include="potentiometer.cpp" />
+    <ClCompile Include="rectline.cpp" />
+    <ClCompile Include="relais.cpp" />
+    <ClCompile Include="resistor.cpp" />
+    <ClCompile Include="rfedd.cpp" />
+    <ClCompile Include="rfedd2p.cpp" />
+    <ClCompile Include="rlcg.cpp" />
+    <ClCompile Include="rs_flipflop.cpp" />
+    <ClCompile Include="source_ac.cpp" />
+    <ClCompile Include="sp_sim.cpp" />
+    <ClCompile Include="sparamfile.cpp" />
+    <ClCompile Include="spicedialog.cpp" />
+    <ClCompile Include="spicedialog.moc.cpp" />
+    <ClCompile Include="spicefile.cpp" />
+    <ClCompile Include="spicefile.moc.cpp" />
+    <ClCompile Include="subcircuit.cpp" />
+    <ClCompile Include="subcirport.cpp" />
+    <ClCompile Include="substrate.cpp" />
+    <ClCompile Include="switch.cpp" />
+    <ClCompile Include="symtrafo.cpp" />
+    <ClCompile Include="tff_SR.cpp" />
+    <ClCompile Include="thyristor.cpp" />
+    <ClCompile Include="tline.cpp" />
+    <ClCompile Include="tline_4port.cpp" />
+    <ClCompile Include="tr_sim.cpp" />
+    <ClCompile Include="transformer.cpp" />
+    <ClCompile Include="triac.cpp" />
+    <ClCompile Include="tunneldiode.cpp" />
+    <ClCompile Include="twistedpair.cpp" />
+    <ClCompile Include="vacomponent.cpp" />
+    <ClCompile Include="vafile.cpp" />
+    <ClCompile Include="vccs.cpp" />
+    <ClCompile Include="vcresistor.cpp" />
+    <ClCompile Include="vcvs.cpp" />
+    <ClCompile Include="verilogfile.cpp" />
+    <ClCompile Include="vexp.cpp" />
+    <ClCompile Include="vfile.cpp" />
+    <ClCompile Include="vhdlfile.cpp" />
+    <ClCompile Include="volt_ac.cpp" />
+    <ClCompile Include="volt_dc.cpp" />
+    <ClCompile Include="volt_noise.cpp" />
+    <ClCompile Include="vprobe.cpp" />
+    <ClCompile Include="vpulse.cpp" />
+    <ClCompile Include="vrect.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="componentdialog.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC%27ing componentdialog.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC%27ing componentdialog.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="optimizedialog.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC%27ing optimizedialog.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC%27ing optimizedialog.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="spicedialog.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC%27ing spicedialog.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC%27ing spicedialog.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="spicefile.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC%27ing spicefile.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC%27ing spicefile.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bsim3v34nMOS.h" />
+    <ClInclude Include="bsim3v34pMOS.h" />
+    <ClInclude Include="bsim4v30nMOS.h" />
+    <ClInclude Include="bsim4v30pMOS.h" />
+    <ClInclude Include="ecvs.h" />
+    <ClInclude Include="eqndefined.h" />
+    <ClInclude Include="etr_sim.h" />
+    <ClInclude Include="hicumL2V2p23.h" />
+    <ClInclude Include="hicumL2V2p24.h" />
+    <ClInclude Include="hicumL2V2p31n.h" />
+    <ClInclude Include="vacomponent.h" />
+    <ClInclude Include="vcresistor.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

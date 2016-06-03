@@ -1,0 +1,38 @@
+﻿生成启动时间为 2015/12/19 21:12:01。
+     1>项目“D:\xuliang\work\EDA\qucs_vs\qucs-0.0.18\qucs\diagrams\libdiagrams.vcxproj”在节点 5 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“.\Opt\libdiagrams.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       CustomBuild:
+         MOC'ing diagramdialog.h ...
+         MOC'ing markerdialog.h ...
+       ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I.. /I../.. /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D __MINGW32__ /D __STDC__=0 /D QT_THREAD_SUPPORT /D _REENTRANT /D UNICODE /D QT_DLL /D QT_NO_DEBUG /D QT3_SUPPORT /D _VC80_UPGRADE=0x0600 /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Opt\\" /Fd".\Opt\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt diagramdialog.moc.cpp markerdialog.moc.cpp
+         diagramdialog.moc.cpp
+         markerdialog.moc.cpp
+         正在生成代码...
+       Lib:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:".\Opt\libdiagrams.lib" /NOLOGO .\Opt\curvediagram.obj
+         .\Opt\diagram.obj
+         .\Opt\diagramdialog.obj
+         .\Opt\diagramdialog.moc.obj
+         .\Opt\graph.obj
+         .\Opt\marker.obj
+         .\Opt\markerdialog.obj
+         .\Opt\markerdialog.moc.obj
+         .\Opt\polardiagram.obj
+         .\Opt\psdiagram.obj
+         .\Opt\rect3ddiagram.obj
+         .\Opt\rectdiagram.obj
+         .\Opt\smithdiagram.obj
+         .\Opt\tabdiagram.obj
+         .\Opt\timingdiagram.obj
+         .\Opt\truthdiagram.obj
+         libdiagrams.vcxproj -> D:\xuliang\work\EDA\qucs_vs\qucs-0.0.18\qucs\diagrams\.\Opt\libdiagrams.lib
+       FinalizeBuildStatus:
+         正在删除文件“.\Opt\libdiagrams.unsuccessfulbuild”。
+         正在对“.\Opt\libdiagrams.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“D:\xuliang\work\EDA\qucs_vs\qucs-0.0.18\qucs\diagrams\libdiagrams.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:22.33

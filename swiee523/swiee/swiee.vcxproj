@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Dbg\</OutDir>
+    <IntDir>.\Dbg\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+    <IncludePath>$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\Qt3Support;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtScript;$(QTDIR)\include\QtSvg;$(IncludePath)</IncludePath>
+    <EmbedManifest>false</EmbedManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Opt\</OutDir>
+    <IntDir>.\Opt\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\Qt3Support;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtScript;$(QTDIR)\include\QtSvg;$(IncludePath);$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;</IncludePath>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..;../..;C:\Program Files %28x86%29\Developer Machines\QtitanRibbon Demo\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;__MINGW32__;__STDC__=0;QT_THREAD_SUPPORT;_REENTRANT;UNICODE;QT_DLL;DEBUG;QT3_SUPPORT;PACKAGE_VERSION="0.0.18";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Dbg\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Dbg\swiee.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Dbg\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Dbg\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Dbg\swiee.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Dbg\swiee.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\Dbg\swiee.exe</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>components/dbg/libcomponents.lib;diagrams/dbg/libdiagrams.lib;paintings/dbg/libpaintings.lib;dialogs/dbg/libdialogs.lib;qtmaind.lib;QtGuid4.lib;QtCored4.lib;Qt3Supportd4.lib;QtSvgd4.lib;QtXmld4.lib;QtScriptd4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>msvcrt.lib;libcmtd.lib</IgnoreSpecificDefaultLibraries>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+    </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>.;..;$(QTDIR)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;__MINGW32__;__STDC__=0;QT_THREAD_SUPPORT;_REENTRANT;UNICODE;QT_DLL;QT_NO_DEBUG;QT3_SUPPORT;PACKAGE_VERSION="1.100";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Opt\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Opt\swiee.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Opt\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Opt\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Opt\swiee.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Opt\swiee.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>msvcrt.lib;libcmt.lib%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <OutputFile>.\Opt\swiee.exe</OutputFile>
+      <AdditionalLibraryDirectories>components/Opt;diagrams/Opt;paintings/Opt;dialogs/Opt;$(QTDIR)/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcomponents.lib;libdiagrams.lib;libpaintings.lib;libdialogs.lib;qtmain.lib;QtGui4.lib;QtCore4.lib;Qt3Support4.lib;QtSvg4.lib;QtXml4.lib;QtScript4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="element.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="messagedock.cpp" />
+    <ClCompile Include="messagedock.moc.cpp" />
+    <ClCompile Include="mnemo.cpp" />
+    <ClCompile Include="module.cpp" />
+    <ClCompile Include="mouseactions.cpp" />
+    <ClCompile Include="node.cpp" />
+    <ClCompile Include="octave_window.cpp" />
+    <ClCompile Include="octave_window.moc.cpp" />
+    <ClCompile Include="qrc_swiee.cpp" />
+    <ClCompile Include="swiee.moc.cpp" />
+    <ClCompile Include="schematic.cpp" />
+    <ClCompile Include="schematic.moc.cpp" />
+    <ClCompile Include="schematic_element.cpp" />
+    <ClCompile Include="schematic_file.cpp" />
+    <ClCompile Include="swiee.cpp" />
+    <ClCompile Include="swieedoc.cpp" />
+    <ClCompile Include="swieeLabel.cpp" />
+    <ClCompile Include="swieeLabel.moc.cpp" />
+    <ClCompile Include="swiee_actions.cpp" />
+    <ClCompile Include="swiee_init.cpp" />
+    <ClCompile Include="syntax.cpp" />
+    <ClCompile Include="textdoc.cpp" />
+    <ClCompile Include="textdoc.moc.cpp" />
+    <ClCompile Include="viewpainter.cpp" />
+    <ClCompile Include="wire.cpp" />
+    <ClCompile Include="wirelabel.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="octave_window.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC%27ing octave_window.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC%27ing octave_window.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="swiee.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC%27ing swiee.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC%27ing swiee.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="schematic.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC%27ing schematic.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC%27ing schematic.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="textdoc.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC%27ing textdoc.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC%27ing textdoc.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="messagedock.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC%27ing messagedock.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC%27ing messagedock.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="swieelabel.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC%27ing swieelabel.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC%27ing swieelabel.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="messagedock.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="swiee.h" />
+    <ClInclude Include="swieedoc.h" />
+    <ClInclude Include="swieeLabel.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="swiee.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\userdata\yuanlwan\Desktop\untitled.ui" />
+    <None Include="ribbon1.mfcribbon-ms" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

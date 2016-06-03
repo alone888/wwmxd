@@ -1,0 +1,407 @@
+#include <QtGui>
+#include "richdiagram.h"
+#include "main.h"
+
+#include <math.h>
+//Added by qt3to4:
+#include <Q3PointArray>
+
+
+#include "swiee.h"
+#include "schematic.h"
+
+RichDiagram::RichDiagram(int _cx, int _cy) : Diagram(_cx, _cy)
+{
+  x1 = 0;    // no extension to select area
+  y1 = 0;
+  x2 = x3 = 300;  // initial size of diagram
+  //y2 = 200;
+  y2=20;
+  Name = "RichText";
+  xAxis.limit_min = 0.0;  // scroll bar position (needs to be saved in file)
+
+  calcDiagram();
+}
+
+RichDiagram::~RichDiagram()
+{
+}
+
+// ------------------------------------------------------------
+void RichDiagram::paint(ViewPainter *p)
+{
+  // paint all lines
+  for(Line *pl = Lines.first(); pl != 0; pl = Lines.next()) {
+    p->Painter->setPen(pl->style);
+    p->drawLine(cx+pl->x1, cy-pl->y1, cx+pl->x2, cy-pl->y2);
+  }
+
+  if(x1 > 0) {  // paint scroll bar ?
+    int   x, y, dx, dy;
+    Q3PointArray Points;
+    y = y2 - 20;
+    // draw scroll bar
+    int by = cy-y + yAxis.numGraphs;
+    p->fillRect(cx-14, by+1, 12, zAxis.numGraphs-1, QColor(192, 192, 192));
+
+    // draw frame for scroll bar
+    p->Painter->setPen(QPen(Qt::black,0));
+    p->drawLine(cx-17, cy-y2, cx-17, cy);
+    p->drawLine(cx-17, cy-y2, cx, cy-y2);
+    p->drawLine(cx-17, cy, cx, cy);
+    y += 2;
+    p->drawLine(cx-17, cy-y, cx, cy-y);
+    y -= y2;
+    p->drawLine(cx-17, cy+y, cx, cy+y);
+
+    // draw the arrows above and below the scroll bar
+    p->Painter->setBrush(QColor(192, 192, 192));
+    p->Painter->setPen(QColor(152, 152, 152));
+    p->drawLine(cx-2, by, cx-2, by + zAxis.numGraphs);
+    p->drawLine(cx-15, by + zAxis.numGraphs, cx-2, by + zAxis.numGraphs);
+
+    p->map(cx-14, cy-y2+3, x, y);
+    p->map(cx-3,  cy-y2+14, dx, dy);
+    Points.setPoints(3, x, dy, (x+dx)>>1, y, dx, dy);
+    p->Painter->drawConvexPolygon(Points);
+    p->Painter->setPen(QColor(224, 224, 224));
+    p->Painter->drawLine(x, dy, (x+dx)>>1, y);
+    p->drawLine(cx-15, by, cx-2, by);
+    p->drawLine(cx-15, by, cx-15, by + zAxis.numGraphs);
+
+    p->Painter->setPen(QColor(152, 152, 152));
+    dy -= y;
+    p->map(cx-14,  cy-3, x, y);
+    Points.setPoints(3, x, y-dy, (x+dx)>>1, y, dx, y-dy);
+    p->Painter->drawConvexPolygon(Points);
+    p->Painter->setPen(QColor(208, 208, 208));
+    p->Painter->drawLine(x, y-dy, (x+dx)>>1, y);
+    p->Painter->setPen(QColor(224, 224, 224));
+    p->Painter->drawLine(x, y-dy, dx, y-dy);
+
+    p->Painter->setBrush(QBrush(Qt::NoBrush));
+  }
+
+
+  p->Painter->setPen(Qt::black);
+  // write whole text
+  //for(Text *pt = Texts.first(); pt != 0; pt = Texts.next())
+	Text *pt = Texts.first();
+    p->drawText(pt->s, cx+pt->x, cy-pt->y);
+	// 
+	for(int i = 0; i < livePointNum+1; i++)
+	{
+		pt = Texts.next();
+		if( !pt )
+		{
+			pt = Texts.first();
+			livePointNum = 0; // reset to the initial value
+			break;
+		}
+	}
+    p->drawText(pt->s, cx+pt->x, cy-pt->y);
+	livePointNum += liveSch->richDiagNum;
+
+
+  if(isSelected) {
+    p->Painter->setPen(QPen(Qt::darkGray,3));
+    p->drawRect(cx-5, cy-y2-5, x2+10, y2+10);
+    p->Painter->setPen(QPen(Qt::darkRed,2));
+    p->drawResizeRect(cx, cy-y2);  // markers for changing the size
+    p->drawResizeRect(cx, cy);
+    p->drawResizeRect(cx+x2, cy-y2);
+    p->drawResizeRect(cx+x2, cy);
+  }
+}
+
+// ------------------------------------------------------------
+// calculates the text in the tabular
+int RichDiagram::calcDiagram()
+{
+  Lines.clear();
+  Texts.clear();
+  Arcs.clear();
+
+  x1 = 0;  // no scroll bar
+  x3 = x2;
+  QFontMetrics  metrics(((Schematic*)SwieeMain->DocumentTab->currentPage())->font());   // get size of text
+  //qDebug("SwieeSettings.font %i", SwieeSettings.font.pointSize());
+  int tHeight = metrics.lineSpacing();
+  QString Str;
+  int colWidth=0, x=8, y;
+
+  if(y2 < (41 + MIN_SCROLLBAR_SIZE))
+    y2 = 41 + MIN_SCROLLBAR_SIZE;
+
+  if(y2 < (tHeight + 8))
+    y2 = tHeight + 8;
+  y = y2 - tHeight - 6;
+
+  // outer frame, smaller one for animated text
+  Lines.append(new Line(0, y2, x2, y2, QPen(Qt::black,0)));
+  Lines.append(new Line(0, y2, 0, 0, QPen(Qt::black,0)));
+  Lines.append(new Line(x2, y2, x2, 0, QPen(Qt::black,0)));
+  Lines.append(new Line(0, 0, x2, 0, QPen(Qt::black,0)));
+  Lines.append(new Line(0, y+2, x2, y+2, QPen(Qt::black,2)));
+
+  if(xAxis.limit_min < 0.0)
+    xAxis.limit_min = 0.0;
+
+  Graph *firstGraph;
+  Graph *g = Graphs.first();
+  if(g == 0) {  // no variables specified in diagram ?
+    Str = QObject::tr("no variables");
+    colWidth = checkColumnWidth(Str, metrics, colWidth, x, y2);
+    if(colWidth >= 0)
+      Texts.append(new Text(x-4, y2-2, Str)); // independent variable
+    return 0;
+  }
+
+
+  int NumAll=0;   // how many numbers per column
+  int NumLeft=0;  // how many numbers could not be written
+
+  double *py, *px;
+  int counting, invisibleCount=0;
+  int startWriting, lastCount = 1;
+
+  while(g->cPointsX.isEmpty()) {  // any graph with data ?
+    g = Graphs.next();
+    if(g == 0) break;
+  }
+if(0&&g) if(!g->cPointsX.isEmpty()) {
+  // ................................................
+  counting = g->cPointsX.getFirst()->count * g->countY;  // number of values
+  NumAll = counting;
+
+  invisibleCount = counting - y/tHeight;
+  if(invisibleCount <= 0)  xAxis.limit_min = 0.0;// height bigger than needed
+  else {
+    NumLeft = invisibleCount - int(xAxis.limit_min + 0.5);
+    if(invisibleCount < int(xAxis.limit_min + 0.5))
+      xAxis.limit_min = double(invisibleCount); // adjust limit of scroll bar
+  }
+
+  for(DataX *pD = g->cPointsX.last(); pD!=0; pD = g->cPointsX.prev()) {
+    colWidth = 0;
+    Str = pD->Var;
+    colWidth = checkColumnWidth(Str, metrics, colWidth, x, y2);
+    if(colWidth < 0)  goto funcEnd;
+    startWriting = int(xAxis.limit_min + 0.5);  // when to reach visible area
+
+    Texts.append(new Text(x-4, y2-2, Str)); // independent variable
+    if(pD->count != 0) {
+      y = y2-tHeight-5;
+      counting /= pD->count;   // how many rows to be skipped
+      for(int z1=0; z1<lastCount; z1++) {
+        px = pD->Points;
+        for(int z=pD->count; z>0; z--) {
+	  if(startWriting <= 0) { // reached visible area ?
+	    y += tHeight*startWriting;
+	    startWriting = 0;
+	    if(y < tHeight) break;  // no room for more rows ?
+	    Str = StringNum(*px, 'g', g->Precision);
+	    colWidth = checkColumnWidth(Str, metrics, colWidth, x, y);
+	    if(colWidth < 0)  goto funcEnd;
+
+            Texts.append(new Text( x, y, Str));
+            y -= tHeight*counting;
+	  }
+	  else startWriting -= counting;
+	  px++;
+        }
+	if(pD == g->cPointsX.getFirst())   // only paint one time
+	  if(y >= tHeight) if(y < y2-tHeight-5)
+            Lines.append(new Line(0, y+1, x2, y+1, QPen(Qt::black,0)));
+      }
+      lastCount *= pD->count;
+    }
+    x += colWidth+15;
+    Lines.append(new Line(x-8, y2, x-8, 0, QPen(Qt::black,0)));
+  }
+  Lines.current()->style = QPen(Qt::black,2);
+
+}  // of "if no data in graphs"
+
+
+  firstGraph = g;
+  // ................................................
+  // all dependent variables
+  for(g = Graphs.first(); g!=0; g = Graphs.next()) {
+    y = y2-tHeight-5;
+    colWidth = 0;
+
+    Str = g->Var;
+    colWidth = checkColumnWidth(Str, metrics, colWidth, x, y2);
+    if(colWidth < 0)  goto funcEnd;
+    Texts.append(new Text(x, y2-2, Str));  // dependent variable
+
+
+    startWriting = int(xAxis.limit_min + 0.5); // when to reach visible area
+    py = g->cPointsY - 2;
+    if(g->cPointsX.getFirst()) {
+
+      if (0 && !g->cPointsY) {   // no data points
+	Str = QObject::tr("invalid");
+	colWidth = checkColumnWidth(Str, metrics, colWidth, x, y);
+	if(colWidth < 0)  goto funcEnd;
+	Texts.append(new Text(x, y, Str));
+      }
+      else if(sameDependencies(g, firstGraph)) {
+        //int z=g->cPointsX.getFirst()->count * g->countY; // commented out by xuliang
+		int z = g->cPointsX.getFirst()->count ; // added by xuliang
+        if(z > NumAll)  NumAll = z;
+
+        if(g->Var.right(2) != ".X")
+          for(; z>0; z--)  // commented out by xuliang
+		  {
+            py += 2;
+            if(startWriting-- > 0) continue; // reached visible area ?
+            if(y < tHeight) break;           // no room for more rows ?
+            switch(g->numMode) {
+              case 0: Str = complexRect(*py, *(py+1), g->Precision); break;
+              case 1: Str = complexDeg (*py, *(py+1), g->Precision); break;
+              case 2: Str = complexRad (*py, *(py+1), g->Precision); break;
+            }
+
+            colWidth = checkColumnWidth(Str, metrics, colWidth, x, y);
+            if(colWidth < 0)  goto funcEnd;
+
+            Texts.append(new Text(x, y, Str));
+            y -= tHeight;
+			if( y < tHeight ) {y2 += tHeight;y += tHeight;} // added by xuliang, not correct 
+          }
+
+        else {  // digital data
+          char *pcy = (char*)g->cPointsY;
+          for(; z>0; z--) {
+            if(startWriting-- > 0) {  // reached visible area ?
+              pcy += strlen(pcy) + 1;
+              continue;
+            }
+            if(y < tHeight) break;           // no room for more rows ?
+            Str = QString(pcy);
+
+            colWidth = checkColumnWidth(Str, metrics, colWidth, x, y);
+            if(colWidth < 0)  goto funcEnd;
+
+            Texts.append(new Text(x, y, Str));
+            pcy += strlen(pcy) + 1;
+            y -= tHeight;
+          }
+        }
+
+        if(z > NumLeft)  NumLeft = z;
+      }  // of "if(sameDeps)"
+      else {
+        Str = QObject::tr("wrong dependency");
+        colWidth = checkColumnWidth(Str, metrics, colWidth, x, y);
+        if(colWidth < 0)  goto funcEnd;
+        Texts.append(new Text(x, y, Str));
+      }
+    }
+    else {   // no data in graph
+      Str = QObject::tr("no data");
+      colWidth = checkColumnWidth(Str, metrics, colWidth, x, y);
+      if(colWidth < 0)  goto funcEnd;
+      Texts.append(new Text(x, y, Str));
+    }
+    x += colWidth+15;
+    if(g != Graphs.getLast())   // do not paint last line
+      Lines.append(new Line(x-8, y2, x-8, 0, QPen(Qt::black,0)));
+  }
+
+funcEnd:
+  if(invisibleCount > 0) {  // could all numbers be written ?
+    x1 = 18;   // extend the select area to the left
+
+    zAxis.limit_max = double(NumAll);  // number of data (rows) 
+
+    // calculate data for painting scroll bar
+    y = int(xAxis.limit_min + 0.5);
+    NumLeft = NumAll - NumLeft - y;
+
+    // position of scroll bar in pixel
+    yAxis.numGraphs = (y2 - 39) * y / NumAll;
+
+    // height of scroll bar
+    zAxis.numGraphs = (y2 - 39) * NumLeft / NumAll;
+    if(zAxis.numGraphs < MIN_SCROLLBAR_SIZE) {
+      yAxis.numGraphs -= (MIN_SCROLLBAR_SIZE - zAxis.numGraphs + 1)
+                         * y / NumAll;
+      zAxis.numGraphs = MIN_SCROLLBAR_SIZE;
+    }
+
+    xAxis.numGraphs = NumLeft;  // number of lines in the diagram
+  }
+
+  return 1;
+}
+
+// ------------------------------------------------------------
+int RichDiagram::scroll(int clickPos)
+{
+  if(x1 <= 0) return 0;   // no scroll bar ?
+  int tmp = int(xAxis.limit_min + 0.5);
+
+  int y = cy;
+  if(clickPos > (cy-20)) {  // scroll one line down ?
+    xAxis.limit_min++;
+  }
+  else {
+    y -= y2 - 20;
+    if(clickPos < y) {  // scroll bar one line up ?
+      if(xAxis.limit_min <= 0.0)  return 0;
+      xAxis.limit_min--;
+    }
+    else {
+      y += yAxis.numGraphs;
+      if(clickPos < y)   // scroll bar one page up ?
+        xAxis.limit_min -= double(xAxis.numGraphs);
+      else {
+        y += zAxis.numGraphs;
+        if(clickPos > y)   // a page down?
+          xAxis.limit_min += double(xAxis.numGraphs);
+        else
+          return 2;  // click on position bar
+      }
+    }
+  }
+
+  calcDiagram();
+  if(tmp == int(xAxis.limit_min + 0.5))
+    return 0;   // did anything change ?
+
+  return 1;
+}
+
+// ------------------------------------------------------------
+bool RichDiagram::scrollTo(int initial, int, int dy)
+{
+  int tmp = int(xAxis.limit_min + 0.5);
+  xAxis.limit_min  = double(initial);
+  xAxis.limit_min += double(dy) / double(y2 - 39) * zAxis.limit_max;
+  xAxis.limit_min  = floor(xAxis.limit_min + 0.5);
+
+  calcDiagram();
+  if(tmp == int(xAxis.limit_min + 0.5))
+    return false;   // did anything change ?
+
+  return true;
+}
+
+// ------------------------------------------------------------
+Diagram* RichDiagram::newOne()
+{
+  return new RichDiagram();
+}
+
+// ------------------------------------------------------------
+Element* RichDiagram::info(QString& Name, char* &BitmapFile, bool getNewOne)
+{
+  Name = QObject::tr("RichText");
+  BitmapFile = (char *) "animate";
+
+  if(getNewOne)  return new RichDiagram();
+  return 0;
+}

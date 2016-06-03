@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Opt\</OutDir>
+    <IntDir>.\Opt\</IntDir>
+    <IncludePath>$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\Qt3Support;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtScript;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Dbg\</OutDir>
+    <IntDir>.\Dbg\</IntDir>
+    <IncludePath>$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\Qt3Support;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtScript;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>..;../..;$(QTDIR)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;__MINGW32__;__STDC__=0;QT_THREAD_SUPPORT;_REENTRANT;UNICODE;QT_DLL;QT_NO_DEBUG;QT3_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Opt\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Opt\libpaintings.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Opt\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Opt\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Opt\libpaintings.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Opt\libpaintings.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..;../..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;__MINGW32__;__STDC__=0;QT_THREAD_SUPPORT;_REENTRANT;UNICODE;QT_DLL;DEBUG;QT3_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Dbg\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Dbg\libpaintings.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Dbg\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Dbg\</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Dbg\libpaintings.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Dbg\libpaintings.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="arrow.cpp" />
+    <ClCompile Include="arrowdialog.cpp" />
+    <ClCompile Include="arrowdialog.moc.cpp" />
+    <ClCompile Include="ellipse.cpp" />
+    <ClCompile Include="ellipsearc.cpp" />
+    <ClCompile Include="filldialog.cpp" />
+    <ClCompile Include="filldialog.moc.cpp" />
+    <ClCompile Include="graphicline.cpp" />
+    <ClCompile Include="graphictext.cpp" />
+    <ClCompile Include="graphictextdialog.cpp" />
+    <ClCompile Include="graphictextdialog.moc.cpp" />
+    <ClCompile Include="id_dialog.cpp" />
+    <ClCompile Include="id_dialog.moc.cpp" />
+    <ClCompile Include="id_text.cpp" />
+    <ClCompile Include="painting.cpp" />
+    <ClCompile Include="portsymbol.cpp" />
+    <ClCompile Include="rectangle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="arrowdialog.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC%27ing arrowdialog.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC%27ing arrowdialog.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="filldialog.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC%27ing filldialog.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC%27ing filldialog.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="graphictextdialog.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC%27ing graphictextdialog.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC%27ing graphictextdialog.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="id_dialog.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC%27ing id_dialog.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC%27ing id_dialog.h ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

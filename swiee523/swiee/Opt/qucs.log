@@ -1,0 +1,1887 @@
+﻿生成启动时间为 2015/12/19 21:20:19。
+     1>项目“D:\xuliang\work\EDA\qucs_vs\qucs-0.0.18\qucs\qucs.vcxproj”在节点 4 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“.\Opt\qucs.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       CustomBuild:
+         MOC'ing octave_window.h ...
+         MOC'ing qucs.h ...
+         MOC'ing schematic.h ...
+         MOC'ing textdoc.h ...
+         MOC'ing messagedock.h ...
+       ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I.. /ID:\Qt\4.8.6/include /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D WIN32 /D NDEBUG /D _CONSOLE /D __MINGW32__ /D __STDC__=0 /D QT_THREAD_SUPPORT /D _REENTRANT /D UNICODE /D QT_DLL /D QT_NO_DEBUG /D QT3_SUPPORT /D "PACKAGE_VERSION=\"1.100\"" /D _VC80_UPGRADE=0x0600 /D _MBCS /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Opt\\" /Fd".\Opt\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt element.cpp main.cpp messagedock.cpp messagedock.moc.cpp mnemo.cpp module.cpp mouseactions.cpp node.cpp octave_window.cpp octave_window.moc.cpp qucs.cpp qucs.moc.cpp qucs_actions.cpp qucs_init.cpp qucsdoc.cpp schematic.cpp schematic.moc.cpp schematic_element.cpp schematic_file.cpp syntax.cpp textdoc.cpp textdoc.moc.cpp viewpainter.cpp wire.cpp wirelabel.cpp
+         element.cpp
+         main.cpp
+     1>main.cpp(277): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>main.cpp(302): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>main.cpp(443): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>main.cpp(717): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdlib.h(433) : 参见“getenv”的声明
+     1>main.cpp(747): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdlib.h(433) : 参见“getenv”的声明
+     1>main.cpp(764): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdlib.h(433) : 参见“getenv”的声明
+     1>main.cpp(781): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdlib.h(433) : 参见“getenv”的声明
+         messagedock.cpp
+         messagedock.moc.cpp
+         mnemo.cpp
+         module.cpp
+         mouseactions.cpp
+         node.cpp
+         octave_window.cpp
+         octave_window.moc.cpp
+         qucs.cpp
+         qucs.moc.cpp
+         qucs_actions.cpp
+         qucs_init.cpp
+         qucsdoc.cpp
+         schematic.cpp
+         schematic.moc.cpp
+         schematic_element.cpp
+         schematic_file.cpp
+         syntax.cpp
+         正在生成代码...
+         正在编译...
+         textdoc.cpp
+     1>textdoc.cpp(228): warning C4101: “y”: 未引用的局部变量
+     1>textdoc.cpp(228): warning C4101: “x”: 未引用的局部变量
+         textdoc.moc.cpp
+         viewpainter.cpp
+         wire.cpp
+         wirelabel.cpp
+         正在生成代码...
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Opt\qucs.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:components/Opt /LIBPATH:diagrams/Opt /LIBPATH:paintings/Opt /LIBPATH:dialogs/Opt /LIBPATH:D:\Qt\4.8.6/lib libcomponents.lib libdiagrams.lib libpaintings.lib libdialogs.lib qtmain.lib QtGui4.lib QtCore4.lib Qt3Support4.lib QtSvg4.lib QtXml4.lib QtScript4.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:msvcrt.lib /NODEFAULTLIB:libcmt.lib /MANIFEST:NO /PDB:"D:\xuliang\work\EDA\qucs_vs\qucs-0.0.18\qucs\Opt\qucs.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Opt\qucs.lib" /MACHINE:X86 .\Opt\element.obj
+         .\Opt\main.obj
+         .\Opt\messagedock.obj
+         .\Opt\messagedock.moc.obj
+         .\Opt\mnemo.obj
+         .\Opt\module.obj
+         .\Opt\mouseactions.obj
+         .\Opt\node.obj
+         .\Opt\octave_window.obj
+         .\Opt\octave_window.moc.obj
+         .\Opt\qucs.obj
+         .\Opt\qucs.moc.obj
+         .\Opt\qucs_actions.obj
+         .\Opt\qucs_init.obj
+         .\Opt\qucsdoc.obj
+         .\Opt\schematic.obj
+         .\Opt\schematic.moc.obj
+         .\Opt\schematic_element.obj
+         .\Opt\schematic_file.obj
+         .\Opt\syntax.obj
+         .\Opt\textdoc.obj
+         .\Opt\textdoc.moc.obj
+         .\Opt\viewpainter.obj
+         .\Opt\wire.obj
+         .\Opt\wirelabel.obj
+     1>libdialogs.lib(packagedialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdialogs.lib(librarydialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdialogs.lib(importdialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdialogs.lib(loaddialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdialogs.lib(sweepdialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdialogs.lib(searchdialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdialogs.lib(newprojdialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdialogs.lib(changedialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdialogs.lib(exportdialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdialogs.lib(simmessage.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdialogs.lib(matchdialog.obj) : error LNK2019: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)，该符号在函数 __unwindfunclet$??H@YA?BVQString@@ABV0@PBD@Z$0 中被引用
+     1>libdialogs.lib(savedialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdialogs.lib(qucssettingsdialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdialogs.lib(settingsdialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdialogs.lib(digisettingsdialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdialogs.lib(vasettingsdialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libpaintings.lib(graphictextdialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libpaintings.lib(arrowdialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libpaintings.lib(id_dialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdialogs.lib(labeldialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libpaintings.lib(portsymbol.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libpaintings.lib(id_text.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libpaintings.lib(painting.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libpaintings.lib(filldialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libpaintings.lib(ellipse.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libpaintings.lib(graphictext.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libpaintings.lib(arrow.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libpaintings.lib(graphicline.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdiagrams.lib(graph.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdiagrams.lib(marker.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libpaintings.lib(ellipsearc.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libpaintings.lib(rectangle.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdiagrams.lib(rectdiagram.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdiagrams.lib(diagramdialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdiagrams.lib(markerdialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdiagrams.lib(psdiagram.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdiagrams.lib(smithdiagram.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdiagrams.lib(tabdiagram.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdiagrams.lib(polardiagram.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdiagrams.lib(truthdiagram.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdiagrams.lib(timingdiagram.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdiagrams.lib(curvediagram.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdiagrams.lib(rect3ddiagram.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(optimizedialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(spicedialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(equation.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(libcomp.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(capacitor.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(resistor.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(component.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(componentdialog.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(transformer.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(subcirport.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(ground.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(inductor.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(biast.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(dcfeed.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(dcblock.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(symtrafo.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(circulator.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(isolator.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(amplifier.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(attenuator.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(hybrid.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(coupler.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(phaseshifter.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(gyrator.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(mutual2.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(mutual.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(vprobe.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(iprobe.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(rfedd2p.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(rfedd.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(relais.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(switch.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(ampere_ac.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(volt_ac.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(ampere_dc.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(volt_dc.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(vccs.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(ampere_noise.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(volt_noise.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(source_ac.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(vpulse.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(ccvs.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(vcvs.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(cccs.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(noise_ii.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(irect.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(vrect.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(ipulse.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(pm_modulator.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(am_modulator.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(noise_iv.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(noise_vv.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(ifile.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(vfile.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(vexp.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(iexp.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(twistedpair.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(ctline.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(tline_4port.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(tline.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(substrate.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(rlcg.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(rectline.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(coaxialline.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(mscorner.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(mslange.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(mscoupled.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(msline.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(mscross.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(mstee.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(msstep.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(msmbend.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(msrstub.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(msvia.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(msgap.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(msopen.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(cpwgap.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(cpwshort.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(cpwopen.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(coplanar.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(bjt.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(diode.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(bondwire.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(cpwstep.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(mosfet_sub.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(mosfet.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(jfet.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(bjtsub.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(triac.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(diac.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(eqndefined.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(opamp.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(HBT_X.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(hicumL2V2p1.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(tunneldiode.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(thyristor.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(hic0_full.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(log_amp.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(hic2_full.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(mod_amp.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(bsim3v34nMOS.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(EKV26MOS.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(MESFET.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(potentiometer.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(hicumL0V1p2.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(bsim4v30pMOS.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(bsim4v30nMOS.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(bsim3v34pMOS.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(hicumL2V2p24.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(hicumL2V2p23.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(hicumL0V1p3.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(hicumL0V1p2g.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(nigbt.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(phototransistor.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(photodiode.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(hicumL2V2p31n.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(logical_or.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(logical_inv.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(digi_source.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(vcresistor.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(logical_xor.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(logical_nand.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(logical_and.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(logical_nor.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(andor4x3.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(andor4x2.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(logical_buf.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(logical_xnor.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(mux8to1.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(mux4to1.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(mux2to1.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(andor4x4.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(ha1b.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(dmux4to16.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(dmux3to8.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(dmux2to4.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(d_flipflop.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(rs_flipflop.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(fa2b.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(fa1b.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(tff_SR.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(jkff_SR.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(jk_flipflop.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(dff_SR.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(pad2bit.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(logic_1.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(logic_0.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(gatedDlatch.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(DLS_1ton.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(DLS_nto1.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(pad4bit.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(pad3bit.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(comp_2bit.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(comp_1bit.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(greytobinary4bit.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(binarytogrey4bit.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(verilogfile.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(vhdlfile.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(hpribin4bit.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(comp_4bit.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(subcircuit.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(sparamfile.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(spicefile.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(digi_sim.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(sp_sim.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(ac_sim.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(tr_sim.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(dc_sim.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(etr_sim.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(opt_sim.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(param_sweep.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(hb_sim.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>wire.obj : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>wirelabel.obj : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(vacomponent.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libcomponents.lib(ecvs.obj) : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>schematic_element.obj : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>schematic_file.obj : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>syntax.obj : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>textdoc.obj : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>qucs_actions.obj : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>qucs_init.obj : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>qucsdoc.obj : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>schematic.obj : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>mouseactions.obj : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>node.obj : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>octave_window.obj : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>qucs.obj : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>element.obj : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>main.obj : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>messagedock.obj : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>module.obj : error LNK2001: 无法解析的外部符号 "const type_info::`vftable'" (??_7type_info@@6B@)
+     1>libdialogs.lib(packagedialog.obj) : error LNK2019: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)，该符号在函数 "class QString const __cdecl operator+(class QString const &,class QChar)" (??H@YA?BVQString@@ABV0@VQChar@@@Z) 中被引用
+     1>libdialogs.lib(librarydialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdialogs.lib(importdialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdialogs.lib(loaddialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdialogs.lib(sweepdialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdialogs.lib(searchdialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdialogs.lib(newprojdialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdialogs.lib(changedialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdialogs.lib(exportdialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdialogs.lib(simmessage.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdialogs.lib(matchdialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdialogs.lib(savedialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdialogs.lib(qucssettingsdialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdialogs.lib(settingsdialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdialogs.lib(digisettingsdialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdialogs.lib(vasettingsdialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libpaintings.lib(graphictextdialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libpaintings.lib(arrowdialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libpaintings.lib(id_dialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdialogs.lib(labeldialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libpaintings.lib(portsymbol.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libpaintings.lib(id_text.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libpaintings.lib(painting.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libpaintings.lib(filldialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libpaintings.lib(ellipse.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libpaintings.lib(graphictext.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libpaintings.lib(arrow.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libpaintings.lib(graphicline.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdiagrams.lib(graph.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdiagrams.lib(marker.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libpaintings.lib(ellipsearc.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libpaintings.lib(rectangle.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdiagrams.lib(rectdiagram.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdiagrams.lib(diagramdialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdiagrams.lib(markerdialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdiagrams.lib(psdiagram.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdiagrams.lib(smithdiagram.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdiagrams.lib(tabdiagram.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdiagrams.lib(polardiagram.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdiagrams.lib(truthdiagram.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdiagrams.lib(timingdiagram.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdiagrams.lib(curvediagram.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libdiagrams.lib(rect3ddiagram.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(optimizedialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(spicedialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(equation.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(libcomp.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(capacitor.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(resistor.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(component.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(componentdialog.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(transformer.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(subcirport.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(ground.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(inductor.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(biast.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(dcfeed.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(dcblock.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(symtrafo.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(circulator.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(isolator.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(amplifier.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(attenuator.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(hybrid.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(coupler.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(phaseshifter.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(gyrator.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(mutual2.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(mutual.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(vprobe.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(iprobe.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(rfedd2p.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(rfedd.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(relais.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(switch.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(ampere_ac.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(volt_ac.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(ampere_dc.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(volt_dc.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(vccs.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(ampere_noise.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(volt_noise.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(source_ac.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(vpulse.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(ccvs.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(vcvs.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(cccs.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(noise_ii.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(irect.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(vrect.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(ipulse.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(pm_modulator.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(am_modulator.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(noise_iv.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(noise_vv.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(ifile.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(vfile.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(vexp.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(iexp.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(twistedpair.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(ctline.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(tline_4port.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(tline.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(substrate.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(rlcg.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(rectline.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(coaxialline.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(mscorner.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(mslange.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(mscoupled.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(msline.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(mscross.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(mstee.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(msstep.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(msmbend.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(msrstub.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(msvia.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(msgap.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(msopen.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(cpwgap.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(cpwshort.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(cpwopen.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(coplanar.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(bjt.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(diode.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(bondwire.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(cpwstep.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(mosfet_sub.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(mosfet.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(jfet.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(bjtsub.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(triac.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(diac.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(eqndefined.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(opamp.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(HBT_X.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(hicumL2V2p1.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(tunneldiode.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(thyristor.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(hic0_full.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(log_amp.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(hic2_full.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(mod_amp.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(bsim3v34nMOS.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(EKV26MOS.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(MESFET.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(potentiometer.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(hicumL0V1p2.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(bsim4v30pMOS.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(bsim4v30nMOS.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(bsim3v34pMOS.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(hicumL2V2p24.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(hicumL2V2p23.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(hicumL0V1p3.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(hicumL0V1p2g.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(nigbt.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(phototransistor.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(photodiode.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(hicumL2V2p31n.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(logical_or.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(logical_inv.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(digi_source.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(vcresistor.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(logical_xor.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(logical_nand.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(logical_and.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(logical_nor.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(andor4x3.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(andor4x2.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(logical_buf.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(logical_xnor.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(mux8to1.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(mux4to1.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(mux2to1.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(andor4x4.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(ha1b.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(dmux4to16.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(dmux3to8.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(dmux2to4.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(d_flipflop.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(rs_flipflop.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(fa2b.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(fa1b.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(tff_SR.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(jkff_SR.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(jk_flipflop.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(dff_SR.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(pad2bit.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(logic_1.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(logic_0.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(gatedDlatch.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(DLS_1ton.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(DLS_nto1.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(pad4bit.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(pad3bit.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(comp_2bit.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(comp_1bit.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(greytobinary4bit.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(binarytogrey4bit.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(verilogfile.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(vhdlfile.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(hpribin4bit.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(comp_4bit.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(subcircuit.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(sparamfile.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(spicefile.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(digi_sim.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(sp_sim.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(ac_sim.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(tr_sim.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(dc_sim.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(etr_sim.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(opt_sim.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(param_sweep.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(hb_sim.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>wire.obj : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>wirelabel.obj : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(vacomponent.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>libcomponents.lib(ecvs.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>schematic_element.obj : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>schematic_file.obj : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>syntax.obj : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>textdoc.obj : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>qucs_actions.obj : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>qucs_init.obj : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>qucsdoc.obj : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>schematic.obj : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>mouseactions.obj : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>node.obj : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>octave_window.obj : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>qucs.obj : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>element.obj : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>main.obj : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>messagedock.obj : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>module.obj : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+     1>main.obj : error LNK2019: 无法解析的外部符号 __imp__strchr，该符号在函数 "char * __cdecl strchr(char *,int)" (?strchr@@YAPADPADH@Z) 中被引用
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 __imp__strchr
+     1>libdialogs.lib(importdialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdialogs.lib(loaddialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdialogs.lib(newprojdialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdialogs.lib(changedialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdialogs.lib(packagedialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdialogs.lib(librarydialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdialogs.lib(matchdialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdialogs.lib(savedialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdialogs.lib(sweepdialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdialogs.lib(searchdialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdialogs.lib(digisettingsdialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdialogs.lib(vasettingsdialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdialogs.lib(exportdialog.obj) : error LNK2019: 无法解析的外部符号 ___security_cookie，该符号在函数 "public: bool __thiscall ExportDialog::isOriginalSize(void)" (?isOriginalSize@ExportDialog@@QAE_NXZ) 中被引用
+     1>libdialogs.lib(simmessage.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libpaintings.lib(id_dialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdialogs.lib(labeldialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdialogs.lib(qucssettingsdialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdialogs.lib(settingsdialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libpaintings.lib(painting.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libpaintings.lib(filldialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libpaintings.lib(graphictextdialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libpaintings.lib(arrowdialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libpaintings.lib(arrow.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libpaintings.lib(graphicline.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libpaintings.lib(portsymbol.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libpaintings.lib(id_text.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libpaintings.lib(ellipsearc.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libpaintings.lib(rectangle.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libpaintings.lib(ellipse.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libpaintings.lib(graphictext.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdiagrams.lib(diagramdialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdiagrams.lib(markerdialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdiagrams.lib(graph.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdiagrams.lib(marker.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdiagrams.lib(tabdiagram.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdiagrams.lib(polardiagram.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdiagrams.lib(rectdiagram.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdiagrams.lib(curvediagram.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdiagrams.lib(rect3ddiagram.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdiagrams.lib(psdiagram.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdiagrams.lib(smithdiagram.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(vafile.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(libcomp.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdiagrams.lib(truthdiagram.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdiagrams.lib(timingdiagram.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(componentdialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(optimizedialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(spicedialog.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(equation.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(inductor.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(capacitor.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(resistor.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(component.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(symtrafo.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(transformer.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(subcirport.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(ground.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(attenuator.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(biast.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(dcfeed.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(dcblock.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(gyrator.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(circulator.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(isolator.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(amplifier.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(iprobe.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(hybrid.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(coupler.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(phaseshifter.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(switch.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(mutual2.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(mutual.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(vprobe.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(volt_dc.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(rfedd2p.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(rfedd.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(relais.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(source_ac.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(ampere_ac.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(volt_ac.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(ampere_dc.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(cccs.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(vccs.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(ampere_noise.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(volt_noise.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(ipulse.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(vpulse.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(ccvs.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(vcvs.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(noise_vv.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(noise_ii.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(irect.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(vrect.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(iexp.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(pm_modulator.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(am_modulator.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(noise_iv.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(tline.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(ifile.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(vfile.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(vexp.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(coaxialline.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(twistedpair.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(ctline.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(tline_4port.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(msline.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(substrate.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(rlcg.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(rectline.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(msmbend.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(mscorner.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(mslange.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(mscoupled.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(msopen.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(mscross.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(mstee.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(msstep.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(coplanar.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(msrstub.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(msvia.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(msgap.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(cpwstep.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(cpwgap.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(cpwshort.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(cpwopen.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(bjtsub.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(bjt.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(diode.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(bondwire.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(opamp.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(mosfet_sub.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(mosfet.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(jfet.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(thyristor.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(triac.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(diac.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(eqndefined.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(mod_amp.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(HBT_X.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(hicumL2V2p1.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(tunneldiode.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(potentiometer.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(hic0_full.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(log_amp.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(hic2_full.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(bsim3v34pMOS.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(bsim3v34nMOS.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(EKV26MOS.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(MESFET.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(hicumL0V1p2g.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(hicumL0V1p2.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(bsim4v30pMOS.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(bsim4v30nMOS.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(hicumL2V2p31n.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(hicumL2V2p24.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(hicumL2V2p23.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(hicumL0V1p3.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(vcresistor.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(nigbt.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(phototransistor.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(photodiode.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(logical_nor.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(logical_or.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(logical_inv.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(digi_source.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(logical_xnor.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(logical_xor.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(logical_nand.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(logical_and.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(andor4x4.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(andor4x3.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(andor4x2.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(logical_buf.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(dmux2to4.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(mux8to1.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(mux4to1.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(mux2to1.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(fa1b.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(ha1b.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(dmux4to16.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(dmux3to8.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(dff_SR.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(d_flipflop.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(rs_flipflop.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(fa2b.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(gatedDlatch.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(tff_SR.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(jkff_SR.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(jk_flipflop.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(pad3bit.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(pad2bit.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(logic_1.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(logic_0.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(binarytogrey4bit.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(DLS_1ton.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(DLS_nto1.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(pad4bit.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(comp_4bit.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(comp_2bit.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(comp_1bit.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(greytobinary4bit.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(digi_sim.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(verilogfile.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(vhdlfile.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(hpribin4bit.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(dc_sim.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(subcircuit.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(sparamfile.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(spicefile.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(hb_sim.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(sp_sim.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(ac_sim.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(tr_sim.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(ecvs.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(etr_sim.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(opt_sim.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(param_sweep.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>viewpainter.obj : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>wire.obj : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>wirelabel.obj : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libcomponents.lib(vacomponent.obj) : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>schematic_element.obj : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>schematic_file.obj : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>syntax.obj : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>textdoc.obj : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>qucs_actions.obj : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>qucs_init.obj : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>qucsdoc.obj : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>schematic.obj : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>mouseactions.obj : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>node.obj : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>octave_window.obj : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>qucs.obj : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>main.obj : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>messagedock.obj : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>mnemo.obj : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>module.obj : error LNK2001: 无法解析的外部符号 ___security_cookie
+     1>libdialogs.lib(importdialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdialogs.lib(loaddialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdialogs.lib(newprojdialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdialogs.lib(changedialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdialogs.lib(packagedialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdialogs.lib(librarydialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdialogs.lib(matchdialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdialogs.lib(savedialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdialogs.lib(sweepdialog.obj) : error LNK2019: 无法解析的外部符号 ___CxxFrameHandler3，该符号在函数 "class QString const __cdecl operator+(class QString const &,char const *)" (??H@YA?BVQString@@ABV0@PBD@Z) 中被引用
+     1>libdialogs.lib(searchdialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdialogs.lib(digisettingsdialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdialogs.lib(vasettingsdialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdialogs.lib(exportdialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdialogs.lib(simmessage.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libpaintings.lib(id_dialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdialogs.lib(labeldialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdialogs.lib(qucssettingsdialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdialogs.lib(settingsdialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libpaintings.lib(painting.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libpaintings.lib(filldialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libpaintings.lib(graphictextdialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libpaintings.lib(arrowdialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libpaintings.lib(arrow.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libpaintings.lib(graphicline.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libpaintings.lib(portsymbol.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libpaintings.lib(id_text.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libpaintings.lib(ellipsearc.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libpaintings.lib(rectangle.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libpaintings.lib(ellipse.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libpaintings.lib(graphictext.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdiagrams.lib(diagramdialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdiagrams.lib(markerdialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdiagrams.lib(graph.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdiagrams.lib(marker.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdiagrams.lib(tabdiagram.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdiagrams.lib(polardiagram.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdiagrams.lib(rectdiagram.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdiagrams.lib(curvediagram.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdiagrams.lib(rect3ddiagram.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdiagrams.lib(psdiagram.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdiagrams.lib(smithdiagram.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(vafile.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(libcomp.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdiagrams.lib(truthdiagram.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdiagrams.lib(timingdiagram.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(componentdialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(optimizedialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(spicedialog.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(equation.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(inductor.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(capacitor.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(resistor.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(component.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(symtrafo.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(transformer.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(subcirport.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(ground.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(attenuator.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(biast.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(dcfeed.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(dcblock.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(gyrator.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(circulator.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(isolator.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(amplifier.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(iprobe.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(hybrid.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(coupler.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(phaseshifter.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(switch.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(mutual2.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(mutual.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(vprobe.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(volt_dc.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(rfedd2p.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(rfedd.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(relais.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(source_ac.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(ampere_ac.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(volt_ac.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(ampere_dc.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(cccs.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(vccs.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(ampere_noise.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(volt_noise.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(ipulse.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(vpulse.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(ccvs.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(vcvs.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(noise_vv.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(noise_ii.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(irect.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(vrect.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(iexp.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(pm_modulator.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(am_modulator.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(noise_iv.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(tline.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(ifile.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(vfile.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(vexp.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(coaxialline.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(twistedpair.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(ctline.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(tline_4port.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(msline.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(substrate.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(rlcg.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(rectline.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(msmbend.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(mscorner.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(mslange.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(mscoupled.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(msopen.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(mscross.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(mstee.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(msstep.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(coplanar.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(msrstub.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(msvia.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(msgap.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(cpwstep.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(cpwgap.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(cpwshort.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(cpwopen.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(bjtsub.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(bjt.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(diode.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(bondwire.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(opamp.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(mosfet_sub.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(mosfet.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(jfet.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(thyristor.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(triac.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(diac.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(eqndefined.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(mod_amp.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(HBT_X.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(hicumL2V2p1.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(tunneldiode.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(potentiometer.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(hic0_full.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(log_amp.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(hic2_full.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(bsim3v34pMOS.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(bsim3v34nMOS.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(EKV26MOS.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(MESFET.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(hicumL0V1p2g.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(hicumL0V1p2.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(bsim4v30pMOS.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(bsim4v30nMOS.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(hicumL2V2p31n.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(hicumL2V2p24.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(hicumL2V2p23.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(hicumL0V1p3.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(vcresistor.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(nigbt.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(phototransistor.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(photodiode.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(logical_nor.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(logical_or.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(logical_inv.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(digi_source.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(logical_xnor.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(logical_xor.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(logical_nand.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(logical_and.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(andor4x4.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(andor4x3.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(andor4x2.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(logical_buf.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(dmux2to4.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(mux8to1.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(mux4to1.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(mux2to1.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(fa1b.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(ha1b.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(dmux4to16.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(dmux3to8.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(dff_SR.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(d_flipflop.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(rs_flipflop.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(fa2b.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(gatedDlatch.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(tff_SR.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(jkff_SR.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(jk_flipflop.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(pad3bit.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(pad2bit.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(logic_1.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(logic_0.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(binarytogrey4bit.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(DLS_1ton.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(DLS_nto1.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(pad4bit.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(comp_4bit.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(comp_2bit.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(comp_1bit.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(greytobinary4bit.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(digi_sim.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(verilogfile.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(vhdlfile.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(hpribin4bit.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(dc_sim.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(subcircuit.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(sparamfile.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(spicefile.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(hb_sim.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(sp_sim.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(ac_sim.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(tr_sim.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(ecvs.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(etr_sim.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(opt_sim.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(param_sweep.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>viewpainter.obj : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>wire.obj : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>wirelabel.obj : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libcomponents.lib(vacomponent.obj) : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>schematic_element.obj : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>schematic_file.obj : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>syntax.obj : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>textdoc.obj : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>qucs_actions.obj : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>qucs_init.obj : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>qucsdoc.obj : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>schematic.obj : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>mouseactions.obj : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>node.obj : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>octave_window.obj : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>qucs.obj : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>main.obj : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>messagedock.obj : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>mnemo.obj : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>module.obj : error LNK2001: 无法解析的外部符号 ___CxxFrameHandler3
+     1>libdialogs.lib(importdialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdialogs.lib(loaddialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdialogs.lib(newprojdialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdialogs.lib(changedialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdialogs.lib(packagedialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdialogs.lib(librarydialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdialogs.lib(matchdialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdialogs.lib(savedialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdialogs.lib(sweepdialog.obj) : error LNK2019: 无法解析的外部符号 @__security_check_cookie@4，该符号在函数 "class QString const __cdecl operator+(class QString const &,char const *)" (??H@YA?BVQString@@ABV0@PBD@Z) 中被引用
+     1>libdialogs.lib(searchdialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdialogs.lib(digisettingsdialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdialogs.lib(vasettingsdialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdialogs.lib(exportdialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdialogs.lib(simmessage.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libpaintings.lib(id_dialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdialogs.lib(labeldialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdialogs.lib(qucssettingsdialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdialogs.lib(settingsdialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libpaintings.lib(painting.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libpaintings.lib(filldialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libpaintings.lib(graphictextdialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libpaintings.lib(arrowdialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libpaintings.lib(arrow.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libpaintings.lib(graphicline.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libpaintings.lib(portsymbol.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libpaintings.lib(id_text.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libpaintings.lib(ellipsearc.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libpaintings.lib(rectangle.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libpaintings.lib(ellipse.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libpaintings.lib(graphictext.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdiagrams.lib(diagramdialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdiagrams.lib(markerdialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdiagrams.lib(graph.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdiagrams.lib(marker.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdiagrams.lib(tabdiagram.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdiagrams.lib(polardiagram.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdiagrams.lib(rectdiagram.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdiagrams.lib(curvediagram.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdiagrams.lib(rect3ddiagram.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdiagrams.lib(psdiagram.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdiagrams.lib(smithdiagram.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(vafile.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(libcomp.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdiagrams.lib(truthdiagram.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libdiagrams.lib(timingdiagram.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(componentdialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(optimizedialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(spicedialog.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(equation.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(inductor.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(capacitor.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(resistor.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(component.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(symtrafo.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(transformer.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(subcirport.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(ground.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(attenuator.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(biast.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(dcfeed.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(dcblock.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(gyrator.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(circulator.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(isolator.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(amplifier.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(iprobe.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(hybrid.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(coupler.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(phaseshifter.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(switch.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(mutual2.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(mutual.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(vprobe.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(volt_dc.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(rfedd2p.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(rfedd.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(relais.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(source_ac.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(ampere_ac.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(volt_ac.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(ampere_dc.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(cccs.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(vccs.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(ampere_noise.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(volt_noise.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(ipulse.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(vpulse.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(ccvs.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(vcvs.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(noise_vv.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(noise_ii.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(irect.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(vrect.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(iexp.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(pm_modulator.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(am_modulator.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(noise_iv.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(tline.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(ifile.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(vfile.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(vexp.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(coaxialline.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(twistedpair.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(ctline.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(tline_4port.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(msline.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(substrate.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(rlcg.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(rectline.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(msmbend.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(mscorner.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(mslange.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(mscoupled.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(msopen.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(mscross.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(mstee.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(msstep.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(coplanar.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(msrstub.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(msvia.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(msgap.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(cpwstep.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(cpwgap.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(cpwshort.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(cpwopen.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(bjtsub.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(bjt.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(diode.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(bondwire.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(opamp.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(mosfet_sub.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(mosfet.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(jfet.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(thyristor.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(triac.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(diac.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(eqndefined.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(mod_amp.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(HBT_X.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(hicumL2V2p1.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(tunneldiode.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(potentiometer.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(hic0_full.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(log_amp.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(hic2_full.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(bsim3v34pMOS.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(bsim3v34nMOS.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(EKV26MOS.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(MESFET.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(hicumL0V1p2g.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(hicumL0V1p2.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(bsim4v30pMOS.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(bsim4v30nMOS.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(hicumL2V2p31n.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(hicumL2V2p24.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(hicumL2V2p23.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(hicumL0V1p3.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(vcresistor.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(nigbt.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(phototransistor.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(photodiode.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(logical_nor.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(logical_or.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(logical_inv.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(digi_source.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(logical_xnor.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(logical_xor.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(logical_nand.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(logical_and.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(andor4x4.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(andor4x3.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(andor4x2.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(logical_buf.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(dmux2to4.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(mux8to1.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(mux4to1.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(mux2to1.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(fa1b.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(ha1b.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(dmux4to16.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(dmux3to8.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(dff_SR.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(d_flipflop.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(rs_flipflop.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(fa2b.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(gatedDlatch.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(tff_SR.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(jkff_SR.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(jk_flipflop.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(pad3bit.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(pad2bit.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(logic_1.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(logic_0.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(binarytogrey4bit.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(DLS_1ton.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(DLS_nto1.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(pad4bit.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(comp_4bit.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(comp_2bit.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(comp_1bit.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(greytobinary4bit.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(digi_sim.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(verilogfile.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(vhdlfile.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(hpribin4bit.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(dc_sim.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(subcircuit.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(sparamfile.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(spicefile.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(hb_sim.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(sp_sim.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(ac_sim.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(tr_sim.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(ecvs.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(etr_sim.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(opt_sim.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(param_sweep.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>viewpainter.obj : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>wire.obj : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>wirelabel.obj : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>libcomponents.lib(vacomponent.obj) : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>schematic_element.obj : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>schematic_file.obj : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>syntax.obj : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>textdoc.obj : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>qucs_actions.obj : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>qucs_init.obj : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>qucsdoc.obj : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>schematic.obj : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>mouseactions.obj : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>node.obj : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>octave_window.obj : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>qucs.obj : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>main.obj : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>messagedock.obj : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>mnemo.obj : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>module.obj : error LNK2001: 无法解析的外部符号 @__security_check_cookie@4
+     1>main.obj : error LNK2019: 无法解析的外部符号 __imp__abort，该符号在函数 "void __cdecl qucsMessageOutput(enum QtMsgType,char const *)" (?qucsMessageOutput@@YAXW4QtMsgType@@PBD@Z) 中被引用
+     1>main.obj : error LNK2019: 无法解析的外部符号 __imp__fprintf，该符号在函数 "void __cdecl qucsMessageOutput(enum QtMsgType,char const *)" (?qucsMessageOutput@@YAXW4QtMsgType@@PBD@Z) 中被引用
+     1>main.obj : error LNK2019: 无法解析的外部符号 __imp____iob_func，该符号在函数 "void __cdecl qucsMessageOutput(enum QtMsgType,char const *)" (?qucsMessageOutput@@YAXW4QtMsgType@@PBD@Z) 中被引用
+     1>libdialogs.lib(sweepdialog.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libpaintings.lib(portsymbol.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libpaintings.lib(id_text.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libdialogs.lib(exportdialog.obj) : error LNK2019: 无法解析的外部符号 __fltused，该符号在函数 "private: void __thiscall ExportDialog::setSvg(class QString)" (?setSvg@ExportDialog@@AAEXVQString@@@Z) 中被引用
+     1>libdialogs.lib(matchdialog.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libpaintings.lib(ellipse.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libpaintings.lib(graphictext.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libpaintings.lib(arrow.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libpaintings.lib(graphicline.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libdiagrams.lib(graph.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libdiagrams.lib(marker.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libpaintings.lib(ellipsearc.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libpaintings.lib(rectangle.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libdiagrams.lib(rectdiagram.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libdiagrams.lib(diagramdialog.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libdiagrams.lib(markerdialog.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libdiagrams.lib(psdiagram.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libdiagrams.lib(smithdiagram.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libdiagrams.lib(tabdiagram.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libdiagrams.lib(polardiagram.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libdiagrams.lib(truthdiagram.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libdiagrams.lib(timingdiagram.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libdiagrams.lib(curvediagram.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libdiagrams.lib(rect3ddiagram.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(componentdialog.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(optimizedialog.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(equation.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(libcomp.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(inductor.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(capacitor.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(resistor.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(component.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(symtrafo.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(transformer.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(subcirport.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(ground.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(attenuator.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(biast.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(dcfeed.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(dcblock.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(gyrator.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(circulator.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(isolator.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(amplifier.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(iprobe.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(hybrid.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(coupler.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(phaseshifter.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(switch.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(mutual2.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(mutual.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(vprobe.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(volt_dc.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(rfedd2p.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(rfedd.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(relais.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(source_ac.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(ampere_ac.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(volt_ac.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(ampere_dc.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(cccs.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(vccs.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(ampere_noise.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(volt_noise.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(ipulse.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(vpulse.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(ccvs.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(vcvs.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(noise_vv.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(noise_ii.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(irect.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(vrect.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(iexp.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(pm_modulator.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(am_modulator.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(noise_iv.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(tline.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(ifile.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(vfile.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(vexp.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(coaxialline.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(twistedpair.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(ctline.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(tline_4port.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(msline.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(substrate.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(rlcg.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(rectline.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(msmbend.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(mscorner.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(mslange.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(mscoupled.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(msopen.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(mscross.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(mstee.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(msstep.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(coplanar.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(msrstub.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(msvia.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(msgap.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(cpwstep.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(cpwgap.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(cpwshort.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(cpwopen.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(bjtsub.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(bjt.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(diode.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(bondwire.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(opamp.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(mosfet_sub.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(mosfet.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(jfet.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(thyristor.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(triac.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(diac.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(eqndefined.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(mod_amp.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(HBT_X.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(hicumL2V2p1.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(tunneldiode.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(potentiometer.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(hic0_full.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(log_amp.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(hic2_full.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(bsim3v34pMOS.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(bsim3v34nMOS.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(EKV26MOS.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(MESFET.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(hicumL0V1p2g.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(hicumL0V1p2.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(bsim4v30pMOS.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(bsim4v30nMOS.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(hicumL2V2p31n.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(hicumL2V2p24.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(hicumL2V2p23.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(hicumL0V1p3.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(vcresistor.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(nigbt.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(phototransistor.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(photodiode.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(andor4x2.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(logical_buf.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(logical_inv.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(digi_source.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(mux4to1.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(mux2to1.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(andor4x4.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(andor4x3.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(dmux4to16.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(dmux3to8.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(dmux2to4.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(mux8to1.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(rs_flipflop.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(fa2b.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(fa1b.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(ha1b.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(jkff_SR.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(jk_flipflop.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(dff_SR.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(d_flipflop.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(logic_1.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(logic_0.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(gatedDlatch.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(tff_SR.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(DLS_nto1.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(pad4bit.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(pad3bit.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(pad2bit.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(comp_1bit.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(greytobinary4bit.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(binarytogrey4bit.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(DLS_1ton.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(vhdlfile.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(hpribin4bit.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(comp_4bit.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(comp_2bit.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(sparamfile.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(spicefile.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(digi_sim.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(verilogfile.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(ac_sim.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(tr_sim.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(dc_sim.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(subcircuit.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(opt_sim.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(param_sweep.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(hb_sim.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(sp_sim.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>wirelabel.obj : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(vacomponent.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(ecvs.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>libcomponents.lib(etr_sim.obj) : error LNK2001: 无法解析的外部符号 __fltused
+     1>schematic_file.obj : error LNK2001: 无法解析的外部符号 __fltused
+     1>textdoc.obj : error LNK2001: 无法解析的外部符号 __fltused
+     1>viewpainter.obj : error LNK2001: 无法解析的外部符号 __fltused
+     1>wire.obj : error LNK2001: 无法解析的外部符号 __fltused
+     1>qucs_actions.obj : error LNK2001: 无法解析的外部符号 __fltused
+     1>qucsdoc.obj : error LNK2001: 无法解析的外部符号 __fltused
+     1>schematic.obj : error LNK2001: 无法解析的外部符号 __fltused
+     1>schematic_element.obj : error LNK2001: 无法解析的外部符号 __fltused
+     1>main.obj : error LNK2001: 无法解析的外部符号 __fltused
+     1>mouseactions.obj : error LNK2001: 无法解析的外部符号 __fltused
+     1>node.obj : error LNK2001: 无法解析的外部符号 __fltused
+     1>qucs.obj : error LNK2001: 无法解析的外部符号 __fltused
+     1>libpaintings.lib(ellipsearc.obj) : error LNK2019: 无法解析的外部符号 __CIatan2，该符号在函数 "public: __thiscall EllipseArc::EllipseArc(void)" (??0EllipseArc@@QAE@XZ) 中被引用
+     1>libpaintings.lib(arrow.obj) : error LNK2001: 无法解析的外部符号 __CIatan2
+     1>libdialogs.lib(matchdialog.obj) : error LNK2001: 无法解析的外部符号 __CIatan2
+     1>main.obj : error LNK2001: 无法解析的外部符号 __CIatan2
+     1>libcomponents.lib(component.obj) : error LNK2001: 无法解析的外部符号 __CIatan2
+     1>libdiagrams.lib(rect3ddiagram.obj) : error LNK2001: 无法解析的外部符号 __CIatan2
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 __CIatan2
+     1>libdialogs.lib(matchdialog.obj) : error LNK2001: 无法解析的外部符号 __CIsqrt
+     1>libdiagrams.lib(rect3ddiagram.obj) : error LNK2001: 无法解析的外部符号 __CIsqrt
+     1>libdiagrams.lib(rectdiagram.obj) : error LNK2001: 无法解析的外部符号 __CIsqrt
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 __CIsqrt
+     1>libpaintings.lib(arrow.obj) : error LNK2019: 无法解析的外部符号 __CIsqrt，该符号在函数 "public: __thiscall Arrow::Arrow(void)" (??0Arrow@@QAE@XZ) 中被引用
+     1>main.obj : error LNK2001: 无法解析的外部符号 __CIsqrt
+     1>libcomponents.lib(component.obj) : error LNK2001: 无法解析的外部符号 __CIsqrt
+     1>libdiagrams.lib(truthdiagram.obj) : error LNK2001: 无法解析的外部符号 __CIsqrt
+     1>libdiagrams.lib(timingdiagram.obj) : error LNK2001: 无法解析的外部符号 __CIsqrt
+     1>main.obj : error LNK2019: 无法解析的外部符号 __imp__sprintf，该符号在函数 "class QString __cdecl StringNum(double,char,int)" (?StringNum@@YA?AVQString@@NDH@Z) 中被引用
+     1>libdiagrams.lib(rectdiagram.obj) : error LNK2001: 无法解析的外部符号 __CIlog10
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 __CIlog10
+     1>libdialogs.lib(matchdialog.obj) : error LNK2019: 无法解析的外部符号 __CIlog10，该符号在函数 "public: void __thiscall MatchDialog::setFrequency(double)" (?setFrequency@MatchDialog@@QAEXN@Z) 中被引用
+     1>main.obj : error LNK2001: 无法解析的外部符号 __CIlog10
+     1>libcomponents.lib(componentdialog.obj) : error LNK2001: 无法解析的外部符号 __CIlog10
+     1>libdiagrams.lib(curvediagram.obj) : error LNK2001: 无法解析的外部符号 __CIlog10
+     1>libdiagrams.lib(rect3ddiagram.obj) : error LNK2001: 无法解析的外部符号 __CIlog10
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 __CIpow
+     1>libdialogs.lib(matchdialog.obj) : error LNK2001: 无法解析的外部符号 __CIpow
+     1>main.obj : error LNK2019: 无法解析的外部符号 __CIpow，该符号在函数 "class QString __cdecl num2str(double)" (?num2str@@YA?AVQString@@N@Z) 中被引用
+     1>libdiagrams.lib(curvediagram.obj) : error LNK2001: 无法解析的外部符号 __CIpow
+     1>libdiagrams.lib(rect3ddiagram.obj) : error LNK2001: 无法解析的外部符号 __CIpow
+     1>libdiagrams.lib(rectdiagram.obj) : error LNK2001: 无法解析的外部符号 __CIpow
+     1>libpaintings.lib(arrow.obj) : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>libpaintings.lib(portsymbol.obj) : error LNK2019: 无法解析的外部符号 __ftol2_sse，该符号在函数 "public: virtual class QString __thiscall PortSymbol::saveCpp(void)" (?saveCpp@PortSymbol@@UAE?AVQString@@XZ) 中被引用
+     1>libpaintings.lib(id_text.obj) : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>libdialogs.lib(matchdialog.obj) : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>libdiagrams.lib(marker.obj) : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>libpaintings.lib(ellipsearc.obj) : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>libpaintings.lib(rectangle.obj) : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>libpaintings.lib(graphictext.obj) : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>libdiagrams.lib(rectdiagram.obj) : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>libdiagrams.lib(diagramdialog.obj) : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>libdiagrams.lib(graph.obj) : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>libdiagrams.lib(timingdiagram.obj) : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>libdiagrams.lib(curvediagram.obj) : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>libdiagrams.lib(rect3ddiagram.obj) : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>libdiagrams.lib(tabdiagram.obj) : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>wirelabel.obj : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>libcomponents.lib(vacomponent.obj) : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>libcomponents.lib(component.obj) : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>libdiagrams.lib(truthdiagram.obj) : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>schematic.obj : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>schematic_element.obj : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>textdoc.obj : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>viewpainter.obj : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>main.obj : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>mouseactions.obj : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>qucs.obj : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>qucs_actions.obj : error LNK2001: 无法解析的外部符号 __ftol2_sse
+     1>main.obj : error LNK2019: 无法解析的外部符号 __imp__strtod，该符号在函数 "bool __cdecl VHDL_Time(class QString &,class QString const &)" (?VHDL_Time@@YA_NAAVQString@@ABV1@@Z) 中被引用
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 __imp__strtod
+     1>libdialogs.lib(packagedialog.obj) : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>libdialogs.lib(librarydialog.obj) : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>libdialogs.lib(importdialog.obj) : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>libdialogs.lib(loaddialog.obj) : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>libdialogs.lib(exportdialog.obj) : error LNK2019: 无法解析的外部符号 __CxxThrowException@8，该符号在函数 "public: __thiscall ExportDialog::ExportDialog(int,int,int,int,class QString,bool,class QWidget *)" (??0ExportDialog@@QAE@HHHHVQString@@_NPAVQWidget@@@Z) 中被引用
+     1>libdialogs.lib(simmessage.obj) : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>libdialogs.lib(savedialog.obj) : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>libdialogs.lib(changedialog.obj) : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>libcomponents.lib(spicedialog.obj) : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>libcomponents.lib(libcomp.obj) : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>libdiagrams.lib(diagramdialog.obj) : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>libdialogs.lib(qucssettingsdialog.obj) : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>libcomponents.lib(vacomponent.obj) : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>libcomponents.lib(opt_sim.obj) : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>libcomponents.lib(spicefile.obj) : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>libcomponents.lib(componentdialog.obj) : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>schematic.obj : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>schematic_file.obj : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>syntax.obj : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>textdoc.obj : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>octave_window.obj : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>qucs.obj : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>qucs_actions.obj : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>qucs_init.obj : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>main.obj : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>messagedock.obj : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>module.obj : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>mouseactions.obj : error LNK2001: 无法解析的外部符号 __CxxThrowException@8
+     1>main.obj : error LNK2019: 无法解析的外部符号 __imp__isalpha，该符号在函数 "bool __cdecl VHDL_Delay(class QString &,class QString const &)" (?VHDL_Delay@@YA_NAAVQString@@ABV1@@Z) 中被引用
+     1>libdialogs.lib(librarydialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdialogs.lib(importdialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdialogs.lib(loaddialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>msvcprt.lib(newaop_s.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdialogs.lib(searchdialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdialogs.lib(newprojdialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdialogs.lib(changedialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdialogs.lib(packagedialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdialogs.lib(simmessage.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdialogs.lib(matchdialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdialogs.lib(savedialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdialogs.lib(sweepdialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdialogs.lib(settingsdialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdialogs.lib(digisettingsdialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdialogs.lib(vasettingsdialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdialogs.lib(exportdialog.obj) : error LNK2019: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)，该符号在函数 "public: virtual void * __thiscall QHBoxLayout::`scalar deleting destructor'(unsigned int)" (??_GQHBoxLayout@@UAEPAXI@Z) 中被引用
+     1>libpaintings.lib(arrowdialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libpaintings.lib(id_dialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdialogs.lib(labeldialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdialogs.lib(qucssettingsdialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libpaintings.lib(id_text.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libpaintings.lib(painting.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libpaintings.lib(filldialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libpaintings.lib(graphictextdialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libpaintings.lib(ellipse.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libpaintings.lib(graphictext.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libpaintings.lib(arrow.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libpaintings.lib(graphicline.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdiagrams.lib(graph.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdiagrams.lib(marker.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libpaintings.lib(ellipsearc.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libpaintings.lib(rectangle.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdiagrams.lib(rectdiagram.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdiagrams.lib(diagramdialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdiagrams.lib(markerdialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdiagrams.lib(psdiagram.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdiagrams.lib(smithdiagram.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdiagrams.lib(tabdiagram.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdiagrams.lib(polardiagram.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdiagrams.lib(truthdiagram.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdiagrams.lib(timingdiagram.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdiagrams.lib(curvediagram.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libdiagrams.lib(rect3ddiagram.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(optimizedialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(spicedialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(equation.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(libcomp.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(capacitor.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(resistor.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(component.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(componentdialog.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(transformer.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(subcirport.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(ground.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(inductor.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(biast.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(dcfeed.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(dcblock.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(symtrafo.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(circulator.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(isolator.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(amplifier.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(attenuator.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(hybrid.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(coupler.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(phaseshifter.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(gyrator.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(mutual2.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(mutual.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(vprobe.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(iprobe.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(rfedd2p.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(rfedd.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(relais.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(switch.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(ampere_ac.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(volt_ac.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(ampere_dc.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(volt_dc.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(vccs.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(ampere_noise.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(volt_noise.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(source_ac.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(vpulse.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(ccvs.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(vcvs.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(cccs.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(noise_ii.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(irect.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(vrect.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(ipulse.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(pm_modulator.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(am_modulator.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(noise_iv.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(noise_vv.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(ifile.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(vfile.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(vexp.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(iexp.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(twistedpair.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(ctline.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(tline_4port.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(tline.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(substrate.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(rlcg.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(rectline.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(coaxialline.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(mscorner.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(mslange.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(mscoupled.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(msline.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(mscross.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(mstee.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(msstep.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(msmbend.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(msrstub.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(msvia.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(msgap.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(msopen.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(cpwgap.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(cpwshort.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(cpwopen.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(coplanar.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(bjt.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(diode.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(bondwire.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(cpwstep.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(mosfet_sub.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(mosfet.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(jfet.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(bjtsub.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(triac.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(diac.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(eqndefined.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(opamp.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(HBT_X.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(hicumL2V2p1.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(tunneldiode.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(thyristor.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(hic0_full.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(log_amp.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(hic2_full.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(mod_amp.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(bsim3v34nMOS.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(EKV26MOS.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(MESFET.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(potentiometer.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(hicumL0V1p2.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(bsim4v30pMOS.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(bsim4v30nMOS.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(bsim3v34pMOS.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(hicumL2V2p24.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(hicumL2V2p23.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(hicumL0V1p3.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(hicumL0V1p2g.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(nigbt.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(phototransistor.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(photodiode.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(hicumL2V2p31n.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(logical_or.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(logical_inv.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(digi_source.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(vcresistor.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(logical_xor.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(logical_nand.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(logical_and.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(logical_nor.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(andor4x3.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(andor4x2.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(logical_buf.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(logical_xnor.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(mux8to1.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(mux4to1.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(mux2to1.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(andor4x4.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(ha1b.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(dmux4to16.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(dmux3to8.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(dmux2to4.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(d_flipflop.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(rs_flipflop.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(fa2b.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(fa1b.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(tff_SR.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(jkff_SR.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(jk_flipflop.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(dff_SR.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(pad2bit.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(logic_1.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(logic_0.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(gatedDlatch.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(DLS_1ton.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(DLS_nto1.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(pad4bit.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(pad3bit.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(comp_2bit.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(comp_1bit.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(greytobinary4bit.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(binarytogrey4bit.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(verilogfile.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(vhdlfile.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(hpribin4bit.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(comp_4bit.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(subcircuit.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(sparamfile.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(spicefile.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(digi_sim.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(sp_sim.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(ac_sim.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(tr_sim.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(dc_sim.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(etr_sim.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(opt_sim.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(param_sweep.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(hb_sim.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>textdoc.obj : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>wire.obj : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(vacomponent.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>libcomponents.lib(ecvs.obj) : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>qucs_init.obj : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>schematic.obj : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>schematic_element.obj : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>schematic_file.obj : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>node.obj : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>octave_window.obj : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>qucs.obj : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>qucs_actions.obj : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>main.obj : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>messagedock.obj : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>module.obj : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>mouseactions.obj : error LNK2001: 无法解析的外部符号 "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+     1>main.obj : error LNK2019: 无法解析的外部符号 __imp__setlocale，该符号在函数 _main 中被引用
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 __imp__setlocale
+     1>main.obj : error LNK2019: 无法解析的外部符号 __imp__getenv，该符号在函数 _main 中被引用
+     1>schematic.obj : error LNK2001: 无法解析的外部符号 _atexit
+     1>schematic_file.obj : error LNK2001: 无法解析的外部符号 _atexit
+     1>main.obj : error LNK2019: 无法解析的外部符号 _atexit，该符号在函数 "void __cdecl `dynamic initializer for 'QucsSettings''(void)" (??__EQucsSettings@@YAXXZ) 中被引用
+     1>module.obj : error LNK2001: 无法解析的外部符号 _atexit
+     1>qucs.obj : error LNK2001: 无法解析的外部符号 _atexit
+     1>qucs_actions.obj : error LNK2001: 无法解析的外部符号 _atexit
+     1>mouseactions.obj : error LNK2019: 无法解析的外部符号 ___RTDynamicCast，该符号在函数 "public: void __thiscall MouseActions::MPressElement(class Schematic *,class QMouseEvent *,float,float)" (?MPressElement@MouseActions@@QAEXPAVSchematic@@PAVQMouseEvent@@MM@Z) 中被引用
+     1>libdialogs.lib(changedialog.obj) : error LNK2001: 无法解析的外部符号 _memcpy
+     1>libdialogs.lib(packagedialog.obj) : error LNK2001: 无法解析的外部符号 _memcpy
+     1>libdialogs.lib(librarydialog.obj) : error LNK2001: 无法解析的外部符号 _memcpy
+     1>qucs.obj : error LNK2019: 无法解析的外部符号 _memcpy，该符号在函数 "private: void __thiscall QList<class QTreeWidgetItem *>::node_copy(struct QList<class QTreeWidgetItem *>::Node *,struct QList<class QTreeWidgetItem *>::Node *,struct QList<class QTreeWidgetItem *>::Node *)" (?node_copy@?$QList@PAVQTreeWidgetItem@@@@AAEXPAUNode@1@00@Z) 中被引用
+     1>qucs_actions.obj : error LNK2001: 无法解析的外部符号 _memcpy
+     1>libdialogs.lib(qucssettingsdialog.obj) : error LNK2001: 无法解析的外部符号 _memcpy
+     1>libdialogs.lib(savedialog.obj) : error LNK2001: 无法解析的外部符号 _memcpy
+     1>qucs.obj : error LNK2019: 无法解析的外部符号 __imp__ceil，该符号在函数 "public: void __thiscall QucsApp::slotSaveSchematicToGraphicsFile(bool)" (?slotSaveSchematicToGraphicsFile@QucsApp@@QAEX_N@Z) 中被引用
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 __imp__ceil
+     1>libdialogs.lib(exportdialog.obj) : error LNK2001: 无法解析的外部符号 __imp__ceil
+     1>libdiagrams.lib(tabdiagram.obj) : error LNK2001: 无法解析的外部符号 _floor
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 _floor
+     1>libdialogs.lib(exportdialog.obj) : error LNK2001: 无法解析的外部符号 _floor
+     1>qucs.obj : error LNK2019: 无法解析的外部符号 _floor，该符号在函数 "public: void __thiscall QucsApp::slotSaveSchematicToGraphicsFile(bool)" (?slotSaveSchematicToGraphicsFile@QucsApp@@QAEX_N@Z) 中被引用
+     1>viewpainter.obj : error LNK2001: 无法解析的外部符号 _floor
+     1>libcomponents.lib(componentdialog.obj) : error LNK2001: 无法解析的外部符号 _floor
+     1>libdiagrams.lib(timingdiagram.obj) : error LNK2001: 无法解析的外部符号 _floor
+     1>libdiagrams.lib(graph.obj) : error LNK2001: 无法解析的外部符号 __imp__free
+     1>libdiagrams.lib(marker.obj) : error LNK2001: 无法解析的外部符号 __imp__free
+     1>libdialogs.lib(packagedialog.obj) : error LNK2001: 无法解析的外部符号 __imp__free
+     1>qucs_actions.obj : error LNK2019: 无法解析的外部符号 __imp__free，该符号在函数 "public: void __thiscall QucsApp::slotAddToProject(void)" (?slotAddToProject@QucsApp@@QAEXXZ) 中被引用
+     1>schematic_element.obj : error LNK2001: 无法解析的外部符号 __imp__free
+     1>libdiagrams.lib(rect3ddiagram.obj) : error LNK2001: 无法解析的外部符号 __imp__free
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 __imp__free
+     1>libdiagrams.lib(marker.obj) : error LNK2001: 无法解析的外部符号 __imp__malloc
+     1>libdialogs.lib(packagedialog.obj) : error LNK2001: 无法解析的外部符号 __imp__malloc
+     1>qucs_actions.obj : error LNK2019: 无法解析的外部符号 __imp__malloc，该符号在函数 "public: void __thiscall QucsApp::slotAddToProject(void)" (?slotAddToProject@QucsApp@@QAEXXZ) 中被引用
+     1>schematic_element.obj : error LNK2001: 无法解析的外部符号 __imp__malloc
+     1>libdiagrams.lib(rect3ddiagram.obj) : error LNK2001: 无法解析的外部符号 __imp__malloc
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 __imp__malloc
+     1>LINK : error LNK2001: 无法解析的外部符号 _WinMainCRTStartup
+     1>libcomponents.lib(opt_sim.obj) : error LNK2019: 无法解析的外部符号 "void __stdcall `eh vector destructor iterator'(void *,unsigned int,int,void (__thiscall*)(void *))" (??_M@YGXPAXIHP6EX0@Z@Z)，该符号在函数 "public: bool __thiscall Optimize_Sim::loadASCOout(void)" (?loadASCOout@Optimize_Sim@@QAE_NXZ) 中被引用
+     1>libcomponents.lib(opt_sim.obj) : error LNK2019: 无法解析的外部符号 "void __stdcall `eh vector constructor iterator'(void *,unsigned int,int,void (__thiscall*)(void *),void (__thiscall*)(void *))" (??_L@YGXPAXIHP6EX0@Z1@Z)，该符号在函数 "public: bool __thiscall Optimize_Sim::loadASCOout(void)" (?loadASCOout@Optimize_Sim@@QAE_NXZ) 中被引用
+     1>libcomponents.lib(bsim3v34pMOS.obj) : error LNK2019: 无法解析的外部符号 __chkstk，该符号在函数 "public: __thiscall bsim3v34pMOS::bsim3v34pMOS(void)" (??0bsim3v34pMOS@@QAE@XZ) 中被引用
+     1>libcomponents.lib(bsim3v34nMOS.obj) : error LNK2001: 无法解析的外部符号 __chkstk
+     1>libpaintings.lib(graphictext.obj) : error LNK2001: 无法解析的外部符号 __CIsin
+     1>libpaintings.lib(arrow.obj) : error LNK2001: 无法解析的外部符号 __CIsin
+     1>libdialogs.lib(matchdialog.obj) : error LNK2001: 无法解析的外部符号 __CIsin
+     1>libcomponents.lib(component.obj) : error LNK2019: 无法解析的外部符号 __CIsin，该符号在函数 "protected: int __thiscall Component::analyseLine(class QString const &,int)" (?analyseLine@Component@@IAEHABVQString@@H@Z) 中被引用
+     1>libdiagrams.lib(rect3ddiagram.obj) : error LNK2001: 无法解析的外部符号 __CIsin
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 __CIsin
+     1>libdiagrams.lib(diagramdialog.obj) : error LNK2001: 无法解析的外部符号 __CIsin
+     1>libpaintings.lib(graphictext.obj) : error LNK2001: 无法解析的外部符号 __CIcos
+     1>libpaintings.lib(arrow.obj) : error LNK2001: 无法解析的外部符号 __CIcos
+     1>libdialogs.lib(matchdialog.obj) : error LNK2001: 无法解析的外部符号 __CIcos
+     1>libcomponents.lib(component.obj) : error LNK2019: 无法解析的外部符号 __CIcos，该符号在函数 "protected: int __thiscall Component::analyseLine(class QString const &,int)" (?analyseLine@Component@@IAEHABVQString@@H@Z) 中被引用
+     1>libdiagrams.lib(rect3ddiagram.obj) : error LNK2001: 无法解析的外部符号 __CIcos
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 __CIcos
+     1>libdiagrams.lib(diagramdialog.obj) : error LNK2001: 无法解析的外部符号 __CIcos
+     1>libdiagrams.lib(truthdiagram.obj) : error LNK2019: 无法解析的外部符号 __CIlog，该符号在函数 "public: virtual int __thiscall TruthDiagram::calcDiagram(void)" (?calcDiagram@TruthDiagram@@UAEHXZ) 中被引用
+     1>libdiagrams.lib(polardiagram.obj) : error LNK2001: 无法解析的外部符号 __imp___finite
+     1>libdiagrams.lib(rectdiagram.obj) : error LNK2019: 无法解析的外部符号 __imp___finite，该符号在函数 "public: virtual void __thiscall RectDiagram::calcCoordinate(double * &,double * &,double * &,float *,float *,struct Axis *)" (?calcCoordinate@RectDiagram@@UAEXAAPAN00PAM1PAUAxis@@@Z) 中被引用
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 __imp___finite
+     1>libdiagrams.lib(curvediagram.obj) : error LNK2001: 无法解析的外部符号 __imp___finite
+     1>libdiagrams.lib(rect3ddiagram.obj) : error LNK2001: 无法解析的外部符号 __imp___finite
+     1>libdiagrams.lib(psdiagram.obj) : error LNK2001: 无法解析的外部符号 __imp___finite
+     1>libdiagrams.lib(smithdiagram.obj) : error LNK2001: 无法解析的外部符号 __imp___finite
+     1>libdiagrams.lib(rect3ddiagram.obj) : error LNK2019: 无法解析的外部符号 __imp__realloc，该符号在函数 "private: void __thiscall Rect3DDiagram::enlargeMemoryBlock(struct tPoint3D * &)" (?enlargeMemoryBlock@Rect3DDiagram@@AAEXAAPAUtPoint3D@@@Z) 中被引用
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 __imp__realloc
+     1>libdiagrams.lib(marker.obj) : error LNK2001: 无法解析的外部符号 __imp__realloc
+     1>libdiagrams.lib(rect3ddiagram.obj) : error LNK2019: 无法解析的外部符号 __imp__qsort，该符号在函数 "private: void __thiscall Rect3DDiagram::removeHiddenLines(char *,struct tBound *)" (?removeHiddenLines@Rect3DDiagram@@AAEXPADPAUtBound@@@Z) 中被引用
+     1>libdiagrams.lib(rect3ddiagram.obj) : error LNK2019: 无法解析的外部符号 "void __cdecl operator delete[](void *)" (??_V@YAXPAX@Z)，该符号在函数 "private: void __thiscall Rect3DDiagram::createAxis(struct Axis *,bool,int,int,int,int)" (?createAxis@Rect3DDiagram@@AAEXPAUAxis@@_NHHHH@Z) 中被引用
+     1>libdiagrams.lib(diagram.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete[](void *)" (??_V@YAXPAX@Z)
+     1>libdiagrams.lib(graph.obj) : error LNK2001: 无法解析的外部符号 "void __cdecl operator delete[](void *)" (??_V@YAXPAX@Z)
+     1>libdiagrams.lib(rect3ddiagram.obj) : error LNK2019: 无法解析的外部符号 _memset，该符号在函数 "public: virtual int __thiscall Rect3DDiagram::calcDiagram(void)" (?calcDiagram@Rect3DDiagram@@UAEHXZ) 中被引用
+     1>libdiagrams.lib(diagram.obj) : error LNK2019: 无法解析的外部符号 __imp__strstr，该符号在函数 "char * __cdecl strstr(char *,char const *)" (?strstr@@YAPADPADPBD@Z) 中被引用
+     1>libdiagrams.lib(diagram.obj) : error LNK2019: 无法解析的外部符号 __CIfmod，该符号在函数 "protected: bool __thiscall Diagram::calcAxisScale(struct Axis *,double &,double &,double &,double &,double)" (?calcAxisScale@Diagram@@IAE_NPAUAxis@@AAN111N@Z) 中被引用
+     1>libdiagrams.lib(diagram.obj) : error LNK2019: 无法解析的外部符号 __imp__strncmp，该符号在函数 "public: int __thiscall Diagram::loadIndepVarData(class QString const &,char *,struct Axis *,class Graph *)" (?loadIndepVarData@Diagram@@QAEHABVQString@@PADPAUAxis@@PAVGraph@@@Z) 中被引用
+     1>libdialogs.lib(packagedialog.obj) : error LNK2001: 无法解析的外部符号 __imp__strncmp
+     1>libdiagrams.lib(diagram.obj) : error LNK2019: 无法解析的外部符号 __CIacos，该符号在函数 "protected: void __thiscall Diagram::createSmithChart(struct Axis *,int)" (?createSmithChart@Diagram@@IAEXPAUAxis@@H@Z) 中被引用
+     1>libdiagrams.lib(diagram.obj) : error LNK2019: 无法解析的外部符号 __CIatan，该符号在函数 "protected: void __thiscall Diagram::createPolarDiagram(struct Axis *,int)" (?createPolarDiagram@Diagram@@IAEXPAUAxis@@H@Z) 中被引用
+     1>LINK : error LNK2001: 无法解析的外部符号 __load_config_used
+     1>.\Opt\qucs.exe : fatal error LNK1120: 47 个无法解析的外部命令
+     1>已完成生成项目“D:\xuliang\work\EDA\qucs_vs\qucs-0.0.18\qucs\qucs.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:01:31.42

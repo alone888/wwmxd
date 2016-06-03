@@ -1,0 +1,307 @@
+# 1 "./tff_SR.va"
+
+
+
+
+
+
+
+
+
+
+
+
+# 1 "disciplines.vams"
+
+
+
+
+
+
+# 9 "disciplines.vams"
+
+
+
+
+discipline logic
+  domain discrete;
+enddiscipline
+
+
+
+
+
+
+nature Current
+  units = "A";
+  access = I;
+  idt_nature = Charge;
+# 29 "disciplines.vams"
+  abstol = 1e-12;
+
+endnature
+
+nature Charge
+  units = "coul";
+  access = Q;
+  ddt_nature = Current;
+# 40 "disciplines.vams"
+  abstol = 1e-14;
+
+endnature
+
+nature Voltage
+  units = "V";
+  access = V;
+  idt_nature = Flux;
+# 51 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Flux
+  units = "Wb";
+  access = Phi;
+  ddt_nature = Voltage;
+# 62 "disciplines.vams"
+  abstol = 1e-9;
+
+endnature
+
+discipline electrical
+  potential Voltage;
+  flow Current;
+enddiscipline
+
+discipline voltage
+  potential Voltage;
+enddiscipline
+discipline current
+  potential Current;
+enddiscipline
+
+
+nature Magneto_Motive_Force
+  units = "A*turn";
+  access = MMF;
+# 85 "disciplines.vams"
+  abstol = 1e-12;
+
+endnature
+
+discipline magnetic
+  potential Magneto_Motive_Force;
+  flow Flux;
+enddiscipline
+
+
+nature Temperature
+  units = "K";
+  access = Temp;
+# 101 "disciplines.vams"
+  abstol = 1e-4;
+
+endnature
+
+nature Power
+  units = "W";
+  access = Pwr;
+# 111 "disciplines.vams"
+  abstol = 1e-9;
+
+endnature
+
+discipline thermal
+  potential Temperature;
+  flow Power;
+enddiscipline
+
+
+nature Position
+  units = "m";
+  access = Pos;
+  ddt_nature = Velocity;
+# 128 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Velocity
+  units = "m/s";
+  access = Vel;
+  ddt_nature = Acceleration;
+  idt_nature = Position;
+# 140 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Acceleration
+  units = "m/s^2";
+  access = Acc;
+  ddt_nature = Impulse;
+  idt_nature = Velocity;
+# 152 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Impulse
+  units = "m/s^3";
+  access = Imp;
+  idt_nature = Acceleration;
+# 163 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Force
+  units = "N";
+  access = F;
+# 173 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+discipline kinematic
+  potential Position;
+  flow Force;
+enddiscipline
+discipline kinematic_v
+  potential Velocity;
+  flow Force;
+enddiscipline
+
+
+nature Angle
+  units = "rads";
+  access = Theta;
+  ddt_nature = Angular_Velocity;
+# 194 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Angular_Velocity
+  units = "rads/s";
+  access = Omega;
+  ddt_nature = Angular_Acceleration;
+  idt_nature = Angle;
+# 206 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Angular_Acceleration
+  units = "rads/s^2";
+  access = Alpha;
+  idt_nature = Angular_Velocity;
+# 217 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+nature Angular_Force
+  units = "N*m";
+  access = Tau;
+# 227 "disciplines.vams"
+  abstol = 1e-6;
+
+endnature
+
+discipline rotational
+  potential Angle;
+  flow Angular_Force;
+enddiscipline
+discipline rotational_omega
+  potential Angular_Velocity;
+  flow Angular_Force;
+enddiscipline
+
+
+# 14 "./tff_SR.va"
+# 1 "constants.vams"
+
+
+
+
+
+
+
+# 10 "constants.vams"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 15 "./tff_SR.va"
+module tff_SR (S, T, CLK, R, QB, QO); 
+ inout S, T, CLK, R, QB, QO ;
+ electrical S, T, CLK, R, QB, QO;
+ electrical n1, n1A, n2, n3, n3A, n4, Dsig,QA;
+
+
+ parameter real TR_H=6 from [1.0:20.0]  (*info="cross coupled gate transfer function high scaling factor"*);
+ parameter real TR_L=5  from [1.0:20.0]  (*info="cross coupled gate transfer function low scaling factor"*);
+ parameter real Delay = 1e-9 from [0: inf]  (*info="cross coupled gate delay" unit="s"*);
+
+real Rd, Ccc;
+
+analog begin
+@(initial_model) 
+  begin
+    Rd = 1e3;
+    Ccc= Delay*1.43/Rd;
+  end
+I(Dsig) <+ -0.5*(1+tanh(TR_H*(V(T)*V(QB)+(1-V(T))*V(QO)-0.5)));
+I(Dsig) <+ V(Dsig);
+I(n1)  <+ -0.5*(1-tanh(TR_H*(V(n4)*V(n2)*V(S)-0.5)));
+I(n1)  <+ V(n1);
+I(n2)  <+ -0.5*(1-tanh(TR_L*(V(n1A)*V(CLK)*V(R)-0.5)));
+I(n2)  <+ V(n2);
+I(n3)  <+ -0.5*(1-tanh(TR_H*(V(n2)*V(CLK)*V(n4)-0.5)));
+I(n3)  <+ V(n3);
+I(n4)  <+ -0.5*(1-tanh(TR_L*(V(n3A)*V(Dsig)*V(R)-0.5)));
+I(n4)  <+ V(n4);
+I(QO)   <+ -0.5*(1-tanh(TR_H*(V(n2)*V(QB)*V(S)-0.5)));
+I(QO)   <+ V(QO);
+I(QB)  <+ -0.5*(1-tanh(TR_L*(V(QA)*V(n3A)*V(R)-0.5)));
+I(QB)  <+ V(QB);
+I(n1, n1A) <+ V(n1, n1A)/Rd;
+I(n1A) <+ ddt(Ccc*V(n1A));
+I(n3, n3A) <+ V(n3, n3A)/Rd;
+I(n3A) <+ ddt(Ccc*V(n3A));
+I(QO, QA) <+ V(QO, QA)/Rd;
+I(QA)    <+ ddt(Ccc*V(QA));
+
+end
+endmodule

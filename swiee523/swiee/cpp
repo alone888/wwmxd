@@ -1,0 +1,1800 @@
+/***************************************************************************
+                                 element.h
+                                -----------
+    begin                : Sat Sep 20 2003
+    copyright            : (C) 2003 by Michael Margraf
+    email                : michael.margraf@alumni.tu-berlin.de
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+
+/** \file element.h
+  * \brief Defines drawing elements for schematics
+  *
+  * element.h contains definitions of various drawing elements used
+  * used to render schematics and the schematic symbols. The following
+  * structs are defined to hold information on various drawing types:
+  *
+  *    Line
+  *    Arc
+  *    Area
+  *    Port
+  *    Text
+  *    Property
+  *
+  * The Element class is also defined here which is a superclass
+  * of every component symbol.
+  *
+  */
+
+#ifndef ELEMENT_H
+#define ELEMENT_H
+
+#include <QPen>
+#include <QBrush>
+
+class Node;
+class QPainter;
+class WireLabel;
+class Schematic;
+
+struct Line {
+  Line(int _x1, int _y1, int _x2, int _y2, QPen _style)
+       : x1(_x1), y1(_y1), x2(_x2), y2(_y2), style(_style) {};
+  int   x1, y1, x2, y2;
+  QPen  style;
+};
+
+struct Arc {
+  Arc(int _x, int _y, int _w, int _h, int _angle, int _arclen, QPen _style)
+      : x(_x), y(_y), w(_w), h(_h), angle(_angle),
+	arclen(_arclen), style(_style) {};
+  int   x, y, w, h, angle, arclen;
+  QPen  style;
+};
+
+struct Area {
+  Area(int _x, int _y, int _w, int _h, QPen _Pen,
+	QBrush _Brush = QBrush(Qt::NoBrush))
+	: x(_x), y(_y), w(_w), h(_h), Pen(_Pen), Brush(_Brush) {};
+  int    x, y, w, h;
+  QPen   Pen;
+  QBrush Brush;    // filling style/color
+};
+
+struct Port {
+  Port() {};
+  Port(int _x, int _y, bool _avail=true) : x(_x), y(_y), avail(_avail) {
+    Type=""; Connection=0;};
+  int   x, y;
+  bool  avail;
+  QString Type;
+  Node *Connection;
+};
+
+struct Text {
+  Text(int _x, int _y, const QString& _s, QColor _Color = QColor(0,0,0),
+	float _Size = 10.0, float _mCos=1.0, float _mSin=0.0)
+	: x(_x), y(_y), s(_s), Color(_Color), Size(_Size),
+	  mSin(_mSin), mCos(_mCos) { over = under = false; };
+  int	  x, y;
+  QString s;
+  QColor  Color;
+  float	  Size, mSin, mCos; // font size and rotation coefficients
+  bool	  over, under;      // text attributes
+};
+
+struct Property {
+  Property(const QString& _Name="", const QString& _Value="",
+	   bool _display=false, const QString& Desc="")
+	 : Name(_Name), Value(_Value), display(_display), Description(Desc) {};
+  QString Name, Value;
+  bool    display;   // show on schematic or not ?
+  QString Description;
+};
+
+
+// valid values for Element.Type
+// The 4 least significant bits of each value are reserved for special
+// additionals !!!
+#define isDummyElement    0
+#define isSpecialMask    -16
+
+#define isComponent        0x30000
+#define isComponentText    0x30002
+#define isAnalogComponent  0x10000
+#define isDigitalComponent 0x20000
+
+#define isGraph            0x0020
+#define isNode             0x0040
+#define isMarker           0x0080
+#define isWire             0x0100
+
+#define isPainting         0x2000
+#define isPaintingResize   0x2001
+
+#define isLabel            0x4000
+#define isHWireLabel       0x4020
+#define isVWireLabel       0x4040
+#define isNodeLabel        0x4080
+#define isMovingLabel      0x4001
+#define isHMovingLabel     0x4002
+#define isVMovingLabel     0x4004
+
+#define isDiagram          0x8000
+#define isDiagramResize    0x8001
+#define isDiagramHScroll   0x8002
+#define isDiagramVScroll   0x8003
+
+
+/** \class Element
+  * \brief Superclass of all schematic drawing elements
+  *
+  *
+  */
+class Element {
+public:
+  Element();
+  virtual ~Element();
+
+  virtual void paintScheme(Schematic*);
+  virtual void setCenter(int, int, bool relative=false);
+  virtual void getCenter(int&, int&);
+
+  bool isSelected;
+  int  Type;    // whether it is Component, Wire, ...
+  int  cx, cy, x1, y1, x2, y2;  // center and relative boundings
+};
+
+
+/** \class Conductor
+  * \brief label for Node and Wire classes
+  *
+  */
+class Conductor : public Element {
+public:
+  WireLabel *Label;
+};
+
+#endif
+/***************************************************************************
+                                  main.h
+                                 --------
+    begin                : Mon May 24  2004
+    copyright            : (C) 2003 by Michael Margraf
+    email                : michael.margraf@alumni.tu-berlin.de
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+/*!
+ * \file main.h
+ * \brief Definitions and declarations for the main application.
+ */
+
+#ifndef QUCS_MAIN_H
+#define QUCS_MAIN_H
+
+#include <QFont>
+#include <QColor>
+#include <Q3PtrList>
+#include <QStringList>
+
+#include "wire.h"
+#include "node.h"
+#include "diagrams/diagram.h"
+#include <QSettings>
+
+class QucsApp;
+class Component;
+
+// constants may be missing on windows systems
+#include <math.h>
+#ifndef M_PI
+#define M_PI     3.1415926535897932384626433832795029
+#endif
+
+struct tQucsSettings {
+  int x, y, dx, dy;    // position and size of main window
+  QFont font;
+  float largeFontSize;
+  QColor BGColor;      // background color of view area
+  QString Language;
+
+  // syntax highlighting
+  QColor Comment, String, Integer, Real, Character, Type,
+    Attribute, Directive, Task;
+
+  unsigned int maxUndo;    // size of undo stack
+  QString Editor;
+  QString BinDir;
+  QString LangDir;
+  QString LibDir;
+  QString OctaveDir;  // m-files location
+  QString ExamplesDir;
+  QString DocDir;
+
+  unsigned int NodeWiring;
+  QDir QucsWorkDir;
+  QDir QucsHomeDir;
+  QDir AdmsXmlBinDir;  // dir of admsXml executable
+  QDir AscoBinDir;     // dir of asco executable
+  QDir OctaveBinDir;   // dir of octave executable
+
+  // registered filename extensions with program to open the file
+  QStringList FileTypes;
+
+  unsigned int numRecentDocs;
+  QStringList RecentDocs;
+
+  bool IgnoreFutureVersion;
+
+};
+
+extern tQucsSettings QucsSettings;  // extern because nearly everywhere used
+extern QucsApp *QucsMain;  // the Qucs application itself
+extern QString lastDir;    // to remember last directory for several dialogs
+extern QStringList qucsPathList;
+
+bool loadSettings();
+bool saveApplSettings(QucsApp*);
+void qucsMessageOutput(QtMsgType type, const char *msg);
+
+QString complexRect(double, double, int Precision=3);
+QString complexDeg (double, double, int Precision=3);
+QString complexRad (double, double, int Precision=3);
+QString StringNum  (double, char form='g', int Precision=3);
+void    str2num    (const QString&, double&, QString&, double&);
+QString num2str    (double);
+QString StringNiceNum(double);
+void    convert2Unicode(QString&);
+void    convert2ASCII(QString&);
+QString properName(const QString&);
+QString properAbsFileName(const QString&);
+QString properFileName(const QString&);
+bool    VHDL_Time(QString&, const QString&);
+bool    VHDL_Delay(QString&, const QString&);
+bool    Verilog_Time(QString&, const QString&);
+bool    Verilog_Delay(QString&, const QString&);
+QString Verilog_Param(const QString);
+bool    checkVersion(QString&);
+
+#endif // ifndef QUCS_MAIN_H
+/***************************************************************************
+                             messagedock.h
+                             -------------
+    begin                : Tue Mar 11 2014
+    copyright            : (C) 2014 by Guilherme Brondani Torri
+    email                : guitorri AT gmail DOT com
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+
+#ifndef MESSAGEDOCK_H
+#define MESSAGEDOCK_H
+
+#include "qucs.h"
+
+#include <QWidget>
+
+#include <QDockWidget>
+#include <QTabWidget>
+
+/*!
+ * \file messagedock.h
+ * \brief The MessageDock class definiion
+ */
+class MessageDock : public QWidget {
+  Q_OBJECT
+public:
+  MessageDock(QucsApp*);
+ ~MessageDock() {};
+
+public:
+
+  QDockWidget *msgDock;
+
+  QTabWidget *builderTabs;
+
+  /*!
+   * \brief admsOutput holds the make output of running admsXml
+   */
+  QPlainTextEdit *admsOutput;
+  /*!
+   * \brief cppOutput holds the make output of running a C++ compiler
+   */
+  QPlainTextEdit *cppOutput;
+
+  void reset();
+
+
+private slots:
+  void slotAdmsChanged();
+  void slotCppChanged();
+  void slotCursor();
+
+};
+
+#endif // MESSAGEDOCK_H
+/***************************************************************************
+                                mnemo.h
+                               ---------
+    begin                : Sat Jun 11 2005
+    copyright            : (C) 2005 by Michael Margraf
+    email                : michael.margraf@alumni.tu-berlin.de
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+
+#ifndef MNEMO_H
+#define MNEMO_H
+
+#include <QString>
+
+void encode_String(const QString&, QString&);
+void decode_String(QString&);
+
+#endif
+//Added by qt3to4:
+#include <Q3PtrList>
+#include <Q3Dict>
+#include <QMap>
+/***************************************************************************
+                               module.h
+                              ----------
+    begin                : Thu Nov 5 2009
+    copyright            : (C) 2009 by Stefan Jahn
+    email                : stefan@lkcc.org
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+
+#ifndef MODULE_H
+#define MODULE_H
+
+// function typedefs for circuits and analyses
+typedef Element * (* pInfoFunc) (QString&, char * &, bool);
+typedef Element * (* pInfoVAFunc) (QString&, QString&, bool, QString);
+typedef Component * (* pCreatorFunc) ();
+
+class Module
+{
+ public:
+  Module ();
+  ~Module ();
+  static void registerModule (QString, pInfoFunc);
+  static void registerComponent (QString, pInfoFunc);
+  static void intoCategory (Module *);
+  static Component * getComponent (QString);
+  static void registerDynamicComponents(void);
+
+ public:
+  static Q3Dict<Module> Modules;
+  static QMap<QString, QString> vaComponents;
+
+ public:
+  static void registerModules (void);
+  static void unregisterModules (void);
+
+ public:
+  pInfoFunc info;
+  pInfoVAFunc infoVA;
+  QString category;
+};
+
+class Category
+{
+ public:
+  Category ();
+  Category (const QString);
+  ~Category ();
+
+ public:
+  static Q3PtrList<Category> Categories;
+
+ public:
+  static QStringList getCategories (void);
+  static Q3PtrList<Module> getModules (QString);
+  static int getModulesNr (QString);
+
+ public:
+  QString Name;
+  Q3PtrList<Module> Content;
+};
+
+#endif /* __MODULE_H__ */
+/***************************************************************************
+                              mouseactions.h
+                             ----------------
+    begin                : Thu Aug 28 2003
+    copyright            : (C) 2003 by Michael Margraf
+    email                : michael.margraf@alumni.tu-berlin.de
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+
+#ifndef MOUSEACTIONS_H
+#define MOUSEACTIONS_H
+
+#include "element.h"
+
+#include <Q3PtrList>
+//Added by qt3to4:
+#include <QMouseEvent>
+#include <Q3PopupMenu>
+
+
+class Wire;
+class Schematic;
+class QPainter;
+class Q3PopupMenu;
+class QMouseEvent;
+class QucsApp;
+
+extern QAction *formerAction;
+
+
+class MouseActions {
+public:
+  MouseActions(QucsApp*);
+  virtual ~MouseActions();
+
+  void setPainter(Schematic*);
+  bool pasteElements(Schematic*);
+  void editElement(Schematic*, QMouseEvent*);
+  void editLabel(Schematic*, WireLabel*);
+
+  bool drawn;  // indicates whether the scheme element was drawn last time
+  Element *selElem;  // component/diagram/painting selected in IconView
+  Element *focusElement;
+  QMouseEvent *focusMEvent;
+
+  int  MAx1, MAy1,MAx2, MAy2, MAx3, MAy3;  // cache for mouse movements
+  Q3PtrList<Element> movingElements;
+  int movingRotated;
+
+  // menu appearing by right mouse button click on component
+  Q3PopupMenu *ComponentMenu;
+
+private:
+  bool isMoveEqual;
+  QucsApp* App;
+
+  // -------------------------------------------------------------------
+public:
+  void MMoveSelect(Schematic*, QMouseEvent*);
+  void MMoveElement(Schematic*, QMouseEvent*);
+  void MMoveWire1(Schematic*, QMouseEvent*);
+  void MMoveWire2(Schematic*, QMouseEvent*);
+  void MMoveMoving(Schematic*, QMouseEvent*);
+  void MMoveMoving2(Schematic*, QMouseEvent*);
+  void MMovePaste(Schematic*, QMouseEvent*);
+  void MMoveDelete(Schematic*, QMouseEvent*);
+  void MMoveLabel(Schematic*, QMouseEvent*);
+  void MMoveMarker(Schematic*, QMouseEvent*);
+  void MMoveMirrorY(Schematic*, QMouseEvent*);
+  void MMoveMirrorX(Schematic*, QMouseEvent*);
+  void MMoveRotate(Schematic*, QMouseEvent*);
+  void MMoveActivate(Schematic*, QMouseEvent*);
+  void MMoveOnGrid(Schematic*, QMouseEvent*);
+  void MMoveResizePainting(Schematic*, QMouseEvent*);
+  void MMoveMoveText(Schematic*, QMouseEvent*);
+  void MMoveMoveTextB(Schematic*, QMouseEvent*);
+  void MMoveZoomIn(Schematic*, QMouseEvent*);
+  void MMoveScrollBar(Schematic*, QMouseEvent*);
+
+  void MPressSelect(Schematic*, QMouseEvent*, float, float);
+  void MPressDelete(Schematic*, QMouseEvent*, float, float);
+  void MPressActivate(Schematic*, QMouseEvent*, float, float);
+  void MPressMirrorX(Schematic*, QMouseEvent*, float, float);
+  void MPressMirrorY(Schematic*, QMouseEvent*, float, float);
+  void MPressRotate(Schematic*, QMouseEvent*, float, float);
+  void MPressElement(Schematic*, QMouseEvent*, float, float);
+  void MPressLabel(Schematic*, QMouseEvent*, float, float);
+  void MPressWire1(Schematic*, QMouseEvent*, float, float);
+  void MPressWire2(Schematic*, QMouseEvent*, float, float);
+  void MPressPainting(Schematic*, QMouseEvent*, float, float);
+  void MPressMarker(Schematic*, QMouseEvent*, float, float);
+  void MPressOnGrid(Schematic*, QMouseEvent*, float, float);
+  void MPressMoveText(Schematic*, QMouseEvent*, float, float);
+  void MPressZoomIn(Schematic*, QMouseEvent*, float, float);
+
+  void MDoubleClickSelect(Schematic*, QMouseEvent*);
+  void MDoubleClickWire2(Schematic*, QMouseEvent*);
+
+  void MReleaseSelect(Schematic*, QMouseEvent*);
+  void MReleaseSelect2(Schematic*, QMouseEvent*);
+  void MReleaseActivate(Schematic*, QMouseEvent*);
+  void MReleaseMoving(Schematic*, QMouseEvent*);
+  void MReleaseResizeDiagram(Schematic*, QMouseEvent*);
+  void MReleasePaste(Schematic*, QMouseEvent*);
+  void MReleaseResizePainting(Schematic*, QMouseEvent*);
+  void MReleaseMoveText(Schematic*, QMouseEvent*);
+  void MReleaseZoomIn(Schematic*, QMouseEvent*);
+
+  void paintElementsScheme(Schematic*);
+  void rotateElements(Schematic*, int&, int&);
+  void moveElements(Schematic*, int&, int&);
+  void moveElements(Q3PtrList<Element>*, int, int);
+  void endElementMoving(Schematic*, Q3PtrList<Element>*);
+  void rightPressMenu(Schematic*, QMouseEvent*, float, float);
+};
+
+#endif
+/***************************************************************************
+                                 node.h
+                                --------
+    begin                : Sat Sep 20 2003
+    copyright            : (C) 2003 by Michael Margraf
+    email                : michael.margraf@alumni.tu-berlin.de
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+
+#ifndef NODE_H
+#define NODE_H
+
+#include "element.h"
+
+#include <Q3PtrList>
+
+class ViewPainter;
+class WireLabel;
+class QPainter;
+
+
+class Node : public Conductor {
+public:
+  Node(int, int);
+ ~Node();
+
+  void  paint(ViewPainter*);
+  bool  getSelected(int, int);
+  void  setName(const QString&, const QString&, int x_=0, int y_=0);
+
+  Q3PtrList<Element> Connections;
+  QString Name;  // node name used by creation of netlist
+  QString DType; // type of node (used by digital files)
+  int State;	 // remember some things during some operations
+};
+
+#endif
+/***************************************************************************
+    copyright            : (C) 2010 by Michael Margraf
+    email                : michael.margraf@alumni.tu-berlin.de
+ ***************************************************************************/
+
+#ifndef OCTAVE_WINDOW_H
+#define OCTAVE_WINDOW_H
+
+#include <QWidget>
+#include <QProcess>
+#include <QStringList>
+#include <QKeyEvent>
+#include <QDockWidget>
+#include <QTextEdit>
+#include <QLineEdit>
+
+
+class OctaveWindow : public QWidget {
+  Q_OBJECT
+public:
+  OctaveWindow(QDockWidget*);
+ ~OctaveWindow();
+
+  QSize sizeHint();
+  bool startOctave();
+  void runOctaveScript(const QString&);
+  void sendCommand(const QString&);
+  void adjustDirectory();
+
+private slots:
+  void slotDisplayMsg();
+  void slotDisplayErr();
+  void slotOctaveEnded(int status);
+  void slotSendCommand();
+
+protected:
+  bool eventFilter(QObject *obj, QEvent *event);
+
+private:
+  QTextEdit *output;
+  QProcess octProcess;
+  QLineEdit *input;
+  QStringList cmdHistory;
+  int histPosition;
+};
+
+#endif
+/***************************************************************************
+                                   qucs.h
+                                  --------
+    begin                : Thu Aug 28 2003
+    copyright            : (C) 2003 by Michael Margraf
+    email                : michael.margraf@alumni.tu-berlin.de
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+
+#ifndef QUCS_H
+#define QUCS_H
+
+#include <QtGui>
+//#include <Q3MainWindow>
+#include <QMainWindow>
+#include <QString>
+#include <QDir>
+//Added by qt3to4:
+#include <QLabel>
+#include <Q3PtrList>
+//#include <Q3PopupMenu>
+#include <QMouseEvent>
+#include <QCloseEvent>
+#include <Q3ScrollView>
+#include <QMenu>
+#include <QToolBar>
+#include <QAction>
+#include <QTabWidget>
+#include <QDockWidget>
+//#include <QListWidget>
+#include <QSettings>
+#include <qtextcodec.h>
+#define GB2312(string) QTextCodec::codecForName("gb2312")->toUnicode((string))
+
+class QucsDoc;
+class Schematic;
+class SimMessage;
+class MouseActions;
+class SearchDialog;
+class QLabel;
+class QAction;
+class QPrinter;
+class QLineEdit;
+class QComboBox;
+class QTabWidget;
+class Q3ListView;
+class Q3ListViewItem;
+class OctaveWindow;
+class MessageDock;
+
+typedef bool (Schematic::*pToggleFunc) ();
+typedef void (MouseActions::*pMouseFunc) (Schematic*, QMouseEvent*);
+typedef void (MouseActions::*pMouseFunc2) (Schematic*, QMouseEvent*, float, float);
+
+class QucsApp : public QMainWindow {
+  Q_OBJECT
+public:
+  QucsApp();
+ ~QucsApp();
+  QSettings *qucsSettings;
+  bool closeAllFiles();
+  static int testFile(const QString&);
+  bool gotoPage(const QString&);   // to load a document
+  QucsDoc *getDoc(int No=-1);
+  QucsDoc* findDoc (QString, int * Pos = 0);
+  QString fileType (const QString&);
+
+  QString ProjName;   // name of the project, that is open
+  //QList<QString> qucsPathList; // the qucs path list for subcircuits and spice files
+  QHash<QString,QString> schNameHash; // QHash for the schematic files lookup
+  QStringList spiceExtensions; // List of extensions used for spice files
+  QString getSpiceFileFilter (void); // generate file filter string for spice files
+  QHash<QString,QString> spiceNameHash; // QHash for the spice files lookup
+
+  QLineEdit *editText;  // for edit component properties on schematic
+  SearchDialog *SearchDia;  // global in order to keep values
+
+  // current mouse methods
+  void (MouseActions::*MouseMoveAction) (Schematic*, QMouseEvent*);
+  void (MouseActions::*MousePressAction) (Schematic*, QMouseEvent*, float, float);
+  void (MouseActions::*MouseDoubleClickAction) (Schematic*, QMouseEvent*);
+  void (MouseActions::*MouseReleaseAction) (Schematic*, QMouseEvent*);
+
+protected:
+  void closeEvent(QCloseEvent*);
+
+public slots:
+  void slotFileNew();     // generate a new schematic in the view TabBar
+  void slotTextNew();     // generate a new text editor in the view TabBar
+  void slotFileOpen();    // open a document
+  void slotFileSave();    // save a document
+  void slotFileSaveAs();  // save a document under a different filename
+  void slotFileSaveAll(); // save all open documents
+  void slotFileClose();   // close the actual file
+  void slotFileExamples();   // show the examples in a file browser
+  void slotHelpTutorial();   // Open a pdf tutorial
+  void slotHelpReport();   // Open a pdf report
+  void slotHelpTechnical();   // Open a pdf technical document
+  void slotFileClose (int); // close the file with given index
+  void slotSymbolEdit();  // edit the symbol for the schematic
+  void slotFileSettings();// open dialog to change file settings
+  void slotFilePrint();   // print the current file
+  void slotFilePrintFit();// Print and fit to page
+  void slotFileQuit();    // exits the application
+  void slotEditCut();     // put marked object into clipboard and delete it
+  void slotEditCopy();    // put the marked object into the clipboard
+  void slotApplSettings();// open dialog to change application settings
+  void slotRefreshSchPath(); // refresh the schematic path hash
+
+  void slotIntoHierarchy();
+  void slotPopHierarchy();
+
+  void slotShowAll();
+  void slotShowOne();
+  void slotZoomOut(); // Zoom out by 2
+
+  void slotToPage();
+  void slotSelectComponent(QListWidgetItem*);
+
+  void slotEditElement();
+  void slotPowerMatching();
+  void slot2PortMatching();
+
+  // for menu that appears by right click in content ListView
+  void slotShowContentMenu(const QPoint &);
+  //void slotShowContentMenu(Q3ListViewItem*, const QPoint&, int);
+  void slotCMenuOpen();
+  void slotCMenuCopy();
+  void slotCMenuRename();
+  void slotCMenuDelete();
+  void slotCMenuDelGroup();
+  void slotCMenuInsert();
+
+private slots:
+  void slotMenuOpenProject();
+  void slotOpenProject(QListWidgetItem*);
+  void slotMenuCloseProject();
+  void slotSelectSubcircuit(QTreeWidgetItem*);
+  void slotSelectLibComponent(QTreeWidgetItem*);
+  void slotOpenContent(QTreeWidgetItem*);
+  void slotSetCompView(int);
+  void slotProjNewButt();
+  void slotProjOpenButt();
+  void slotProjDelButt();
+  void slotMenuDelProject();
+  void slotChangeView(QWidget*);
+  void slotSimulate();
+  void slotAfterSimulation(int, SimMessage*);
+  void slotDCbias();
+  void slotChangePage(QString&, QString&);
+  void slotNextTab();
+  void slotHideEdit();
+signals:
+  void signalKillEmAll();
+
+public:
+  MouseActions *view;
+  QTabWidget *DocumentTab;
+  QListWidget *CompComps;
+  QTreeWidget *libTreeWidget;
+
+  // menu appearing by right mouse button click on content listview
+  QMenu *ContentMenu;
+
+  // corresponding actions
+  QAction *ActionCMenuOpen, *ActionCMenuCopy, *ActionCMenuRename, *ActionCMenuDelete, *ActionCMenuDelGroup, *ActionCMenuInsert;
+
+  QAction *fileNew, *textNew, *fileNewDpl, *fileOpen, *fileSave, *fileSaveAs,
+          *fileSaveAll, *fileClose, *fileExamples, *fileSettings, *filePrint, *fileQuit,
+          *projNew, *projOpen, *projDel, *projClose, *applSettings, *refreshSchPath,
+          *editCut, *editCopy, *magAll, *magOne, *magMinus, *filePrintFit,
+          *symEdit, *intoH, *popH, *simulate, *dpl_sch, *undo, *redo, *dcbias;
+
+  QAction *exportAsImage;
+
+  QAction *activeAction;    // pointer to the action selected by the user
+
+private:
+  QPrinter  *Printer; // printer is global (to remember the user settings)
+
+// ********* Widgets on the main area **********************************
+  QDockWidget     *dock;
+  QTabWidget      *TabView;
+  QDockWidget     *octDock;
+  OctaveWindow    *octave;
+  MessageDock     *messageDock;
+
+  QListWidget     *Projects;
+  QTreeWidget     *Content;
+  QTreeWidgetItem *ConSchematics, *ConSources, *ConDisplays, *ConDatasets,
+                  *ConOthers, *ConVerilog, *ConVerilogA, *ConOctave;
+
+
+  QComboBox       *CompChoose;
+
+// ********** Properties ************************************************
+  Q3PtrList<QString> HierarchyHistory; // keeps track of "go into subcircuit"
+  QString  QucsFileFilter;
+
+// ********** Methods ***************************************************
+  void initView();
+  void initCursorMenu();
+  void initContentListView();
+
+  void printCurrentDocument(bool);
+  bool saveFile(QucsDoc *Doc=0);
+  bool saveAs();
+  void openProject(const QString&, const QString&);
+  bool deleteProject(const QString&, const QString&);
+  void updatePortNumber(QucsDoc*, int);
+  void fillComboBox(bool);
+  void switchSchematicDoc(bool);
+  void switchEditMode(bool);
+  void changeSchematicSymbolMode(Schematic*);
+  bool deleteDirectoryContent(QDir& Dir);
+  bool isTextDocument(QWidget *);
+  void closeFile(int);
+
+  void updateRecentFilesList(QString s);
+  void successExportMessages(bool ok);
+  void fillLibrariesTreeView (void);
+
+public:
+
+  void readProjects();
+  void readProjectFiles();
+  void updatePathList(void); // update the list of paths, pruning non-existing paths
+  void updatePathList(QStringList);
+  void updateSchNameHash(void); // maps all schematic files in the path list
+  void updateSpiceNameHash(void); // maps all spice files in the path list
+
+/* **************************************************
+   *****  The following methods are located in  *****
+   *****  "qucs_init.cpp".                      *****
+   ************************************************** */
+
+public slots:
+  void slotShowWarnings();
+  void slotResetWarnings();
+  void printCursorPosition(int, int);
+
+private slots:
+  void slotViewToolBar(bool toggle);    // toggle the toolbar
+  void slotViewStatusBar(bool toggle);  // toggle the statusbar
+  void slotViewBrowseDock(bool toggle); // toggle the dock window
+  void slotViewOctaveDock(bool); // toggle the dock window
+  void slotToggleOctave(bool);
+  void slotToggleDock(bool);
+  void slotHelpAbout();     // shows an about dialog
+  void slotHelpAboutQt();   // shows the standard about dialog for Qt
+
+private:
+  void initActions();    // initializes all QActions of the application
+  void initMenuBar();    // creates the menu_bar and inserts the menuitems
+  void initToolBar();    // creates the toolbars
+  void initStatusBar();  // setup the statusbar
+
+  QAction *helpAboutApp, *helpAboutQt, *viewToolBar, *viewStatusBar,
+          *viewBrowseDock, *viewOctaveDock;
+
+  // menus contain the items of their menubar
+  QMenu *fileMenu, *editMenu, *insMenu, *projMenu, *simMenu, *viewMenu,
+             *helpMenu, *alignMenu, *toolMenu, *recentfilesMenu;
+
+  // submenus for the PDF documents
+  QMenu *helpTechnical, *helpReport, *helpTutorial;
+
+  QToolBar *fileToolbar, *editToolbar, *viewToolbar, *workToolbar;
+
+  // Shortcuts for scolling schematic / TextEdit
+  // This is rather cumbersome -> Make this with a QScrollView instead??
+  QShortcut *cursorUp, *cursorLeft, *cursorRight, *cursorDown;
+
+  QLabel *WarningLabel, *PositionLabel;  // labels in status bar
+
+
+
+/* **************************************************
+   *****  The following methods are located in  *****
+   *****  "qucs_actions.cpp".                   *****
+   ************************************************** */
+
+public:
+  void editFile(const QString&);
+
+  QAction *insWire, *insLabel, *insGround, *insPort, *insEquation, *magPlus,
+          *editRotate, *editMirror, *editMirrorY, *editPaste, *select,
+          *editActivate, *wire, *editDelete, *setMarker, *onGrid, *moveText,
+          *helpIndex, *helpGetStart, *callEditor, *callFilter, *callLine,
+          *showMsg, *showNet, *alignTop, *alignBottom, *alignLeft, *alignRight,
+          *distrHor, *distrVert, *selectAll, *callLib, *callMatch, *changeProps,
+          *addToProj, *editFind, *editFindAgain, *insEntity, *selectMarker,
+          *createLib, *importData, *graph2csv, *createPkg, *extractPkg,
+          *callAtt, *callRes, *centerHor, *centerVert, *loadModule, *buildModule;
+
+public slots:
+  void slotEditRotate(bool);  // rotate the selected items
+  void slotEditMirrorX(bool); // mirror the selected items about X axis
+  void slotEditMirrorY(bool); // mirror the selected items about Y axis
+  void slotEditPaste(bool);   // paste the clipboard into the document
+  void slotEditDelete(bool);  // delete the selected items
+  void slotInsertEquation(bool);
+  void slotInsertGround(bool);
+  void slotInsertPort(bool);
+  void slotInsertEntity();
+  void slotSetWire(bool);
+  void slotEscape();
+  void slotSelect(bool);
+  void slotEditActivate(bool);
+  void slotInsertLabel(bool);
+  void slotSetMarker(bool);
+  void slotOnGrid(bool);      // set selected elements on grid
+  void slotMoveText(bool);    // move property text of components
+  void slotZoomIn(bool);
+  void slotEditUndo();    // makes the last operation undone
+  void slotEditRedo();    // makes the last undo undone
+  void slotEditFind();    // searches for a piece of text
+  void slotEditFindAgain();  // searches for the same piece of text again
+  void slotAlignTop();    // align selected elements with respect to top
+  void slotAlignBottom(); // align selected elements with respect to bottom
+  void slotAlignLeft();   // align selected elements with respect to left
+  void slotAlignRight();  // align selected elements with respect to right
+  void slotDistribHoriz();// distribute horizontally selected elements
+  void slotDistribVert(); // distribute vertically selected elements
+  void slotCenterHorizontal();
+  void slotCenterVertical();
+  void slotSelectAll();
+  void slotSelectMarker();
+  void slotShowLastMsg();
+  void slotShowLastNetlist();
+  void slotCallEditor();
+  void slotCallFilter();
+  void slotCallLine();
+  void slotCallLibrary();
+  void slotCallMatch();
+  void slotCallAtt();
+  void slotCallRes();
+  void slotHelpIndex();       // shows a HTML docu: Help Index
+  void slotGettingStarted();  // shows a HTML docu: Getting started
+  void slotChangeProps();
+  void slotAddToProject();
+  void slotApplyCompText();
+  void slotOpenRecent(int num);
+  void slotSaveDiagramToGraphicsFile();
+  void slotSaveSchematicToGraphicsFile(bool diagram = false);
+
+private slots:
+  void slotCursorLeft();
+  void slotCursorRight();
+  void slotCursorUp();
+  void slotCursorDown();
+  void slotResizePropEdit(const QString&);
+  void slotCreateLib();
+  void slotImportData();
+  void slotExportGraphAsCsv();
+  void slotCreatePackage();
+  void slotExtractPackage();
+  void slotUpdateRecentFiles();
+  void slotClearRecentFiles();
+  void slotLoadModule();
+  void slotBuildModule();
+  
+private:
+  void showHTML(const QString&);
+  bool performToggleAction(bool, QAction*, pToggleFunc, pMouseFunc, pMouseFunc2);
+  friend class SaveDialog;
+  QString lastExportFilename;
+};
+
+#endif /* QUCS_H */
+/***************************************************************************
+                                 qucsdoc.h
+                                -----------
+    begin                : Wed Sep 3 2003
+    copyright            : (C) 2003 by Michael Margraf
+    email                : michael.margraf@alumni.tu-berlin.de
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+
+#ifndef QUCSDOC_H
+#define QUCSDOC_H
+
+#include <QString>
+#include <QDateTime>
+
+class QucsApp;
+class QPrinter;
+class QPainter;
+
+extern const char *smallsave_xpm[];// icon for unsaved files (diskette)
+extern const char *empty_xpm[];    // provides same height than "smallsave_xpm"
+
+
+class QucsDoc {
+public: 
+  QucsDoc(QucsApp*, const QString&);
+  virtual ~QucsDoc() {};
+
+  virtual void  setName(const QString&) {};
+  virtual bool  load() { return true; };
+  virtual int   save() { return 0; };
+  virtual void  print(QPrinter*, QPainter*, bool, bool) {};
+  virtual void  becomeCurrent(bool) {};
+  virtual float zoomBy(float) { return 1.0; };
+  virtual void  showAll() {};
+  virtual void  showNoZoom() {};
+
+  static QString fileSuffix (const QString&);
+  QString fileSuffix (void);
+  static QString fileBase (const QString&);
+  QString fileBase (void);
+
+  QString DocName;
+  QString DataSet;     // name of the default dataset
+  QString DataDisplay; // name of the default data display
+  QString Script;
+  QString SimTime;     // used for VHDL simulation, but stored in datadisplay
+  QDateTime lastSaved;
+
+  float Scale;
+  QucsApp *App;
+  bool DocChanged;
+  bool SimOpenDpl;   // open data display after simulation ?
+  bool SimRunScript; // run script after simulation ?
+  int  showBias;     // -1=no, 0=calculation running, >0=show DC bias points
+  bool GridOn;
+  int  tmpPosX, tmpPosY;
+};
+
+#endif
+//{{NO_DEPENDENCIES}}
+// Microsoft Visual C++ generated include file.
+// Used by qucs.rc
+
+// 新对象的下一组默认值
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_NEXT_RESOURCE_VALUE        101
+#define _APS_NEXT_COMMAND_VALUE         40001
+#define _APS_NEXT_CONTROL_VALUE         1001
+#define _APS_NEXT_SYMED_VALUE           101
+#endif
+#endif
+/***************************************************************************
+                               schematic.h
+                              -------------
+    begin                : Sat Mar 11 2006
+    copyright            : (C) 2006 by Michael Margraf
+    email                : michael.margraf@alumni.tu-berlin.de
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+
+#ifndef SCHEMATIC_H
+#define SCHEMATIC_H
+#include <QtGui>
+#include "wire.h"
+#include "diagrams/diagram.h"
+#include "paintings/painting.h"
+#include "components/component.h"
+#include "qucsdoc.h"
+//Added by qt3to4:
+#include <QTextStream>
+#include <QDragMoveEvent>
+#include <QDropEvent>
+#include <QDragLeaveEvent>
+#include <QWheelEvent>
+#include <QMouseEvent>
+#include <QDragEnterEvent>
+#include "viewpainter.h"
+#include "node.h"
+
+#include <Q3ScrollView>
+#include <QPainter>
+#include <Q3PtrList>
+#include <QFile>
+#include <QStringList>
+
+#include <qtimer.h> // added by xuliang to support QTimer for live show
+
+class Q3TextEdit;
+class QTextEdit;
+
+// digital signal data
+struct DigSignal {
+  DigSignal() { Name=""; Type=""; }
+  DigSignal(const QString& _Name, const QString& _Type = "")
+    : Name(_Name), Type(_Type) {}
+  QString Name; // name
+  QString Type; // type of signal
+};
+typedef QMap<QString, DigSignal> DigMap;
+typedef enum {_NotRop, _Rect, _Line, _Ellipse, _Arc, _DotLine, _Translate, _Scale}PE;
+typedef struct {PE pe; int x1; int y1;int x2;int y2;int a; int b; bool PaintOnViewport;}PostedPaintEvent;
+
+// subcircuit, vhdl, etc. file structure
+struct SubFile {
+  SubFile() { Type=""; File=""; PortTypes.clear(); }
+  SubFile(const QString& _Type, const QString& _File)
+    : Type(_Type), File(_File) { PortTypes.clear(); }
+  QString Type;          // type of file
+  QString File;          // file name identifier
+  QStringList PortTypes; // data types of in/out signals
+};
+typedef QMap<QString, SubFile> SubMap;
+
+class Schematic : public Q3ScrollView, public QucsDoc {
+  Q_OBJECT
+public:
+  Schematic(QucsApp*, const QString&);
+ ~Schematic();
+
+  void setName(const QString&);
+  void setChanged(bool, bool fillStack=false, char Op='*');
+  void paintGrid(ViewPainter*, int, int, int, int);
+  void print(QPrinter*, QPainter*, bool, bool);
+
+  void paintSchToViewpainter(ViewPainter* p, bool printAll, bool toImage, int screenDpiX=96, int printerDpiX=300);
+
+  void PostPaintEvent(PE pe, int x1=0, int y1=0, int x2=0, int y2=0, int a=0, int b=0,bool PaintOnViewport=false);
+
+  float textCorr();
+  void  sizeOfAll(int&, int&, int&, int&);
+  bool  rotateElements();
+  bool  mirrorXComponents();
+  bool  mirrorYComponents();
+  void  setOnGrid(int&, int&);
+  bool  elementsOnGrid();
+
+  float zoom(float);
+  float zoomBy(float);
+  void  showAll();
+  void  showNoZoom();
+  void  enlargeView(int, int, int, int);
+  void  switchPaintMode();
+  int   adjustPortNumbers();
+  void  reloadGraphs();
+  bool  createSubcircuitSymbol();
+
+  QString copySelected(bool);
+  bool    paste(QTextStream*, Q3PtrList<Element>*);
+  bool    load();
+  int     save();
+  int     saveSymbolCpp (void);
+  int     saveSymbolJSON (void);
+  void    becomeCurrent(bool);
+  bool    undo();
+  bool    redo();
+
+  bool scrollUp(int);
+  bool scrollDown(int);
+  bool scrollLeft(int);
+  bool scrollRight(int);
+  
+  // The pointers points to the current lists, either to the schematic
+  // elements "Doc..." or to the symbol elements "SymbolPaints".
+  Q3PtrList<Wire>      *Wires, DocWires;
+  Q3PtrList<Node>      *Nodes, DocNodes;
+  Q3PtrList<Diagram>   *Diagrams, DocDiags;
+  Q3PtrList<Painting>  *Paintings, DocPaints;
+  Q3PtrList<Component> *Components, DocComps;
+
+  Q3PtrList<Painting>  SymbolPaints;  // symbol definition for subcircuit
+
+  QList<PostedPaintEvent>   PostedPaintEvents;
+  bool symbolMode;  // true if in symbol painting mode
+
+
+  int GridX, GridY;
+  int ViewX1, ViewY1, ViewX2, ViewY2;  // size of the document area
+  int UsedX1, UsedY1, UsedX2, UsedY2;  // document area used by elements
+
+  int showFrame;
+  QString Frame_Text0, Frame_Text1, Frame_Text2, Frame_Text3;
+
+  // Two of those data sets are needed for Schematic and for symbol.
+  // Which one is in "tmp..." depends on "symbolMode".
+  float tmpScale;
+  int tmpViewX1, tmpViewY1, tmpViewX2, tmpViewY2;
+  int tmpUsedX1, tmpUsedY1, tmpUsedX2, tmpUsedY2;
+
+  Q3PtrList<QString> UndoStack;
+  Q3PtrList<QString> UndoSymbol;    // undo stack for circuit symbol
+
+  QFileInfo getFileInfo (void) { return FileInfo; }
+
+  QTimer *liveTimer; // added by xuliang to support live show
+  int richPointNum; // one schematic uses one common point number, int array can be used later to support multiple timer
+  int richDiagNum; // always, the diagram with richDiagNum = 0 has the right to update richPointNum
+  Diagram *liveTimerMaster;
+
+protected:
+  bool sizeOfFrame(int&, int&);
+  void paintFrame(ViewPainter*);
+
+  // overloaded function to get actions of user
+  void drawContents(QPainter*, int, int, int, int);
+  void contentsMouseMoveEvent(QMouseEvent*);
+  void contentsMousePressEvent(QMouseEvent*);
+  void contentsMouseDoubleClickEvent(QMouseEvent*);
+  void contentsMouseReleaseEvent(QMouseEvent*);
+  void contentsWheelEvent(QWheelEvent*);
+  void contentsDropEvent(QDropEvent*);
+  void contentsDragEnterEvent(QDragEnterEvent*);
+  void contentsDragLeaveEvent(QDragLeaveEvent*);
+  void contentsDragMoveEvent(QDragMoveEvent*);
+  void slotLabelDoubleClicked(/*QMouseEvent * */);
+
+protected slots:
+  void slotScrollUp();
+  void slotScrollDown();
+  void slotScrollLeft();
+  void slotScrollRight();
+  void slotLivePaint();
+
+private:
+  bool dragIsOkay;
+  QFileInfo FileInfo;
+
+/* ********************************************************************
+   *****  The following methods are in the file                   *****
+   *****  "schematic_element.cpp". They only access the QPtrList  *****
+   *****  pointers "Wires", "Nodes", "Diagrams", "Paintings" and  *****
+   *****  "Components".                                           *****
+   ******************************************************************** */
+
+public:
+  Node* insertNode(int, int, Element*);
+  Node* selectedNode(int, int);
+
+  int   insertWireNode1(Wire*);
+  bool  connectHWires1(Wire*);
+  bool  connectVWires1(Wire*);
+  int   insertWireNode2(Wire*);
+  bool  connectHWires2(Wire*);
+  bool  connectVWires2(Wire*);
+  int   insertWire(Wire*);
+  void  selectWireLine(Element*, Node*, bool);
+  Wire* selectedWire(int, int);
+  Wire* splitWire(Wire*, Node*);
+  bool  oneTwoWires(Node*);
+  void  deleteWire(Wire*);
+
+  Marker* setMarker(int, int);
+  void    markerLeftRight(bool, Q3PtrList<Element>*);
+  void    markerUpDown(bool, Q3PtrList<Element>*);
+
+  Element* selectElement(float, float, bool, int *index=0);
+  void     deselectElements(Element*);
+  int      selectElements(int, int, int, int, bool);
+  void     selectMarkers();
+  void     newMovingWires(Q3PtrList<Element>*, Node*, int);
+  int      copySelectedElements(Q3PtrList<Element>*);
+  bool     deleteElements();
+  bool     aligning(int);
+  bool     distributeHorizontal();
+  bool     distributeVertical();
+
+  void       setComponentNumber(Component*);
+  void       insertRawComponent(Component*, bool noOptimize=true);
+  void       recreateComponent(Component*);
+  void       insertComponent(Component*);
+  void       activateCompsWithinRect(int, int, int, int);
+  bool       activateSpecifiedComponent(int, int);
+  bool       activateSelectedComponents();
+  void       setCompPorts(Component*);
+  Component* selectCompText(int, int, int&, int&);
+  Component* searchSelSubcircuit();
+  Component* selectedComponent(int, int);
+  void       deleteComp(Component*);
+
+  void     oneLabel(Node*);
+  int      placeNodeLabel(WireLabel*);
+  Element* getWireLabel(Node*);
+  void     insertNodeLabel(WireLabel*);
+  void     copyLabels(int&, int&, int&, int&, Q3PtrList<Element>*);
+
+  Painting* selectedPainting(float, float);
+  void      copyPaintings(int&, int&, int&, int&, Q3PtrList<Element>*);
+
+  void      getSchWidthAndHeight(int& w, int& h, int& xmin_, int& ymin_); // calculates schematic
+  void      getSelAreaWidthAndHeight(int &wsel, int& hsel, int& xmin_sel_, int& ymin_sel_); // and selected area width and height in pixels
+
+private:
+  void insertComponentNodes(Component*, bool);
+  int  copyWires(int&, int&, int&, int&, Q3PtrList<Element>*);
+  int  copyComponents(int&, int&, int&, int&, Q3PtrList<Element>*);
+  void copyComponents2(int&, int&, int&, int&, Q3PtrList<Element>*);
+  bool copyComps2WiresPaints(int&, int&, int&, int&, Q3PtrList<Element>*);
+  int  copyElements(int&, int&, int&, int&, Q3PtrList<Element>*);
+
+
+/* ********************************************************************
+   *****  The following methods are in the file                   *****
+   *****  "schematic_file.cpp". They only access the QPtrLists    *****
+   *****  and their pointers. ("DocComps", "Components" etc.)     *****
+   ******************************************************************** */
+
+public:
+  bool createLibNetlist(QTextStream*, QTextEdit*, int);
+  bool createSubNetlist(QTextStream *, int&, QStringList&, QTextEdit*, int);
+  void createSubNetlistPlain(QTextStream*, QTextEdit*, int);
+  int  prepareNetlist(QTextStream&, QStringList&, QTextEdit*);
+  QString createNetlist(QTextStream&, int);
+  bool loadDocument();
+  void highlightWireLabels (void);
+
+private:
+  int  saveDocument();
+
+  bool loadProperties(QTextStream*);
+  void simpleInsertComponent(Component*);
+  bool loadComponents(QTextStream*, Q3PtrList<Component> *List=0);
+  void simpleInsertWire(Wire*);
+  bool loadWires(QTextStream*, Q3PtrList<Element> *List=0);
+  bool loadDiagrams(QTextStream*, Q3PtrList<Diagram>*);
+  bool loadPaintings(QTextStream*, Q3PtrList<Painting>*);
+  bool loadIntoNothing(QTextStream*);
+
+  QString createClipboardFile();
+  bool    pasteFromClipboard(QTextStream *, Q3PtrList<Element>*);
+
+  QString createUndoString(char);
+  bool    rebuild(QString *);
+  QString createSymbolUndoString(char);
+  bool    rebuildSymbol(QString *);
+
+  static void createNodeSet(QStringList&, int&, Conductor*, Node*);
+  void throughAllNodes(bool, QStringList&, int&);
+  void propagateNode(QStringList&, int&, Node*);
+  void collectDigitalSignals(void);
+  bool giveNodeNames(QTextStream *, int&, QStringList&, QTextEdit*, int);
+  void beginNetlistDigital(QTextStream &);
+  void endNetlistDigital(QTextStream &);
+  bool throughAllComps(QTextStream *, int&, QStringList&, QTextEdit *, int);
+
+  DigMap Signals; // collecting node names for VHDL signal declarations
+  QStringList PortTypes;
+
+public:
+  bool isAnalog;
+  bool isVerilog;
+  bool creatingLib;
+};
+
+#endif
+#ifndef _LABEL_H_
+#define _LABEL_H_
+#include <qlabel.h>
+#include <QWidget> 
+#include "qcoreevent.h"
+#include "qevent.h"
+#include "qtimer.h"
+
+class swieeLabel:public QLabel
+{
+	Q_OBJECT
+public:
+	explicit swieeLabel(QWidget *parent = 0);
+	explicit swieeLabel(char *, QWidget *parent);
+	~swieeLabel();
+protected:
+	void mousePressEvent(QMouseEvent *event);
+	void mouseReleaseEvent(QMouseEvent *event);
+private:
+	bool mouse_press; 
+	int clicked_num;
+	QTimer* timer;
+private slots:
+	void SlotTimerOut();
+signals:  
+	void swieeLabelClicked();  
+	void swieeLabelDoubleClicked();  
+};
+
+
+#endif //_LABEL_H_/***************************************************************************
+                                syntax.h
+                               ----------
+    begin                : Sat Mar 11 2006
+    copyright            : (C) 2006 by Michael Margraf
+    email                : michael.margraf@alumni.tu-berlin.de
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+
+#ifndef SYNTAX_H
+#define SYNTAX_H
+
+#include <QtCore>
+#include <QtGui>
+
+#include "textdoc.h"
+//#include "main.h"
+
+enum language_type {
+  LANG_NONE = 0,
+  LANG_VHDL,
+  LANG_VERILOG,
+  LANG_VERILOGA,
+  LANG_OCTAVE,
+};
+
+enum textstate_type {
+  STATE_NONE = 0,
+  STATE_COMMENT = 100,
+};
+
+class SyntaxHighlighter : public QSyntaxHighlighter {
+public:
+ SyntaxHighlighter(TextDoc*);
+ virtual ~SyntaxHighlighter();
+
+ void setLanguage(int);
+ void highlightBlock(const QString&);
+
+private:
+  int language;
+  TextDoc *Doc;
+
+  struct HighlightingRule
+     {
+         QRegExp pattern;
+         QTextCharFormat format;
+     };
+  
+  QVector<HighlightingRule> highlightingRules;
+
+  QTextCharFormat reservedWordFormat;
+  QTextCharFormat unitFormat;
+  QTextCharFormat datatypeFormat;
+  QTextCharFormat directiveFormat;
+  QTextCharFormat functionFormat;
+  QTextCharFormat commentFormat;
+
+};
+
+#endif
+/***************************************************************************
+                                textdoc.h
+                               -----------
+Copyright (C) 2006 by Michael Margraf <michael.margraf@alumni.tu-berlin.de>
+Copyright (C) 2014 by Guilherme Brondani Torri <guitorri@gmail.com>
+
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+
+#ifndef TEXTDOC_H
+#define TEXTDOC_H
+
+#include <QPlainTextEdit>
+#include <QFont>
+
+#include "qucsdoc.h"
+
+/*!
+ * \file textdoc.h
+ * \brief Definition of the TextDoc class.
+ */
+
+class SyntaxHighlighter;
+
+extern const char *smallsave_xpm[];// icon for unsaved files (diskette)
+extern const char *empty_xpm[];    // provides same height than "smallsave_xpm"
+
+// device type flags
+#define DEV_BJT      0x0001
+#define DEV_MOS      0x0002
+#define DEV_MASK_DEV 0x00FF
+#define DEV_DIG      0x0100
+#define DEV_ANA      0x0200
+#define DEV_ALL      0x0300
+#define DEV_MASK_TYP 0xFF00
+#define DEV_DEF      0x0200 // default value
+
+/*!
+ * \brief The TextDoc class definition
+ */
+class TextDoc : public QPlainTextEdit, public QucsDoc {
+  Q_OBJECT
+public:
+  TextDoc (QucsApp *, const QString&);
+ ~TextDoc ();
+
+  void  setName (const QString&);
+  bool  load ();
+  int   save ();
+  float zoomBy (float);
+  void  showNoZoom ();
+  void  becomeCurrent (bool);
+  bool  loadSimulationTime (QString&);
+  void  commentSelected ();
+  void  insertSkeleton ();
+  void  setLanguage (int);
+  void  setLanguage (const QString&);
+  QString getModuleName (void);
+
+
+  QFont TextFont;
+
+  bool simulation;   // simulation or module
+  QString Library;   // library this document belongs to
+  QString Libraries; // libraries to be linked with
+  QString ShortDesc; // icon description
+  QString LongDesc;  // component description
+  QString Icon;      // icon file
+  bool recreate;     // recreate output file
+  int devtype;       // device type
+
+  bool SetChanged;
+  int language;
+
+  bool loadSettings (void);
+  bool saveSettings (void);
+  void refreshLanguage(void);
+
+  QMenu* createStandardContextMenu(const QPoint&);
+
+public slots:
+  void slotCursorPosChanged ();
+  void slotSetChanged ();
+
+private:
+  SyntaxHighlighter * syntaxHighlight;
+
+private slots:
+   void highlightCurrentLine();
+};
+
+#endif
+/***************************************************************************
+                               viewpainter.h
+                              ---------------
+    begin                : Tue Oct 05 2004
+    copyright            : (C) 2004 by Michael Margraf
+    email                : michael.margraf@alumni.tu-berlin.de
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+
+#ifndef VIEWPAINTER_H
+#define VIEWPAINTER_H
+
+#include <QPainter>
+
+#define TO_INT(f)   (f > 0.0 ? int(f + 0.5) : int(f - 0.5))
+
+/* This class is neccessary because scaled fonts looks very ungly.
+   Avoiding this is unfortunately not easy.
+   This class scales the font point size instead of the font glyphes.
+   But this has the disadvantage, that the text size does not increase
+   equally with the rest of the drawing. We therefore must compute
+   some thing anew each time the paint function is called. The class
+   "ViewPainter" supports this. */
+
+class ViewPainter {
+public:
+  ViewPainter(QPainter *p=0);
+ ~ViewPainter();
+
+  void init(QPainter*, float, int, int, int, int, float FontScale_=0.0,
+	    float PrintScale_=1.0);
+  void map(int, int, int&, int&);
+  void drawPoint(int, int);
+  void drawLine (int, int, int, int);
+  void drawLines(int, int, float*);
+  void drawRect (int, int, int, int);
+  void drawRectD(int, int, int, int);
+  void drawRoundRect(int, int, int, int);
+  void drawEllipse(int, int, int, int);
+  void drawArc(int, int, int, int, int, int);
+  int  drawText(const QString&, int, int, int *Height=0);
+  int  drawTextMapped(const QString&, int, int, int *Height=0);
+  void fillRect(int, int, int, int, const QColor&);
+  void eraseRect(int, int, int, int);
+  void drawResizeRect(int, int);
+  void drawStarSymbols(int, int, float*);
+  void drawCircleSymbols(int, int, float*);
+  void drawArrowSymbols(int, int, float*);
+  void drawOneCircleSymbol(int, int, float*, int);
+
+  QPainter *Painter;
+  float Scale, FontScale, PrintScale, DX , DY;
+  int LineSpacing;   // updated by init(), just for info
+};
+
+#endif
+/***************************************************************************
+                                  wire.h
+                                 --------
+    begin                : Wed Sep 3 2003
+    copyright            : (C) 2003 by Michael Margraf
+    email                : michael.margraf@alumni.tu-berlin.de
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+
+#ifndef WIRE_H
+#define WIRE_H
+
+#include "viewpainter.h"
+#include "element.h"
+#include "components/component.h"    // because of struct Port
+#include "wirelabel.h"
+
+#include <QPainter>
+#include <QString>
+#include <Q3PtrList>
+
+
+class Wire : public Conductor {
+public:
+  Wire(int _x1=0, int _y1=0, int _x2=0, int _y2=0, Node *n1=0, Node *n2=0);
+ ~Wire();
+
+  void paint(ViewPainter*);
+  void paintScheme(QPainter*);
+  void setCenter(int, int, bool relative=false);
+  void getCenter(int&, int&);
+  bool getSelected(int, int);
+  void setName(const QString&, const QString&, int delta_=0, int x_=0, int y_=0);
+
+  Node      *Port1, *Port2;
+
+  void    rotate();
+  QString save();
+  bool    load(const QString&);
+  bool    isHorizontal();
+};
+
+#endif
+/***************************************************************************
+                                wirelabel.h
+                               -------------
+    begin                : Sun Feb 29 2004
+    copyright            : (C) 2004 by Michael Margraf
+    email                : michael.margraf@alumni.tu-berlin.de
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
+
+#ifndef WIRELABEL_H
+#define WIRELABEL_H
+
+#include "element.h"
+#include "viewpainter.h"
+
+#include <QPainter>
+#include <QString>
+#include <Q3PtrList>
+
+class Wire;
+class Node;
+
+
+class WireLabel : public Element {
+public:
+  WireLabel(const QString& _Name=0, int _cx=0, int _cy=0,
+            int _x1=0, int _y1=0, int _Type=isNodeLabel);
+  ~WireLabel();
+
+  void paintScheme(QPainter *p);
+  void setCenter(int x, int y, bool relative=false);
+  bool getSelected(int, int);
+  void setName(const QString& Name_);
+  void setHighlighted (bool newval) { isHighlighted = newval; };
+
+
+  Conductor *pOwner;  // Wire or Node where label belongs to
+  QString Name, initValue;
+
+  void    paint(ViewPainter*);
+  void    rotate();
+  QString save();
+  bool    load(const QString& s);
+  bool    isHorizontal();
+
+private:
+  bool isHighlighted;
+
+};
+
+#endif
+
