@@ -300,8 +300,17 @@ void MouseActions::MMoveElement(Schematic *Doc, QMouseEvent *Event)
  * @param Doc
  * @param Event
  */
+//画线第二阶段模式
 void MouseActions::MMoveWire2(Schematic *Doc, QMouseEvent *Event)
 {
+	switch(Event->button()) 
+	{
+	case Qt::RightButton :
+
+		App->select->setChecked(true);
+		break;
+	}
+
   MAx2  = DOC_X_POS(Event->pos().x());
   MAy2  = DOC_Y_POS(Event->pos().y());
   Doc->setOnGrid(MAx2, MAy2);
@@ -325,8 +334,9 @@ void MouseActions::MMoveWire2(Schematic *Doc, QMouseEvent *Event)
  * @param Doc
  * @param Event
  */
+//点击划线按钮之后，鼠标上显示十字标尺线
 void MouseActions::MMoveWire1(Schematic *Doc, QMouseEvent *Event)
-{
+{	
   MAx3 = DOC_X_POS(Event->pos().x());
   MAy3 = DOC_Y_POS(Event->pos().y());
   Doc->setOnGrid(MAx3, MAy3);
@@ -345,6 +355,7 @@ void MouseActions::MMoveWire1(Schematic *Doc, QMouseEvent *Event)
  * @param Doc
  * @param Event
  */
+//画框框
 void MouseActions::MMoveSelect(Schematic *Doc, QMouseEvent *Event)
 {
   //qDebug() << "MMoveSelect " << "select area";
@@ -1302,15 +1313,26 @@ void MouseActions::MPressElement(Schematic *Doc, QMouseEvent *Event, float, floa
  * @param fX
  * @param fY
  */
-void MouseActions::MPressWire1(Schematic *Doc, QMouseEvent*, float fX, float fY)
+void MouseActions::MPressWire1(Schematic *Doc, QMouseEvent* Event, float fX, float fY)
 {
-  //Doc->PostPaintEvent (_DotLine);
+  	
+
+	
+	//Doc->PostPaintEvent (_DotLine);
   //Doc->PostPaintEvent (_NotRop);
   //if(drawn) {
     Doc->PostPaintEvent (_Line, 0, MAy3, MAx2, MAy3); // erase old mouse cross
     Doc->PostPaintEvent (_Line, MAx3, 0, MAx3, MAy2);
   //}
   //drawn = false;
+	//增加鼠标右键取消画线的功能
+	switch(Event->button()) 
+	{
+	case Qt::RightButton :
+
+		App->select->setChecked(true);
+		break;
+	}
 
   MAx1 = 0;   // paint wire corner first up, then left/right
   MAx3 = int(fX);
@@ -1322,7 +1344,7 @@ void MouseActions::MPressWire1(Schematic *Doc, QMouseEvent*, float fX, float fY)
   SwieeMain->MousePressAction = &MouseActions::MPressWire2;
   // Double-click action is set in "MMoveWire2" to not initiate it
   // during "Wire1" actions.
-  Doc->viewport()->update();
+  Doc->viewport()->update();//更新文档
 }
 
 
@@ -1379,6 +1401,10 @@ void MouseActions::MPressWire2(Schematic *Doc, QMouseEvent *Event, float fX, flo
 
    /// \todo document right mouse button changes the wire corner
   case Qt::RightButton :
+	//增加鼠标右键取消画线的功能
+	App->select->setChecked(true);
+	break;
+
     if(MAx1 == 0) {
       Doc->PostPaintEvent (_Line, MAx3, MAy3, MAx3, MAy2); // erase old
       Doc->PostPaintEvent (_Line, MAx3, MAy2, MAx2, MAy2); // erase old
@@ -1761,7 +1787,7 @@ void MouseActions::MReleasePaste(Schematic *Doc, QMouseEvent *Event)
     break;
 
   // ............................................................
-  case Qt::RightButton :  // right button rotates the elements
+  case Qt::RightButton :  // WYL right button rotates the elements
     //setPainter(Doc, &painter);
 
     if(drawn) // erase old scheme
@@ -1965,6 +1991,7 @@ void MouseActions::editElement(Schematic *Doc, QMouseEvent *Event)
 }
 
 // -----------------------------------------------------------
+//双击之后进入属性窗口
 void MouseActions::MDoubleClickSelect(Schematic *Doc, QMouseEvent *Event)
 {
   Doc->releaseKeyboard();  // allow keyboard inputs again

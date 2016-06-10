@@ -222,6 +222,7 @@ QWidget *w = DocumentTab->currentPage();
     return;
   }
 
+   //如果正在划线，按了esc键之后会进入插入线模式，两层了模式
   // goto to insertWire mode if ESC pressed during wiring
   Schematic *Doc = (Schematic*)DocumentTab->currentPage();
   if(MouseMoveAction == &MouseActions::MMoveWire2) {

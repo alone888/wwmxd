@@ -544,6 +544,7 @@ void Schematic::contentsMouseMoveEvent(QMouseEvent *Event)
 }
 
 // -----------------------------------------------------------
+//WYL 鼠标右键按下去的时候
 void Schematic::contentsMousePressEvent(QMouseEvent *Event)
 {
   App->editText->setHidden(true); // disable text edit of component property
@@ -555,7 +556,9 @@ void Schematic::contentsMousePressEvent(QMouseEvent *Event)
 
   if(Event->button() != Qt::LeftButton)
     if(App->MousePressAction != &MouseActions::MPressElement)
-      if(App->MousePressAction != &MouseActions::MPressWire2) {
+      if(App->MousePressAction != &MouseActions::MPressWire2 &&
+		 App->MousePressAction != &MouseActions::MPressWire1 ) //只有这几种情况都不是才可以显示右键菜单
+	  {
         // show menu on right mouse button
         App->view->rightPressMenu(this, Event, x, y);
         if(App->MouseReleaseAction)
