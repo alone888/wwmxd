@@ -994,7 +994,7 @@ void SwieeApp::initProptsDock()
 	
 	//设置表头内容
 	QStringList header;
-	header<<GB2312("名称")<<GB2312("值")<<GB2312("显示")<<GB2312("描述");
+	header<<GB2312("显示")<<GB2312("名称")<<GB2312("值")<<GB2312("描述");
 	PropTabWdg->setHorizontalHeaderLabels(header);
 	PropTabWdg->horizontalHeader()->setStretchLastSection(true); //就是这个地方 
 	//PropTabWdg->horizontalHeader()->setResizeMode(QHeaderView::Stretch); //水平表头自适应填充
@@ -1003,9 +1003,9 @@ void SwieeApp::initProptsDock()
 
 
 	//设置列宽行高
-	PropTabWdg->setColumnWidth(0,50);//设置第一列的列宽
+	PropTabWdg->setColumnWidth(0,35);//设置第一列的列宽
 	PropTabWdg->setColumnWidth(1,80);//设置第二列的列宽
-	PropTabWdg->setColumnWidth(2,40);//设置第三列的列宽
+	PropTabWdg->setColumnWidth(2,80);//设置第三列的列宽
 	//PropTabWdg->setColumnWidth(2,40);//设置第三列的列宽
 
 	//PropTabWdg->setRowHeight()
@@ -1133,8 +1133,7 @@ void SwieeApp::PropCellChanged(int row, int col)
 	if(!ProptShowDone)
 	{
 		return;
-	}
-	
+	}	
 	
 	QString s;
 	Component *pc = (Component*)view->focusElement;
@@ -1149,24 +1148,10 @@ void SwieeApp::PropCellChanged(int row, int col)
 		for(Property *p = Comp->Props.last(); p != 0; p = Comp->Props.prev()) 
 		{
 			//if(p == pp)  break;   // do not insert if already on first tab
-			if(p->display) 
-			{
-				s = tr("yes");
-			}
-			else
-			{
-				s = tr("no");
-			}
+			//设置对应的图标、文件名称、最后更新时间、对应的类型、文件大小 
 
 			
-
-			//设置对应的图标、文件名称、最后更新时间、对应的类型、文件大小
- 
-
-			p->Name = PropTabWdg->item(row_count,0)->text();
-			p->Value = PropTabWdg->item(row_count,1)->text();
-
-			if(PropTabWdg->item(row_count,2)->text() ==  tr("yes"))
+			if(PropTabWdg->item(row_count,0)->checkState() ==  Qt::Checked)
 			{
 				p->display = true;
 			}
@@ -1175,16 +1160,77 @@ void SwieeApp::PropCellChanged(int row, int col)
 				p->display = false;
 			}
 
+
+			p->Name = PropTabWdg->item(row_count,1)->text();
+			p->Value = PropTabWdg->item(row_count,2)->text();
 			p->Description = PropTabWdg->item(row_count,3)->text();
 
 			row_count++;
 		}
 		SwieeDoc *d = getDoc();
 		updateProptsDock((Schematic *)d,pc);
+		((Schematic *)d)->viewport()->update();
 	}
 
 
 }
+void SwieeApp::updateProptsDock(Schematic *Doc,Element *Elem)
+{	
+	QString s;
+	//PropTabWdg->clear();
+
+	ProptShowDone = false;
+	int iLen = PropTabWdg->rowCount();
+	for(int i=0;i<iLen;i++)    
+	{        
+		PropTabWdg->removeRow(0);           
+	}
+
+	int rowID=0;
+	if(!Elem)
+	{
+		return;
+	}
+	if(Elem->Type & isComponent) {
+		Component *Comp = (Component*)Elem;
+		for(Property *p = Comp->Props.last(); p != 0; p = Comp->Props.prev()) {
+			//if(p == pp)  break;   // do not insert if already on first tab
+			
+
+			int row_count = PropTabWdg->rowCount(); //获取表单行数
+			PropTabWdg->insertRow(row_count); //插入新行
+			QTableWidgetItem *item = new QTableWidgetItem();
+			QTableWidgetItem *itemkong = new QTableWidgetItem();
+			QTableWidgetItem *item1 = new QTableWidgetItem();
+			QTableWidgetItem *item3 = new QTableWidgetItem();
+
+			//设置对应的图标、文件名称、最后更新时间、对应的类型、文件大小
+ 
+			item->setText(p->Name);
+			item1->setText(p->Value);
+			item3->setText(p->Description);
+
+			PropTabWdg->setItem(row_count, 0, itemkong);
+			if(p->display) 
+			{
+				PropTabWdg->item(row_count,0)->setCheckState(Qt::Checked);
+			}
+			else
+			{
+				PropTabWdg->item(row_count,0)->setCheckState(Qt::Unchecked);
+			}
+
+			PropTabWdg->setItem(row_count, 1, item);
+			PropTabWdg->item(row_count, 1)->setFlags(Qt::ItemIsEnabled);
+			PropTabWdg->setItem(row_count, 2, item1); 
+			PropTabWdg->setItem(row_count, 3, item3);
+			PropTabWdg->item(row_count, 3)->setFlags(Qt::ItemIsEnabled);
+		}
+	}
+	ProptShowDone = true;
+	
+}
+
 
 void SwieeApp::updateNavigateDock(Schematic *Doc){
 	//QList<QTreeWidgetItem*> temp;
@@ -1208,59 +1254,6 @@ void SwieeApp::updateNavigateDock(Schematic *Doc){
 	}
 	 
 	CompRoot->setExpanded(true);
-}
-
-void SwieeApp::updateProptsDock(Schematic *Doc,Element *Elem)
-{	
-	QString s;
-	//PropTabWdg->clear();
-
-	ProptShowDone = false;
-	int iLen = PropTabWdg->rowCount();
-	for(int i=0;i<iLen;i++)    
-	{        
-		PropTabWdg->removeRow(0);           
-	}
-
-	int rowID=0;
-	if(!Elem)
-	{
-		return;
-	}
-	if(Elem->Type & isComponent) {
-		Component *Comp = (Component*)Elem;
-		for(Property *p = Comp->Props.last(); p != 0; p = Comp->Props.prev()) {
-			//if(p == pp)  break;   // do not insert if already on first tab
-			if(p->display) 
-			{
-				s = tr("yes");
-			}
-			else
-			{
-				s = tr("no");
-			}
-
-			int row_count = PropTabWdg->rowCount(); //获取表单行数
-			PropTabWdg->insertRow(row_count); //插入新行
-			QTableWidgetItem *item = new QTableWidgetItem();
-			QTableWidgetItem *item1 = new QTableWidgetItem();
-			QTableWidgetItem *item2 = new QTableWidgetItem();
-			QTableWidgetItem *item3 = new QTableWidgetItem();
-
-			//设置对应的图标、文件名称、最后更新时间、对应的类型、文件大小
- 
-			item->setText(p->Name);
-			item1->setText(p->Value);
-			item2->setText(s); //type为调用系统的类型，以后缀来区分
-			item3->setText(p->Description);
-			PropTabWdg->setItem(row_count, 0, item);
-			PropTabWdg->setItem(row_count, 1, item1);    
-			PropTabWdg->setItem(row_count, 2, item2);
-			PropTabWdg->setItem(row_count, 3, item3);
-		}
-	}
-	ProptShowDone = true;
-	
 }
 
 
