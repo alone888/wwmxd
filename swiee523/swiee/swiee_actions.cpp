@@ -77,7 +77,8 @@ bool SwieeApp::performToggleAction(bool on, QAction *Action,
 // Is called, when "set on grid" action is activated.
 void SwieeApp::slotOnGrid(bool on)
 {
-  performToggleAction(on, onGrid, &Schematic::elementsOnGrid,
+  on = true;
+	performToggleAction(on, onGrid, &Schematic::elementsOnGrid,
 		&MouseActions::MMoveOnGrid, &MouseActions::MPressOnGrid);
 }
 
@@ -85,7 +86,8 @@ void SwieeApp::slotOnGrid(bool on)
 // Is called when the rotate toolbar button is pressed.
 void SwieeApp::slotEditRotate(bool on)
 {
-  performToggleAction(on, editRotate, &Schematic::rotateElements,
+	 on = true;
+	performToggleAction(on, editRotate, &Schematic::rotateElements,
 		&MouseActions::MMoveRotate, &MouseActions::MPressRotate);
 }
 
@@ -93,7 +95,8 @@ void SwieeApp::slotEditRotate(bool on)
 // Is called when the mirror toolbar button is pressed.
 void SwieeApp::slotEditMirrorX(bool on)
 {
-  performToggleAction(on, editMirror, &Schematic::mirrorXComponents,
+	on = true;
+	performToggleAction(on, editMirror, &Schematic::mirrorXComponents,
 		&MouseActions::MMoveMirrorX, &MouseActions::MPressMirrorX);
 }
 
@@ -101,7 +104,8 @@ void SwieeApp::slotEditMirrorX(bool on)
 // Is called when the mirror toolbar button is pressed.
 void SwieeApp::slotEditMirrorY(bool on)
 {
-  performToggleAction(on, editMirrorY, &Schematic::mirrorYComponents,
+  on = true;
+	performToggleAction(on, editMirrorY, &Schematic::mirrorYComponents,
 		&MouseActions::MMoveMirrorY, &MouseActions::MPressMirrorY);
 }
 
@@ -111,6 +115,7 @@ void SwieeApp::slotEditMirrorY(bool on)
 // \todo update the status or tooltip message
 void SwieeApp::slotEditActivate (bool on)
 {
+  on = true;
   TextDoc * Doc = (TextDoc *) DocumentTab->currentPage ();
   if (isTextDocument (Doc)) {
     //TODO Doc->clearParagraphBackground (Doc->tmpPosX);
@@ -130,6 +135,7 @@ void SwieeApp::slotEditActivate (bool on)
 // Is called if "Delete"-Button is pressed.
 void SwieeApp::slotEditDelete(bool on)
 {
+  on = true;
   TextDoc *Doc = (TextDoc*)DocumentTab->currentPage();
   if(Doc->inherits("QPlainTextEdit")) {
     Doc->viewport()->setFocus();
@@ -149,21 +155,24 @@ void SwieeApp::slotEditDelete(bool on)
 // Is called if "Wire"-Button is pressed.
 void SwieeApp::slotSetWire(bool on)
 {
-  performToggleAction(on, insWire, 0,
+  on = true;
+	performToggleAction(on, insWire, 0,
 		&MouseActions::MMoveWire1, &MouseActions::MPressWire1);
 }
 
 // -----------------------------------------------------------------------
 void SwieeApp::slotInsertLabel(bool on)
 {
-  performToggleAction(on, insLabel, 0,
+  on = true;
+	performToggleAction(on, insLabel, 0,
 		&MouseActions::MMoveLabel, &MouseActions::MPressLabel);
 }
 
 // -----------------------------------------------------------------------
 void SwieeApp::slotSetMarker(bool on)
 {
-  performToggleAction(on, setMarker, 0,
+  on = true;
+	performToggleAction(on, setMarker, 0,
 		&MouseActions::MMoveMarker, &MouseActions::MPressMarker);
 }
 
@@ -171,7 +180,8 @@ void SwieeApp::slotSetMarker(bool on)
 // Is called, when "move component text" action is activated.
 void SwieeApp::slotMoveText(bool on)
 {
-  performToggleAction(on, moveText, 0,
+  on = true;
+	performToggleAction(on, moveText, 0,
 		&MouseActions::MMoveMoveTextB, &MouseActions::MPressMoveText);
 }
 
@@ -179,7 +189,8 @@ void SwieeApp::slotMoveText(bool on)
 // Is called, when "Zoom in" action is activated.
 void SwieeApp::slotZoomIn(bool on)
 {
-  TextDoc *Doc = (TextDoc*)DocumentTab->currentPage();
+  on = true;
+TextDoc *Doc = (TextDoc*)DocumentTab->currentPage();
   if(Doc->inherits("QPlainTextEdit")) {
     Doc->zoomBy(1.5f);
     magPlus->blockSignals(true);
@@ -201,7 +212,8 @@ void SwieeApp::slotEscape()
 // Is called when the select toolbar button is pressed.
 void SwieeApp::slotSelect(bool on)
 {
-  QWidget *w = DocumentTab->currentPage();
+  on = true;
+QWidget *w = DocumentTab->currentPage();
   if(w->inherits("QPlainTextEdit")) {
     ((TextDoc*)w)->viewport()->setFocus();
       select->blockSignals(true);

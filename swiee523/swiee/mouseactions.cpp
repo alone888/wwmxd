@@ -1010,18 +1010,16 @@ void MouseActions::MPressSelect(Schematic *Doc, QMouseEvent *Event, float fX, fl
   Doc->viewport()->update();
   drawn = false;
 
+  App->updateProptsDock(Doc,focusElement);
   if(focusElement == 0) {
     MAx2 = 0;  // if not clicking on an element => open a rectangle
     MAy2 = 0;
-    SwieeMain->MouseReleaseAction = &MouseActions::MReleaseSelect2;
+    SwieeMain->MouseReleaseAction = &MouseActions::MReleaseSelect2;//需要增加属性处理代码
     SwieeMain->MouseMoveAction = &MouseActions::MMoveSelect;
+
   }
   else
   {
-    App->updateProptsDock(Doc,focusElement);
-	  
-	  
-	  
 	// element could be moved
     if(!Ctrl)
     {

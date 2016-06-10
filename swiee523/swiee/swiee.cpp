@@ -259,8 +259,7 @@ void SwieeApp::initView()
   // slotFileClose
   DocumentTab->setTabsClosable(true);
   DocumentTab->
-  connect(DocumentTab,
-          SIGNAL(tabCloseRequested(int)), SLOT(slotFileClose(int)));
+  connect(DocumentTab,SIGNAL(tabCloseRequested(int)),this, SLOT(slotFileClose(int)));
     DocumentTab->setMovable (true);
 #ifdef HAVE_QTABWIDGET_SETMOVABLE
   // make tabs draggable if supported
