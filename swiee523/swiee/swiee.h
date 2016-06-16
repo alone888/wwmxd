@@ -281,7 +281,7 @@ private slots:
   void slotHelpAbout();     // shows an about dialog
   void slotHelpAboutQt();   // shows the standard about dialog for Qt
 
-  void PropCellChanged(int row,int col);
+  void slotPropCellChanged(int row,int col);
 
 private:
   void initActions();    // initializes all QActions of the application

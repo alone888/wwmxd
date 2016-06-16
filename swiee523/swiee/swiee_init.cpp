@@ -905,31 +905,7 @@ void SwieeApp::initQQTabDock()
 }
 
 void SwieeApp::initProptsDock()
-{
-	//Q3VBoxLayout *all;   // the mother of all widgets
-	//QValidator  *Validator, *ValRestrict, *Validator2;
-	//QRegExp     Expr;
-	//QIntValidator *ValInteger;
-	//Q3ListView   *prop;
-	//QLineEdit   *edit, *NameEdit, *CompNameEdit;
-	//QComboBox   *ComboEdit;
-	//QLabel      *Name, *Description;
-	//QPushButton *BrowseButt, *EditButt, *ButtAdd, *ButtRem;
-	//QCheckBox   *disp;
-	//Component   *Comp;
-	//Schematic   *Doc;
-	//bool        changed;
-	//int         tx_Dist, ty_Dist;   // remember the text position
-
-	//QLabel    *textType;
-	//QLabel    *textSim, *textParam, *textValues, *textStart, *textStop,
-	//*textStep, *textNumber;
-	//QLineEdit *editParam, *editValues, *editStart, *editStop,
-	//*editStep, *editNumber;
-	//QCheckBox *checkSim, *checkParam, *checkValues, *checkStart, *checkStop,
-	//*checkNumber, *checkType, *showName;
-	//QComboBox *editSim, *comboType;
-	
+{		
 	propertyDock = new QDockWidget(this);
 	propertyDock->setAllowedAreas(Qt::RightDockWidgetArea); //
 	//把dock 放右边
@@ -974,13 +950,13 @@ void SwieeApp::initProptsDock()
 	Q3HBox *h5 = new Q3HBox(myParent);
 	h5->setSpacing(5);
 	gp1->addWidget(h5, 1,0);
-	new QLabel(tr("Name:"), h5);
-	CompNameEdit = new QLineEdit(h5);
-	CompNameEdit->setValidator(ValRestrict);
+	//new QLabel(tr("Name:"), h5);
+	//CompNameEdit = new QLineEdit(h5);
+	//CompNameEdit->setValidator(ValRestrict);
 	//connect(CompNameEdit, SIGNAL(returnPressed()), SLOT(slotButtOK()));
 
-	showName = new QCheckBox(tr("display in schematic"), myParent);
-	gp1->addWidget(showName, 1,1);
+	//showName = new QCheckBox(tr("display in schematic"), myParent);
+	//gp1->addWidget(showName, 1,1);
 	
 	Q3HGroupBox *PropertyBox = new Q3HGroupBox(tr("Properties"), myParent);
 	gp1->addMultiCellWidget(PropertyBox, 2,2,0,1);
@@ -1025,101 +1001,9 @@ void SwieeApp::initProptsDock()
 	//connect(PropTabWdg, SIGNAL(cellChanged(int,int)), this, SLOT(changeTest(int, int)));
 	//connect(PropTabWdg, SIGNAL(itemChanged(QTableWidgetItem*)), this, SLOT(getCurrentItem(QTableWidgetItem*)));
 
-	connect(PropTabWdg, SIGNAL(cellChanged(int,int)), this, SLOT(PropCellChanged(int, int)));
-	//设置对应的图标、文件名称、最后更新时间、对应的类型、文件大小
+	connect(PropTabWdg, SIGNAL(cellChanged(int,int)), this, SLOT(slotPropCellChanged(int, int)));
+	//连接属性框单元格更改的信号的slot
  
-	//item->setText("teset");
-	//item1->setText("teset");
-	//item2->setText("teset"); //type为调用系统的类型，以后缀来区分
-	//item3->setText("teset");
-	//PropTabWdg->setItem(0, 0, item);
-	//PropTabWdg->setItem(0, 1, item1);    
-	//PropTabWdg->setItem(0, 2, item2);
-	//PropTabWdg->setItem(0, 3, item3);
-
-	//Name = new QLabel(v1);
-
-	//Description = new QLabel(v1);
-
-	//// hide, because it only replaces 'Description' in some cases
-	//NameEdit = new QLineEdit(v1);
-	//NameEdit->setShown(false);
-	//NameEdit->setValidator(ValRestrict);
-	//connect(NameEdit, SIGNAL(returnPressed()), SLOT(slotApplyPropName()));
-
-	//edit = new QLineEdit(v1);
-	//edit->setMinimumWidth(150);
-	//edit->setValidator(Validator2);
-	//connect(edit, SIGNAL(returnPressed()), SLOT(slotApplyProperty()));
-
-	//// hide, because it only replaces 'edit' in some cases
-	//ComboEdit = new QComboBox(false, v1);
-	//ComboEdit->setShown(false);
-	//connect(ComboEdit, SIGNAL(activated(const QString&)),
-	//SLOT(slotApplyChange(const QString&)));
-
-	//Q3HBox *h3 = new Q3HBox(v1);
-	//h3->setStretchFactor(new QWidget(h3),5); // stretchable placeholder
-	//EditButt = new QPushButton(tr("Edit"),h3);
-	//EditButt->setEnabled(false);
-	//EditButt->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-	//connect(EditButt, SIGNAL(clicked()), SLOT(slotEditFile()));
-	//BrowseButt = new QPushButton(tr("Browse"),h3);
-	//BrowseButt->setEnabled(false);
-	//BrowseButt->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-	//connect(BrowseButt, SIGNAL(clicked()), SLOT(slotBrowseFile()));
-
-	//disp = new QCheckBox(tr("display in schematic"), v1);
-	//connect(disp, SIGNAL(stateChanged(int)), SLOT(slotApplyState(int)));
-
-	//v1->setStretchFactor(new QWidget(v1),5); // stretchable placeholder
-
-	//Q3HBox *h4 = new Q3HBox(v1);
-	//h4->setSpacing(5);
-	//ButtAdd = new QPushButton(tr("Add"),h4);
-	//ButtAdd->setEnabled(false);
-	//ButtRem = new QPushButton(tr("Remove"),h4);
-	//ButtRem->setEnabled(false);
-	//connect(ButtAdd, SIGNAL(clicked()), SLOT(slotButtAdd()));
-	//connect(ButtRem, SIGNAL(clicked()), SLOT(slotButtRem()));
-
-	//// ...........................................................
-	//Q3HBox *h2 = new Q3HBox(this);
-	//h2->setSpacing(5);
-	//all->addWidget(h2);
-	//connect(new QPushButton(tr("OK"),h2), SIGNAL(clicked()),
-	//SLOT(slotButtOK()));
-	//connect(new QPushButton(tr("Apply"),h2), SIGNAL(clicked()),
-	//SLOT(slotApplyInput()));
-	//connect(new QPushButton(tr("Cancel"),h2), SIGNAL(clicked()),
-	//SLOT(slotButtCancel()));
-
-	//// ------------------------------------------------------------
-	//CompNameEdit->setText(Comp->Name);
-	//showName->setChecked(Comp->showName);
-	//changed = false;
-
-	//Comp->textSize(tx_Dist, ty_Dist);
-	//int tmp = Comp->tx+tx_Dist - Comp->x1;
-	//if((tmp > 0) || (tmp < -6))  tx_Dist = 0;  // remember the text position
-	//tmp = Comp->ty+ty_Dist - Comp->y1;
-	//if((tmp > 0) || (tmp < -6))  ty_Dist = 0;
-
-	// insert all properties into the ListBox
-	//for(Property *p = Comp->Props.last(); p != 0; p = Comp->Props.prev()) {
-	//	//if(p == pp)  break;   // do not insert if already on first tab
-	//	if(p->display) s = tr("yes");
-	//	else s = tr("no");
-	//	new Q3ListViewItem(prop, p->Name, p->Value, s, p->Description);
-	//}
-
-	//if(prop->childCount() > 0) {
-	//prop->setCurrentItem(prop->firstChild());
-	//slotSelectProperty(prop->firstChild());
-	//}
-
-	//connect(prop, SIGNAL(clicked(Q3ListViewItem*)),
-	//SLOT(slotSelectProperty(Q3ListViewItem*)));
 
 }
 void SwieeApp::getCurrentItem(QTableWidgetItem* item)
@@ -1128,7 +1012,7 @@ void SwieeApp::getCurrentItem(QTableWidgetItem* item)
 	Component *pc = (Component*)view->focusElement;
 }
 
-void SwieeApp::PropCellChanged(int row, int col)
+void SwieeApp::slotPropCellChanged(int row, int col)
 {
 	if(!ProptShowDone)
 	{
@@ -1145,6 +1029,25 @@ void SwieeApp::PropCellChanged(int row, int col)
 	if(pc->Type & isComponent) {
 		Component *Comp = pc;
 		int row_count = 0; //获取表单行数
+
+		/*********************************************************/
+		//单独更新界面中元件的属性
+		/*********************************************************/
+		if(PropTabWdg->item(row_count,0)->checkState() ==  Qt::Checked)
+		{
+			Comp->showName = true;
+		}
+		else
+		{
+			Comp->showName = false;
+		}
+
+		Comp->Name = PropTabWdg->item(row_count,2)->text();		
+		row_count++;
+
+		/*********************************************************/
+		//从属性框中，更改元件实际的属性链表
+		/*********************************************************/
 		for(Property *p = Comp->Props.last(); p != 0; p = Comp->Props.prev()) 
 		{
 			//if(p == pp)  break;   // do not insert if already on first tab
@@ -1193,6 +1096,40 @@ void SwieeApp::updateProptsDock(Schematic *Doc,Element *Elem)
 	}
 	if(Elem->Type & isComponent) {
 		Component *Comp = (Component*)Elem;
+		/*********************************************************/
+		//单独添加元件的名字，因为元件的名字不在元件的属性链表中
+		/*********************************************************/
+
+		int row_count = PropTabWdg->rowCount(); //获取表单行数
+		PropTabWdg->insertRow(row_count); //插入新行
+		QTableWidgetItem *item = new QTableWidgetItem();
+		QTableWidgetItem *itemkong = new QTableWidgetItem();
+		QTableWidgetItem *item1 = new QTableWidgetItem();
+		QTableWidgetItem *item3 = new QTableWidgetItem();
+		
+		item->setText(GB2312("名称"));
+		item1->setText(Comp->Name);
+		item3->setText(GB2312("元件的名称"));
+
+		PropTabWdg->setItem(row_count, 0, itemkong);//第一为勾选框，没有文字
+		if(Comp->showName) 
+		{
+			PropTabWdg->item(row_count,0)->setCheckState(Qt::Checked);
+		}
+		else
+		{
+			PropTabWdg->item(row_count,0)->setCheckState(Qt::Unchecked);
+		}
+
+		PropTabWdg->setItem(row_count, 1, item);
+		PropTabWdg->item(row_count, 1)->setFlags(Qt::ItemIsEnabled);
+		PropTabWdg->setItem(row_count, 2, item1); 
+		PropTabWdg->setItem(row_count, 3, item3);
+		PropTabWdg->item(row_count, 3)->setFlags(Qt::ItemIsEnabled);
+
+		/*********************************************************/
+		//添加元件的属性
+		/*********************************************************/
 		for(Property *p = Comp->Props.last(); p != 0; p = Comp->Props.prev()) {
 			//if(p == pp)  break;   // do not insert if already on first tab
 			
@@ -1204,7 +1141,7 @@ void SwieeApp::updateProptsDock(Schematic *Doc,Element *Elem)
 			QTableWidgetItem *item1 = new QTableWidgetItem();
 			QTableWidgetItem *item3 = new QTableWidgetItem();
 
-			//设置对应的图标、文件名称、最后更新时间、对应的类型、文件大小
+			//设置每一列的文字
  
 			item->setText(p->Name);
 			item1->setText(p->Value);
