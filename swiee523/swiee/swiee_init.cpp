@@ -1175,8 +1175,27 @@ void SwieeApp::updateNavigateDock(Schematic *Doc){
 	//
 	//NaviTreeWidget->removeItemWidget(NaviTreeWidget->findItems(GB2312("元件"),Qt::MatchContains|Qt::MatchRecursive).at(0),0);
 	NaviTreeWidget->clear();
-	QTreeWidgetItem* CompRoot = new QTreeWidgetItem(QStringList()<<GB2312("元件"));  	
-	NaviTreeWidget->addTopLevelItem(CompRoot);
+	//QTreeWidgetItem* CompRoot = new QTreeWidgetItem(QStringList()<<GB2312("元件"));  	
+	//NaviTreeWidget->addTopLevelItem(CompRoot);
+
+	//QTreeWidgetItem* CompRoot1 = new QTreeWidgetItem(QStringList()<<GB2312("电容"));  	
+	//NaviTreeWidget->addTopLevelItem(CompRoot1);
+
+	//WYL 测试如何查找树	
+	//for(int m=0;m< NaviTreeWidget->topLevelItemCount(); m++)                         //遍历所有父节点     
+	//{          
+	//	QTreeWidgetItem* CurTopLevItm = NaviTreeWidget->topLevelItem(m); //显示与关键字匹配的馈线         		
+	//	QString TopNodText=CurTopLevItm->text(0);
+	//	
+	//	if (!TopNodText.compare(GB2312("元件")) )
+	//	{
+	//		CurTopLevItm->setBackgroundColor(0,QColor(255,0,0));
+	//	} 
+	//	else
+	//	{
+	//	}
+	//
+	//}
 
 	
 	// determines the name by looking for names with the same
@@ -1184,14 +1203,21 @@ void SwieeApp::updateNavigateDock(Schematic *Doc){
 	for(Component *pc = Doc->Components->first(); pc != 0; pc = Doc->Components->next())
 	{
 
-        QTreeWidgetItem *child;  
+        QTreeWidgetItem *child; 
 
-        child = new QTreeWidgetItem(QStringList()<<pc->Name);  
-        CompRoot->addChild(child);  
+
+
+		//pc->Description;
+		QList<QTreeWidgetItem> temp;
+		temp = NaviTreeWidget->findItems(pc->Description,Qt::MatchExactly);
+
+		/* child = new QTreeWidgetItem(QStringList()<<pc->Name);  
+		CompRoot->addChild(child);*/  
 	}
 	 
-	CompRoot->setExpanded(true);
+	//CompRoot->setExpanded(true);
 }
+
 
 
 void SwieeApp::initNavigateDock(){
