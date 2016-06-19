@@ -1208,8 +1208,21 @@ void SwieeApp::updateNavigateDock(Schematic *Doc){
 
 
 		//pc->Description;
-		QList<QTreeWidgetItem> temp;
+		QList<QTreeWidgetItem *> temp;
 		temp = NaviTreeWidget->findItems(pc->Description,Qt::MatchExactly);
+
+		if(temp.length() == 0)
+		{
+			QTreeWidgetItem* CompRoot = new QTreeWidgetItem(QStringList()<<pc->Description);  	
+			NaviTreeWidget->addTopLevelItem(CompRoot);
+			child = new QTreeWidgetItem(QStringList()<<pc->Name);
+			CompRoot->addChild(child);
+		}
+		else
+		{
+			child = new QTreeWidgetItem(QStringList()<<pc->Name);
+			temp[0]->addChild(child);	
+		}
 
 		/* child = new QTreeWidgetItem(QStringList()<<pc->Name);  
 		CompRoot->addChild(child);*/  
