@@ -1279,6 +1279,9 @@ void SwieeApp::slotShowSelectedItem(QTreeWidgetItem* treeW,int index)
 
 			sc1->zoom(xScale);
 
+
+			updateProptsDock(sc1,pc1);
+
 			sc1->viewport()->update();
 			break;  // found component with the same name ?
 		}
