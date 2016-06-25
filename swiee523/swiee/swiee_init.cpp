@@ -1031,7 +1031,7 @@ void SwieeApp::slotPropCellChanged(int row, int col)
 		int row_count = 0; //获取表单行数
 
 		/*********************************************************/
-		//单独更新界面中元件的属性
+		//单独更新界面中元件名称
 		/*********************************************************/
 		if(PropTabWdg->item(row_count,0)->checkState() ==  Qt::Checked)
 		{
@@ -1042,7 +1042,27 @@ void SwieeApp::slotPropCellChanged(int row, int col)
 			Comp->showName = false;
 		}
 
-		Comp->Name = PropTabWdg->item(row_count,2)->text();		
+
+		//检查新的名字是不是有重名的元件
+		QString newName;
+		Component *pc1;
+
+		SwieeDoc *d1 = getDoc();
+		Schematic *sc1 = (Schematic *)d1;
+		newName = PropTabWdg->item(row_count,2)->text();
+		if(newName != Comp->Name) 
+		{
+			for(pc1 = sc1->Components->first(); pc1!=0; pc1 = sc1->Components->next())
+			{
+				if(pc1->Name == newName)
+						break;  // found component with the same name ?
+			}
+			if(!pc1)   
+			{
+				Comp->Name = newName;
+			}
+			
+		}	
 		row_count++;
 
 		/*********************************************************/
@@ -1072,6 +1092,7 @@ void SwieeApp::slotPropCellChanged(int row, int col)
 		}
 		SwieeDoc *d = getDoc();
 		updateProptsDock((Schematic *)d,pc);
+		updateNavigateDock((Schematic *)d);
 		((Schematic *)d)->viewport()->update();
 	}
 
@@ -1168,7 +1189,102 @@ void SwieeApp::updateProptsDock(Schematic *Doc,Element *Elem)
 	
 }
 
+void SwieeApp::initNavigateDock(){
+	navigateDock = new QDockWidget(this);
+	navigateDock->setAllowedAreas(Qt::RightDockWidgetArea); //
+	//把dock 放右边
+	this->addDockWidget(Qt::RightDockWidgetArea, navigateDock);
+	navigateDock->setWindowTitle(GB2312("导航窗口"));
+	
+	navigateDock->setStyleSheet("background-color: rgb(240, 240, 240);");
+	
+	
+    
+	NaviTreeWidget =new QTreeWidget(navigateDock);
 
+	   //设定头项名称  
+    NaviTreeWidget->setHeaderLabels(QStringList()<<"Key"<<"Value");  
+ 
+	
+	////设定各个项  
+ //   QTreeWidgetItem* A = new QTreeWidgetItem(QStringList()<<"A");  
+ // 
+ //   A->setCheckState(0, Qt::Checked);  
+ //   QTreeWidgetItem* B = new QTreeWidgetItem(QStringList()<<"B");  
+ //
+ //   B->setCheckState(0, Qt::Checked);  
+ //   QTreeWidgetItem* C = new QTreeWidgetItem(QStringList()<<"C");  
+	// C->setCheckState(0, Qt::Checked);  
+
+ //   NaviTreeWidget->addTopLevelItem(A);  
+ //   NaviTreeWidget->addTopLevelItem(B);  
+ //   NaviTreeWidget->addTopLevelItem(C);  
+
+	QTreeWidgetItem* CompRoot = new QTreeWidgetItem(QStringList()<<GB2312("元件"));  	
+	NaviTreeWidget->addTopLevelItem(CompRoot);
+
+
+	navigateDock->setWidget(NaviTreeWidget);
+	navigateDock->setLayout(all);
+
+	connect(NaviTreeWidget,SIGNAL(itemClicked(QTreeWidgetItem*,int)),
+		this,SLOT(slotShowSelectedItem(QTreeWidgetItem*,int)));//单击节点事件
+}
+//一定要加类名字啊
+void SwieeApp::slotShowSelectedItem(QTreeWidgetItem* treeW,int index)
+{
+	
+
+
+	QString CompName;
+	CompName = treeW->text(0);
+
+	Component *pc1;
+
+	SwieeDoc *d1 = getDoc();
+	Schematic *sc1 = (Schematic *)d1;
+
+	Element *curFocusElement;
+
+	sc1->showAll();
+	sc1->viewport()->update();
+
+
+	for(pc1 = sc1->Components->first(); pc1!=0; pc1 = sc1->Components->next())
+	{
+		if(pc1->Name == CompName)
+		{
+			curFocusElement = sc1->selectElement(pc1->cx,pc1->cy,false);
+			curFocusElement->isSelected = true;
+
+			sc1->deselectElements(curFocusElement);
+			
+			sc1->showNoZoom();
+			
+
+			int vx,vy;
+			vx = sc1->visibleWidth();
+			vy = sc1->visibleHeight();
+
+			float xScale = float(vx) / float(500.0);
+			float yScale = float(vy) / float(500.0);
+			if(xScale > yScale) xScale = yScale;
+			xScale /= sc1->Scale;
+
+			sc1->ViewX1 = pc1->cx - sc1->visibleWidth()/2;
+			sc1->ViewY1 = pc1->cy - sc1->visibleHeight()/2;
+			sc1->ViewX2 = pc1->cx + sc1->visibleWidth()/2;
+			sc1->ViewY2 = pc1->cy + sc1->visibleHeight()/2;
+
+
+			sc1->zoom(xScale);
+
+			sc1->viewport()->update();
+			break;  // found component with the same name ?
+		}
+			
+	}
+}
 void SwieeApp::updateNavigateDock(Schematic *Doc){
 	//QList<QTreeWidgetItem*> temp;
 	//temp = NaviTreeWidget->findItems(GB2312("元件"),Qt::MatchContains|Qt::MatchRecursive);
@@ -1228,86 +1344,12 @@ void SwieeApp::updateNavigateDock(Schematic *Doc){
 		CompRoot->addChild(child);*/  
 	}
 	 
-	//CompRoot->setExpanded(true);
+	NaviTreeWidget->expandAll();
 }
 
 
 
-void SwieeApp::initNavigateDock(){
-	navigateDock = new QDockWidget(this);
-	navigateDock->setAllowedAreas(Qt::RightDockWidgetArea); //
-	//把dock 放右边
-	this->addDockWidget(Qt::RightDockWidgetArea, navigateDock);
-	navigateDock->setWindowTitle(GB2312("导航窗口"));
-	
-	navigateDock->setStyleSheet("background-color: rgb(240, 240, 240);");
-	
-	
-    
-	NaviTreeWidget =new QTreeWidget(navigateDock);
 
-	   //设定头项名称  
-    NaviTreeWidget->setHeaderLabels(QStringList()<<"Key"<<"Value");  
-    //设定各个项  
-    QTreeWidgetItem* A = new QTreeWidgetItem(QStringList()<<"A");  
-  
-    A->setCheckState(0, Qt::Checked);  
-    QTreeWidgetItem* B = new QTreeWidgetItem(QStringList()<<"B");  
- 
-    B->setCheckState(0, Qt::Checked);  
-    QTreeWidgetItem* C = new QTreeWidgetItem(QStringList()<<"C");  
-	 C->setCheckState(0, Qt::Checked);  
-
-    NaviTreeWidget->addTopLevelItem(A);  
-    NaviTreeWidget->addTopLevelItem(B);  
-    NaviTreeWidget->addTopLevelItem(C);  
-
-	QTreeWidgetItem* CompRoot = new QTreeWidgetItem(QStringList()<<GB2312("元件"));  	
-	NaviTreeWidget->addTopLevelItem(CompRoot);
-
-
-	//for(int i=0; i<3; ++i)  
- //   {  
- //       QStringList columItemList;  
- //       QTreeWidgetItem *child;  
- //       QString key, value;  
- //       key += "a" + QString::number(i);  
- //       value += QString::number(i);  
- //       columItemList<<key<<value;  
- //       child = new QTreeWidgetItem(columItemList);  
- //       A->addChild(child);  
- //   }  
- //   for(int i=0; i<3; ++i)  
- //   {  
- //       QStringList columItemList;  
- //       QTreeWidgetItem *child;  
- //       QString key, value;  
- //       key += "b" + QString::number(i);  
- //       value += QString::number(i);  
- //       columItemList<<key<<value;  
- //       child = new QTreeWidgetItem(columItemList);  
- //       B->addChild(child);  
- //   }  
- //   for(int i=0; i<3; ++i)  
- //   {  
- //       QStringList columItemList;  
- //       QTreeWidgetItem *child;  
- //       QString key, value;  
- //       key += "c" + QString::number(i);  
- //       value += QString::number(i);  
- //       columItemList<<key<<value;  
- //       child = new QTreeWidgetItem(columItemList);  
- //       C->addChild(child);  
- //   }  
-
-	navigateDock->setWidget(NaviTreeWidget);
-	navigateDock->setLayout(all);
-
-
-
-
-
-}
 
 
 /**

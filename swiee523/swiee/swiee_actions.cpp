@@ -149,6 +149,9 @@ void SwieeApp::slotEditDelete(bool on)
   else
     performToggleAction(on, editDelete, &Schematic::deleteElements,
           &MouseActions::MMoveDelete, &MouseActions::MPressDelete);
+
+  updateProptsDock((Schematic *)Doc,(Element *)0);
+  updateNavigateDock((Schematic *)Doc);
 }
 
 // -----------------------------------------------------------------------

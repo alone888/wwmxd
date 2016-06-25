@@ -896,6 +896,7 @@ void MouseActions::MPressSelect(Schematic *Doc, QMouseEvent *Event, float fX, fl
   int No=0;
   MAx1 = int(fX);
   MAy1 = int(fY);
+  //选中某个元件
   focusElement = Doc->selectElement(fX, fY, Ctrl, &No);
   isMoveEqual = false;   // moving not neccessarily square
 
@@ -1243,6 +1244,8 @@ void MouseActions::MPressElement(Schematic *Doc, QMouseEvent *Event, float, floa
 //    qDebug() << "   => selElem = Comp;" << Comp->Name;
     // comp it geting empty
     selElem = Comp;
+
+	App->select->setChecked(true);
     return;
 
   }  // of "if(isComponent)"
@@ -1832,6 +1835,7 @@ void MouseActions::MReleaseZoomIn(Schematic *Doc, QMouseEvent *Event)
   MAy1 = Event->pos().y();
   float DX = float(abs(MAx2));
   float DY = float(abs(MAy2));
+  //简单的点一下鼠标左键 进行放大 而不是选一个框框
   if((Doc->Scale * DX) < 6.0) {
     DX = 1.5;    // a simple click zooms by constant factor
     Doc->zoom(DX);

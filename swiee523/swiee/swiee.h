@@ -282,6 +282,7 @@ private slots:
   void slotHelpAboutQt();   // shows the standard about dialog for Qt
 
   void slotPropCellChanged(int row,int col);
+  void slotShowSelectedItem(QTreeWidgetItem* treeW,int index);
 
 private:
   void initActions();    // initializes all QActions of the application
