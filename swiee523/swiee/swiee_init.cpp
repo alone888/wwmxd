@@ -362,7 +362,7 @@ void SwieeApp::initActions()
 	projDel->setStatusTip(tr("Deletes an existing project"));
 	projDel->setWhatsThis(tr("Delete Project\n\nDeletes an existing project"));
 	connect(projDel, SIGNAL(activated()), SLOT(slotMenuDelProject()));
-	connect(projDel1, SIGNAL(clicked()), SLOT(slotMenuDelProject()));
+	connect(projDel1, SIGNAL(clicked()), SLOT(slotProjDelButt()));
 
 	projClose = new QAction(tr("&Close Project"), this);
 	projClose->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_W);
@@ -1233,9 +1233,6 @@ void SwieeApp::initNavigateDock(){
 //一定要加类名字啊
 void SwieeApp::slotShowSelectedItem(QTreeWidgetItem* treeW,int index)
 {
-	
-
-
 	QString CompName;
 	CompName = treeW->text(0);
 

@@ -330,15 +330,62 @@ void SwieeApp::initView()
   ProjButtsLayout->addWidget(ProjDel);
   ProjButts->setLayout(ProjButtsLayout);
 
-  ProjGroupLayout->addWidget(ProjButts);
+  //ProjGroupLayout->addWidget(ProjButts);
+
+
+  //开始添加工程列表
+  QGroupBox *ProjGroupbox = new QGroupBox(GB2312("工程列表"));
+
 
   Projects = new QListWidget();
 
-  ProjGroupLayout->addWidget(Projects);
- 
+  QVBoxLayout *vbox = new QVBoxLayout;
+  vbox->addWidget(Projects);
+  ProjGroupbox->setLayout(vbox); 
+
+  ProjGroupLayout->addWidget(ProjGroupbox);//把列表加到垂直布局中
+
+
+//添加工程树状图
+  QStringList headers;
+  // ----------------------------------------------------------
+  // "Content" Tab of the left QTabWidget
+  // 内容选项卡
+  Content = new QTreeWidget();
+  ProjGroupLayout->addWidget(Content);//把树状图加到垂直布局中
+
+  Content->setColumnCount(2);
+  headers << tr("Content of") << tr("Note");
+  Content->setHeaderLabels(headers);
+  Content->setSortingEnabled(false);
+  Content->setColumnWidth(0,150);
+
+
+
+  // allow for a custom context menu
+  Content->setContextMenuPolicy(Qt::CustomContextMenu);
+
+  initContentListView();
+
+  connect(Content, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)),
+	  SLOT(slotOpenContent(QTreeWidgetItem*)));
+
+  connect(Content, SIGNAL(itemPressed(QTreeWidgetItem*, int)),
+	  SLOT(slotSelectSubcircuit(QTreeWidgetItem*)));
+
+
+
+
+  ProjGroupLayout->setStretchFactor(ProjGroupbox,1);
+  ProjGroupLayout->setStretchFactor(Content,2);
   
   ProjGroup->setLayout(ProjGroupLayout);
 
+
+
+
+
+  //增加“工程”选项卡
   TabView->addTab(ProjGroup, tr("Projects"));
   TabView->setTabToolTip(TabView->indexOf(ProjGroup), tr("content of project directory"));
 
@@ -348,36 +395,38 @@ void SwieeApp::initView()
 
 
 
-  QStringList headers;
-  // ----------------------------------------------------------
-  // "Content" Tab of the left QTabWidget
-  Content = new QTreeWidget(this);
+  //QStringList headers;
+  //// ----------------------------------------------------------
+  //// "Content" Tab of the left QTabWidget
+  //// 内容选项卡
+  ////Content = new QTreeWidget(this);
+  //Content = new QTreeWidget();
 
-  Content->setColumnCount(2);
-  headers << tr("Content of") << tr("Note");
-  Content->setHeaderLabels(headers);
-  Content->setSortingEnabled(false);
-  Content->setColumnWidth(0,150);
+  //Content->setColumnCount(2);
+  //headers << tr("Content of") << tr("Note");
+  //Content->setHeaderLabels(headers);
+  //Content->setSortingEnabled(false);
+  //Content->setColumnWidth(0,150);
 
-  // added by xuliang to control background color
-  Content->setAutoFillBackground(true);
-  Content->setStyleSheet("background-color: rgb(255, 230, 255);");
-  Content->hide(); //setVisible (false); // hide
-  // add end
+  //// added by xuliang to control background color
+  //Content->setAutoFillBackground(true);
+  //Content->setStyleSheet("background-color: rgb(255, 230, 255);");
+  //Content->hide(); //setVisible (false); // hide
+  //// add end
 
-  // allow for a custom context menu
-  Content->setContextMenuPolicy(Qt::CustomContextMenu);
+  //// allow for a custom context menu
+  //Content->setContextMenuPolicy(Qt::CustomContextMenu);
 
-  initContentListView();
+  //initContentListView();
 
-//  TabView->addTab(Content,tr("Content")); // commented out by xuliang
-//  TabView->setTabToolTip(TabView->indexOf(Content), tr("content of current project"));
+  //TabView->addTab(Content,tr("Content")); // commented out by xuliang
+  //TabView->setTabToolTip(TabView->indexOf(Content), tr("content of current project"));
 
-  connect(Content, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)),
-		   SLOT(slotOpenContent(QTreeWidgetItem*)));
+  //connect(Content, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)),
+		//   SLOT(slotOpenContent(QTreeWidgetItem*)));
 
-  connect(Content, SIGNAL(itemPressed(QTreeWidgetItem*, int)),
-           SLOT(slotSelectSubcircuit(QTreeWidgetItem*)));
+  //connect(Content, SIGNAL(itemPressed(QTreeWidgetItem*, int)),
+  //         SLOT(slotSelectSubcircuit(QTreeWidgetItem*)));
 
   // ----------------------------------------------------------
   // "Component" Tab of the left QTabWidget
@@ -486,14 +535,14 @@ void SwieeApp::initView()
 	/*********************************************************************/
 	QQTabDock = new QDockWidget(this);
 	QQTabDock->setAllowedAreas(Qt::LeftDockWidgetArea); //
-	//把dock 放右边
+	//把dock 放左边
 	this->addDockWidget(Qt::LeftDockWidgetArea, QQTabDock);
 	QToolBox *test = new  QToolBox(QQTabDock);
 	QQTabDock->setWidget(test);
 
 	
 	test->addItem(ProjGroup,tr("Projects"));
-	test->addItem(Content,tr("Content"));
+	//test->addItem(Content,tr("Content"));
 	test->addItem(CompGroup,tr("Components"));
 	test->addItem(LibGroup, tr("Libraries"));
 
@@ -1577,6 +1626,7 @@ bool SwieeApp::deleteProject(const QString& Path, const QString& Name)
 
 // ----------------------------------------------------------
 // Is called, when "Delete Project" menu is activated.
+// 将menu的按钮响应改为 下边那个slot
 void SwieeApp::slotMenuDelProject()
 {
 
@@ -2527,6 +2577,8 @@ void SwieeApp::slotDCbias()
   getDoc()->showBias = 0;
   slotSimulate();
 }
+
+
 
 // ------------------------------------------------------------------------
 // Changes to the corresponding data display page or vice versa.

@@ -10,12 +10,12 @@
 #include <QDebug>
 
 SaveDialog::SaveDialog( QWidget* parent, const char* name, bool modal, Qt::WFlags fl )
-   : QDialog( parent, name, modal, fl ),unsavedDocs()
+	: QDialog( parent, name, modal, fl ),unsavedDocs()
 {
-   if ( !name )
-      setWindowTitle( tr( "Save the modified files" ) );
-   app = 0l;
-   initDialog();
+	if ( !name )
+		setWindowTitle( tr( "Save the modified files" ) );
+	app = 0l;
+	initDialog();
 }
 
 SaveDialog::~SaveDialog()
@@ -24,90 +24,90 @@ SaveDialog::~SaveDialog()
 
 void SaveDialog::setApp(SwieeApp *a)
 {
-   app = a;
+	app = a;
 }
 
 void SaveDialog::initDialog()
 {
-   setSizeGripEnabled( FALSE );
-   SaveDialogLayout = new QVBoxLayout( this, 11, 6, "SaveDialogLayout"); 
+	setSizeGripEnabled( FALSE );
+	SaveDialogLayout = new QVBoxLayout( this, 11, 6, "SaveDialogLayout"); 
 
-   label = new QLabel( tr( "Select files to be saved" ) );
-   SaveDialogLayout->addWidget( label );
+	label = new QLabel( tr( "Select files to be saved" ) );
+	SaveDialogLayout->addWidget( label );
 
-   QGroupBox *group = new QGroupBox( tr( "Modified Files" ) );
-   QVBoxLayout *checkBoxLayout = new QVBoxLayout();
-   group->setLayout(checkBoxLayout);
-   
-   fileView = new QListWidget(this);
-   checkBoxLayout->addWidget(fileView);
-   SaveDialogLayout->addWidget(group);
-   
-   buttonsLayout = new QHBoxLayout( 0, 0, 6, "buttonsLayout"); 
+	QGroupBox *group = new QGroupBox( tr( "Modified Files" ) );
+	QVBoxLayout *checkBoxLayout = new QVBoxLayout();
+	group->setLayout(checkBoxLayout);
 
-   abortClosingButton = new QPushButton( tr( "Abort Closing" ) );
-   buttonsLayout->addWidget( abortClosingButton );
-   spacer = new QSpacerItem( 20, 20, QSizePolicy::Expanding, QSizePolicy::Minimum );
-   buttonsLayout->addItem( spacer );
+	fileView = new QListWidget(this);
+	checkBoxLayout->addWidget(fileView);
+	SaveDialogLayout->addWidget(group);
 
-   dontSaveButton = new QPushButton( tr( "Don't Save" ) );
-   buttonsLayout->addWidget( dontSaveButton );
+	buttonsLayout = new QHBoxLayout( 0, 0, 6, "buttonsLayout"); 
 
-   saveSelectedButton = new QPushButton( tr( "Save Selected" ) );
-   saveSelectedButton->setDefault(true);
-   buttonsLayout->addWidget( saveSelectedButton );
-   SaveDialogLayout->addLayout( buttonsLayout );
-   languageChange();
-   resize( QSize(500, 300).expandedTo(minimumSizeHint()) );
-   //clearWState( Qt::WA_WState_Polished );
-   setAttribute(Qt::WA_WState_Polished, false);
+	abortClosingButton = new QPushButton( tr( "Abort Closing" ) );
+	buttonsLayout->addWidget( abortClosingButton );
+	spacer = new QSpacerItem( 20, 20, QSizePolicy::Expanding, QSizePolicy::Minimum );
+	buttonsLayout->addItem( spacer );
 
-   connect(abortClosingButton,SIGNAL(clicked()),this,SLOT(reject()));
-   connect(dontSaveButton,SIGNAL(clicked()),this,SLOT(dontSaveClicked()));
-   connect(saveSelectedButton,SIGNAL(clicked()),this,SLOT(saveSelectedClicked()));
+	dontSaveButton = new QPushButton( tr( "Don't Save" ) );
+	buttonsLayout->addWidget( dontSaveButton );
+
+	saveSelectedButton = new QPushButton( tr( "Save Selected" ) );
+	saveSelectedButton->setDefault(true);
+	buttonsLayout->addWidget( saveSelectedButton );
+	SaveDialogLayout->addLayout( buttonsLayout );
+	languageChange();
+	resize( QSize(500, 300).expandedTo(minimumSizeHint()) );
+	//clearWState( Qt::WA_WState_Polished );
+	setAttribute(Qt::WA_WState_Polished, false);
+
+	connect(abortClosingButton,SIGNAL(clicked()),this,SLOT(reject()));
+	connect(dontSaveButton,SIGNAL(clicked()),this,SLOT(dontSaveClicked()));
+	connect(saveSelectedButton,SIGNAL(clicked()),this,SLOT(saveSelectedClicked()));
 }
 
 void SaveDialog::addUnsavedDoc(SwieeDoc *doc)
 {
-   QString text = (doc->DocName).isEmpty() ? tr("Untitled") : doc->DocName;
+	QString text = (doc->DocName).isEmpty() ? tr("Untitled") : doc->DocName;
 
-   QListWidgetItem *item = new QListWidgetItem(text, fileView);
-   item->setFlags( item->flags() | Qt::ItemIsUserCheckable );
-   item->setCheckState(Qt::Checked);
-   
-   unsavedDocs.insert(doc, item);
+	QListWidgetItem *item = new QListWidgetItem(text, fileView);
+	item->setFlags( item->flags() | Qt::ItemIsUserCheckable );
+	item->setCheckState(Qt::Checked);
+
+	unsavedDocs.insert(doc, item);
 }
 
 void SaveDialog::dontSaveClicked()
 {
-   done(DontSave);
+	done(DontSave);
 }
 
 void SaveDialog::saveSelectedClicked()
 {   
-   QList<SwieeDoc*> unsavable;
-   QMap<SwieeDoc*,QListWidgetItem*>::iterator it(unsavedDocs.begin());
-   for ( ; it != unsavedDocs.end(); ++it)
-   {
-      if ( it.value()->checkState() == Qt::Checked )
-      {
-         SwieeDoc *doc = static_cast<SwieeDoc*>(it.key());
-         if(app->saveFile(doc) == false)
-            unsavable.append(doc);
-         else
-            unsavedDocs.remove(it);
-      }
-   }
-   if(unsavable.isEmpty())
-       done(SaveSelected);
+	QList<SwieeDoc*> unsavable;
+	QMap<SwieeDoc*,QListWidgetItem*>::iterator it(unsavedDocs.begin());
+	for (it=unsavedDocs.begin() ; it != unsavedDocs.end(); ++it)
+	{
+		if ( it.value()->checkState() == Qt::Checked )
+		{
+			SwieeDoc *doc = static_cast<SwieeDoc*>(it.key());
+			if(app->saveFile(doc) == false)
+				unsavable.append(doc);
+			else
+				unsavedDocs.remove(it);
+		}
+	}
+	if(unsavable.isEmpty())
+		done(SaveSelected);
 }
 
 void SaveDialog::reject()
 {
-   done(AbortClosing);
+	done(AbortClosing);
 }
 
 bool SaveDialog::isEmpty() const
 {
-   return unsavedDocs.isEmpty();
+	return unsavedDocs.isEmpty();
 }

@@ -219,6 +219,7 @@ private:
 
   QListWidget     *Projects;
   QTreeWidget     *Content;
+  QTreeWidget     *Content1;
   QTreeWidgetItem *ConSchematics, *ConSources, *ConDisplays, *ConDatasets,
                   *ConOthers, *ConVerilog, *ConVerilogA, *ConOctave;
 
