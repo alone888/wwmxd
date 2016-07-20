@@ -2445,6 +2445,9 @@ void SwieeApp::slotShowOne()
 {
   editText->setHidden(true); // disable text edit of component property
   getDoc()->showNoZoom();
+  Schematic *Doc = (Schematic*)DocumentTab->currentPage();
+  Doc->viewport()->setMouseTracking(true);
+  Doc->setAcceptDrops(true);
 }
 
 // -----------------------------------------------------------
