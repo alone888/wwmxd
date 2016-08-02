@@ -70,13 +70,14 @@
       <Optimization>Disabled</Optimization>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <AdditionalIncludeDirectories>..;../..;C:\Program Files %28x86%29\Developer Machines\QtitanRibbon Demo\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;__MINGW32__;__STDC__=0;QT_THREAD_SUPPORT;_REENTRANT;UNICODE;QT_DLL;DEBUG;QT3_SUPPORT;PACKAGE_VERSION="0.0.18";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\Dbg\</AssemblerListingLocation>
       <PrecompiledHeaderOutputFile>.\Dbg\swiee.pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\Dbg\</ObjectFileName>
       <ProgramDataBaseFileName>.\Dbg\</ProgramDataBaseFileName>
+      <MinimalRebuild>true</MinimalRebuild>
     </ClCompile>
     <Midl>
       <TypeLibraryName>.\Dbg\swiee.tlb</TypeLibraryName>

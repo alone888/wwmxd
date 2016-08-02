@@ -270,6 +270,8 @@ void MouseActions::MMoveElement(Schematic *Doc, QMouseEvent *Event)
   //QPainter painter(Doc->viewport());
   setPainter(Doc);
 
+  MMoveWire1(Doc,Event);
+
   if(selElem->Type == isPainting) {
     Doc->PostPaintEvent (_NotRop, 0,0,0,0);
     x -= Doc->contentsX();
@@ -452,6 +454,17 @@ void MouseActions::MMoveMoving2(Schematic *Doc, QMouseEvent *Event)
 //        if(!((Wire*)pe)->Label->isSelected)
 //          ((Wire*)pe)->Label->paintScheme(&painter);
 
+  Element *wmt;
+  for(wmt = movingElements.first(); wmt != 0; wmt = movingElements.next()) 
+  {
+	  //ÅÐ¶ÏÊÇ·ñÊÇÏß
+	  if(wmt->Type == isWire)
+	  {
+		  Doc->PostPaintEvent(_DotLine,wmt->x1,wmt->y1,wmt->x2,wmt->y2,0,0,true);
+		  break;
+	  }
+  }
+
   drawn = true;
   if((Event->state() & Qt::ControlModifier) == 0)
     Doc->setOnGrid(MAx2, MAy2);  // use grid only if CTRL key not pressed
@@ -471,6 +484,7 @@ void MouseActions::MMoveMoving2(Schematic *Doc, QMouseEvent *Event)
   MAx1 = MAx2;
   MAy1 = MAy2;
 }
+
 
 
 /**

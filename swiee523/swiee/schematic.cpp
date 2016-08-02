@@ -511,7 +511,8 @@ void Schematic::drawContents(QPainter *p, int, int, int, int)
           Painter.drawArc(p.x1, p.y1, p.x2, p.y2, p.a, p.b);
         break;
       case _DotLine:
-        Painter.Painter->setPen(Qt::DotLine);
+		  painter2.setPen(QPen(Qt::gray,2,Qt::DotLine));
+		  painter2.drawLine(p.x1, p.y1, p.x2, p.y2);
         break;
       case _Translate:
 
