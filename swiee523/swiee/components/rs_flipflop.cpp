@@ -94,7 +94,7 @@ Component* RS_FlipFlop::newOne()
 Element* RS_FlipFlop::info(QString& Name, char* &BitmapFile, bool getNewOne)
 {
   Name = QObject::tr("RS-FlipFlop");
-  BitmapFile = (char *) "rsflipflop";
+  BitmapFile = (char *) "z8";
 
   if(getNewOne)  return new RS_FlipFlop();
   return 0;

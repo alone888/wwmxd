@@ -143,13 +143,20 @@ bool SimMessage::startProcess()
   Collect.clear();  // clear list for NodeSets, SPICE components etc.
   //ProgText->insert(tr("creating netlist... "));
   ProgText->insert(GB2312("建立网表... "));
-  NetlistFile.setName(SwieeSettings.SwieeHomeDir.filePath("netlist.txt"));
-   if(!NetlistFile.open(QIODevice::WriteOnly)) {
-    //ErrText->insert(tr("ERROR: Cannot write netlist file!"));
-    ErrText->insert(GB2312("错误: 无法建立网表!"));
-    FinishSimulation(-1);
-    return false;
+  NetlistFile.setName("netlist.txt");
+  if(!NetlistFile.open(QIODevice::WriteOnly)) {
+	  //ErrText->insert(tr("ERROR: Cannot write netlist file!"));
+	  ErrText->insert(GB2312("错误: 无法建立网表!"));
+	  FinishSimulation(-1);
+	  return false;
   }
+  //NetlistFile.setName(SwieeSettings.SwieeHomeDir.filePath("netlist.txt"));
+  // if(!NetlistFile.open(QIODevice::WriteOnly)) {
+  //  //ErrText->insert(tr("ERROR: Cannot write netlist file!"));
+  //  ErrText->insert(GB2312("错误: 无法建立网表!"));
+  //  FinishSimulation(-1);
+  //  return false;
+  //}
 
   Stream.setDevice(&NetlistFile);
 

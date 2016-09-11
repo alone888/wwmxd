@@ -118,14 +118,13 @@ SwieeApp::SwieeApp()
 
   initView();
 
-
-
   initRibbon();
   initActions();
   initMenuBarRibbon();
   initMenuBar();
   initProptsDock();//
   initNavigateDock();
+  initExtAppDock();
   //initQQTabDock();
   //initToolBar();
   initStatusBar();
@@ -265,8 +264,6 @@ void SwieeApp::initView()
   // make tabs draggable if supported
   DocumentTab->setMovable (true);
 #endif
-
-
 
   //dock = new VTabbedDockWidget(Q3DockWindow::InDock, this);
   dock = new QDockWidget(this);
@@ -466,7 +463,7 @@ void SwieeApp::initView()
   QWidget *LibGroup = new QWidget ();
   QVBoxLayout *LibGroupLayout = new QVBoxLayout ();
   QWidget *LibButts = new QWidget ();
-  QPushButton *LibManage = new QPushButton (tr ("Manage Libraries"));
+  QPushButton *LibManage = new QPushButton (tr ("Manage Libraries"));//管理元件库
   connect(LibManage, SIGNAL(clicked()), SLOT(slotCallLibrary()));
   LibManage->setFont(QFont("SimSum",9)); // added by xuliang to control font size
 
@@ -2461,6 +2458,7 @@ void SwieeApp::slotZoomOut()
 /*!
  * \brief SwieeApp::slotSimulate
  *  is called when the simulate toolbar button is pressed.
+ *	仿真按钮
  */
 void SwieeApp::slotSimulate()
 {

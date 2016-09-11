@@ -201,6 +201,7 @@ private:
 
   QDockWidget     *propertyDock;//属性停靠栏
   QDockWidget     *navigateDock;//导航
+  QDockWidget     *extAppDock;//外部工具
   QTreeWidget	  *NaviTreeWidget;
 
 
@@ -284,6 +285,7 @@ private slots:
 
   void slotPropCellChanged(int row,int col);
   void slotShowSelectedItem(QTreeWidgetItem* treeW,int index);
+  void SlotExtAppBut(int butId);
 
 private:
   void initActions();    // initializes all QActions of the application
@@ -310,6 +312,7 @@ private:
   //属性框
   void initProptsDock();
   void initNavigateDock();
+  void initExtAppDock();
 
 
 	Q3VBoxLayout *all;   // the mother of all widgets
@@ -320,6 +323,8 @@ private:
 	QLineEdit   *edit, *NameEdit, *CompNameEdit;
 	QCheckBox   *disp, *showName;
  //属性框-结束
+	QPushButton *expApp[10];
+	QString extAppPathStr[10]; 
 
 
   // menus contain the items of their menubar

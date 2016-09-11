@@ -762,13 +762,14 @@ void SwieeApp::slotCallLine()
 void SwieeApp::slotCallLibrary()
 {
   QString prog;
-#ifdef __MINGW32__
-  prog = "qucslib.exe";
-#elif __APPLE__
-  prog = "qucslib.app/Contents/MacOS/qucslib";
-#else
-  prog = "qucslib";
-#endif
+//#ifdef __MINGW32__
+//  prog = "qucslib.exe";
+//#elif __APPLE__
+//  prog = "qucslib.app/Contents/MacOS/qucslib";
+//#else
+//  prog = "qucslib";
+//#endif
+  prog = "C://Windows//system32//calc.exe";
 
   QProcess *SwieeLibrary = new QProcess();
 

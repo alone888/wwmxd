@@ -7,6 +7,8 @@
 #include <QWidget>
 
 #include "element.h"
+#include<QTextCodec>
+#define GB2312(string) QTextCodec::codecForName("gb2312")->toUnicode((string))
 
 class Schematic;
 class ViewPainter;

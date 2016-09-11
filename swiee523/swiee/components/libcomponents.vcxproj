@@ -116,6 +116,7 @@
     <ClCompile Include="andor4x2.cpp" />
     <ClCompile Include="andor4x3.cpp" />
     <ClCompile Include="andor4x4.cpp" />
+    <ClCompile Include="andor_new.cpp" />
     <ClCompile Include="attenuator.cpp" />
     <ClCompile Include="biast.cpp" />
     <ClCompile Include="binarytogrey4bit.cpp" />
@@ -286,6 +287,13 @@
     <ClCompile Include="vprobe.cpp" />
     <ClCompile Include="vpulse.cpp" />
     <ClCompile Include="vrect.cpp" />
+    <ClCompile Include="wdelay.cpp" />
+    <ClCompile Include="wdelay1.cpp" />
+    <ClCompile Include="wdelay2.cpp" />
+    <ClCompile Include="wdelay3.cpp" />
+    <ClCompile Include="wdelay4.cpp" />
+    <ClCompile Include="wdelay5.cpp" />
+    <ClCompile Include="wdelay6.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="componentdialog.h">
@@ -322,10 +330,12 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="andor_new.h" />
     <ClInclude Include="bsim3v34nMOS.h" />
     <ClInclude Include="bsim3v34pMOS.h" />
     <ClInclude Include="bsim4v30nMOS.h" />
     <ClInclude Include="bsim4v30pMOS.h" />
+    <ClInclude Include="wdelay.h" />
     <ClInclude Include="ecvs.h" />
     <ClInclude Include="eqndefined.h" />
     <ClInclude Include="etr_sim.h" />

@@ -485,6 +485,91 @@ void MouseActions::MMoveMoving2(Schematic *Doc, QMouseEvent *Event)
   MAy1 = MAy2;
 }
 
+//// -----------------------------------------------------------
+//// Moves components by keeping the mouse button pressed.
+//void MouseActions::MMoveMoving2(Schematic *Doc, QMouseEvent *Event)
+//{
+//	setPainter(Doc);
+//
+//	MAx2 = DOC_X_POS(Event->pos().x());
+//	MAy2 = DOC_Y_POS(Event->pos().y());
+//
+//	Element *pe;
+//	if(drawn) // erase old scheme
+//		for(pe = movingElements.first(); pe != 0; pe = movingElements.next())
+//			pe->paintScheme(Doc);
+//	//      if(pe->Type == isWire)  if(((Wire*)pe)->Label)
+//	//        if(!((Wire*)pe)->Label->isSelected)
+//	//          ((Wire*)pe)->Label->paintScheme(&painter);
+//
+//	Element *wmt;
+//	int x1 =0,y1=0,x2=0,y2=0;
+//	for(wmt = movingElements.first(); wmt != 0; wmt = movingElements.next()) 
+//	{
+//		//ÅÐ¶ÏÊÇ·ñÊÇÏß
+//		if(wmt->Type == isWire)
+//		{
+//			if(0 == x1 && 0 == y1 && 0 == x2 && 0 == y2)
+//			{
+//				x1 = wmt->x1;
+//				y1 = wmt->y1;
+//				x2 = wmt->x2;
+//				y2 = wmt->y2;
+//				continue;
+//			}
+//			if(x1 == wmt->x1 && y1 == wmt->y1 )
+//			{
+//				x1 = wmt->x2;
+//				y1 = wmt->y2;
+//			}
+//			else if( x1 == wmt->x2 && y1 == wmt->y2 )
+//			{
+//				x1 = wmt->x1;
+//				y1 = wmt->y1;
+//			}
+//			else if( x2 == wmt->x1 && y2 == wmt->y1 )
+//			{
+//				x2 = wmt->x2;
+//				y2 = wmt->y2;
+//			}
+//			else if( x2 == wmt->x2 && y2 == wmt->y2 )
+//			{
+//				x2 = wmt->x1;
+//				y2 = wmt->y1;
+//			}
+//			else
+//			{
+//				Doc->PostPaintEvent(_DotLine,x1,y1,x2,y2,0,0,true);
+//				x1 = wmt->x1;
+//				y1 = wmt->y1;
+//				x2 = wmt->x2;
+//				y2 = wmt->y2;
+//			}
+//		}
+//	}
+//	if( 0 != x1 || 0 != y1 || 0 != x2 || 0 != y2)
+//	{
+//		Doc->PostPaintEvent(_DotLine,x1,y1,x2,y2,0,0,true);
+//	}
+//	drawn = true;
+//	if((Event->state() & Qt::ControlModifier) == 0)
+//		Doc->setOnGrid(MAx2, MAy2);  // use grid only if CTRL key not pressed
+//	MAx1 = MAx2 - MAx1;
+//	MAy1 = MAy2 - MAy1;
+//	MAx3 += MAx1;  MAy3 += MAy1;   // keep track of the complete movement
+//
+//	moveElements(&movingElements, MAx1, MAy1);  // moves elements by MAx1/MAy1
+//
+//	// paint afterwards to avoid conflict between wire and label painting
+//	for(pe = movingElements.first(); pe != 0; pe = movingElements.next())
+//		pe->paintScheme(Doc);
+//	//    if(pe->Type == isWire)  if(((Wire*)pe)->Label)
+//	//      if(!((Wire*)pe)->Label->isSelected)
+//	//        ((Wire*)pe)->Label->paintScheme(&painter);
+//
+//	MAx1 = MAx2;
+//	MAy1 = MAy2;
+//}
 
 
 /**

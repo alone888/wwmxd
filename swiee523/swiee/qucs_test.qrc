@@ -1,5 +1,12 @@
 <!DOCTYPE RCC><RCC version="1.0">
 <qresource>
+<file>bitmaps/1library.png</file>
+<file>bitmaps/1moveText.png</file>
+<file>bitmaps/1Print.png</file>
+<file>bitmaps/1recent.png</file>
+<file>bitmaps/1selectAll.png</file>
+<file>bitmaps/1textEdit.png</file>
+<file>bitmaps/1textSetting.png</file>
 <file>bitmaps/29.png</file>
 <file>bitmaps/ac.png</file>
 <file>bitmaps/ac_current.png</file>
@@ -165,6 +172,15 @@
 <file>bitmaps/pad2bit.png</file>
 <file>bitmaps/pad3bit.png</file>
 <file>bitmaps/pad4bit.png</file>
+<file>bitmaps/pc18.png</file>
+<file>bitmaps/pc19.png</file>
+<file>bitmaps/pc20.png</file>
+<file>bitmaps/pc21.png</file>
+<file>bitmaps/pc22.png</file>
+<file>bitmaps/pc28.png</file>
+<file>bitmaps/pc29.png</file>
+<file>bitmaps/pc32.png</file>
+<file>bitmaps/pc33.png</file>
 <file>bitmaps/pfet.png</file>
 <file>bitmaps/photodiode.png</file>
 <file>bitmaps/phototransistor.png</file>
@@ -186,6 +202,7 @@
 <file>bitmaps/previous.png</file>
 <file>bitmaps/pshifter.png</file>
 <file>bitmaps/qucs.icns</file>
+<file>bitmaps/qucs_test.qrc</file>
 <file>bitmaps/qucsattenuator.icns</file>
 <file>bitmaps/qucsedit.icns</file>
 <file>bitmaps/qucsfilter.icns</file>
@@ -257,5 +274,15 @@
 <file>bitmaps/xnor.png</file>
 <file>bitmaps/xor.png</file>
 <file>bitmaps/ysmith.png</file>
+<file>bitmaps/z1.png</file>
+<file>bitmaps/z10.png</file>
+<file>bitmaps/z2.png</file>
+<file>bitmaps/z3.png</file>
+<file>bitmaps/z4.png</file>
+<file>bitmaps/z5.png</file>
+<file>bitmaps/z6.png</file>
+<file>bitmaps/z7.png</file>
+<file>bitmaps/z8.png</file>
+<file>bitmaps/z9.png</file>
 </qresource>
 </RCC>

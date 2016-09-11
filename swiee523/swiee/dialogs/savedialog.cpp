@@ -87,16 +87,23 @@ void SaveDialog::saveSelectedClicked()
 {   
 	QList<SwieeDoc*> unsavable;
 	QMap<SwieeDoc*,QListWidgetItem*>::iterator it(unsavedDocs.begin());
-	for (it=unsavedDocs.begin() ; it != unsavedDocs.end(); ++it)
+	QMap<SwieeDoc*,QListWidgetItem*>::iterator itTmp(unsavedDocs.begin());
+	for (it=unsavedDocs.begin() ; it != unsavedDocs.end();)
 	{
+		itTmp = it + 1;
 		if ( it.value()->checkState() == Qt::Checked )
 		{
 			SwieeDoc *doc = static_cast<SwieeDoc*>(it.key());
 			if(app->saveFile(doc) == false)
 				unsavable.append(doc);
 			else
-				unsavedDocs.remove(it);
+			{
+				unsavedDocs.remove(it);				
+			}
+
+				
 		}
+		it = itTmp;
 	}
 	if(unsavable.isEmpty())
 		done(SaveSelected);

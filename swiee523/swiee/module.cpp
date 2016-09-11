@@ -175,7 +175,7 @@ void Module::intoCategory (Module * m) {
 #define REGISTER_PROBE_1(val) \
   REGISTER_COMP_1 (QObject::tr("probes"),val)
 #define REGISTER_TRANS_1(val) \
-  REGISTER_COMP_1 (QObject::tr("transmission lines"),val)
+  REGISTER_COMP_1 (GB2312("自定义模块"),val)
 #define REGISTER_NONLINEAR_1(val) \
   REGISTER_COMP_1 (QObject::tr("nonlinear components"),val)
 #define REGISTER_NONLINEAR_2(val,inf1,inf2) \
@@ -210,12 +210,51 @@ void Module::intoCategory (Module * m) {
 // any new component.
 void Module::registerModules (void) {
 
-  // lumped components
+	//新加自定义模块的王元龙
+
+
+	REGISTER_TRANS_1 (wDelay);
+	REGISTER_TRANS_1 (wDelay1);
+	REGISTER_TRANS_1 (wDelay2);
+	REGISTER_TRANS_1 (wDelay3);
+	REGISTER_TRANS_1 (wDelay4);
+	REGISTER_TRANS_1 (andor_new);
+	REGISTER_TRANS_1 (Amplifier);
+	REGISTER_TRANS_1 (RS_FlipFlop);
+	REGISTER_TRANS_1 (D_FlipFlop);
+	REGISTER_TRANS_1 (Isolator);
+	//REGISTER_TRANS_1 (TLine_4Port);
+	//REGISTER_TRANS_1 (CoupledTLine);
+	//REGISTER_TRANS_1 (TwistedPair);
+	//REGISTER_TRANS_1 (CoaxialLine);
+	//REGISTER_TRANS_1 (RectLine);
+	//REGISTER_TRANS_1 (RLCG);
+	//REGISTER_TRANS_1 (Substrate);
+	//REGISTER_TRANS_1 (MSline);
+	//REGISTER_TRANS_1 (MScoupled);
+	//REGISTER_TRANS_1 (MSlange);
+	//REGISTER_TRANS_1 (MScorner);
+	//REGISTER_TRANS_1 (MSmbend);
+	//REGISTER_TRANS_1 (MSstep);
+	//REGISTER_TRANS_1 (MStee);
+	//REGISTER_TRANS_1 (MScross);
+	//REGISTER_TRANS_1 (MSopen);
+	//REGISTER_TRANS_1 (MSgap);
+	//REGISTER_TRANS_1 (MSvia);
+	//REGISTER_TRANS_1 (MSrstub);
+	//REGISTER_TRANS_1 (Coplanar);
+	//REGISTER_TRANS_1 (CPWopen);
+	//REGISTER_TRANS_1 (CPWshort);
+	//REGISTER_TRANS_1 (CPWgap);
+	//REGISTER_TRANS_1 (CPWstep);
+	//REGISTER_TRANS_1 (BondWire);
+	
+	// lumped components
   REGISTER_LUMPED_2 (Resistor, info, info_us);
   REGISTER_LUMPED_1 (Capacitor);
-//  REGISTER_LUMPED_1 (Inductor);
+  REGISTER_LUMPED_1 (Inductor);
   REGISTER_LUMPED_1 (Ground);
-/*
+
   REGISTER_LUMPED_1 (SubCirPort);
   REGISTER_LUMPED_1 (Transformer);
   REGISTER_LUMPED_1 (symTrafo);
@@ -223,8 +262,8 @@ void Module::registerModules (void) {
   REGISTER_LUMPED_1 (dcFeed);
   REGISTER_LUMPED_1 (BiasT);
   REGISTER_LUMPED_1 (Attenuator);
-  REGISTER_LUMPED_1 (Amplifier);
-  REGISTER_LUMPED_1 (Isolator);
+  //REGISTER_LUMPED_1 (Amplifier);
+  //REGISTER_LUMPED_1 (Isolator);
   REGISTER_LUMPED_1 (Circulator);
   REGISTER_LUMPED_1 (Gyrator);
   REGISTER_LUMPED_1 (Phaseshifter);
@@ -238,12 +277,12 @@ void Module::registerModules (void) {
   REGISTER_LUMPED_1 (Relais);
   REGISTER_LUMPED_1 (RFedd);
   REGISTER_LUMPED_1 (RFedd2P);
-*/
+
   // sources
   REGISTER_SOURCE_1 (Volt_dc);
 //  REGISTER_SOURCE_1 (Ampere_dc);
   REGISTER_SOURCE_1 (Volt_ac);
-/*  REGISTER_SOURCE_1 (Ampere_ac);
+  REGISTER_SOURCE_1 (Ampere_ac);
   REGISTER_SOURCE_1 (Source_ac);
   REGISTER_SOURCE_1 (Volt_noise);
   REGISTER_SOURCE_1 (Ampere_noise);
@@ -251,9 +290,9 @@ void Module::registerModules (void) {
   REGISTER_SOURCE_1 (CCCS);
   REGISTER_SOURCE_1 (VCVS);
   REGISTER_SOURCE_1 (CCVS);
-*/
+
   REGISTER_SOURCE_1 (vPulse);
-/*
+
   REGISTER_SOURCE_1 (iPulse);
   REGISTER_SOURCE_1 (vRect);
   REGISTER_SOURCE_1 (iRect);
@@ -266,43 +305,14 @@ void Module::registerModules (void) {
   REGISTER_SOURCE_1 (vExp);
   REGISTER_SOURCE_1 (vFile);
   REGISTER_SOURCE_1 (iFile);
-*/
+
   // probes
   REGISTER_PROBE_1 (iProbe);
   REGISTER_PROBE_1 (vProbe);
 
-  // transmission lines
-/*
-  REGISTER_TRANS_1 (TLine);
-  REGISTER_TRANS_1 (TLine_4Port);
-  REGISTER_TRANS_1 (CoupledTLine);
-  REGISTER_TRANS_1 (TwistedPair);
-  REGISTER_TRANS_1 (CoaxialLine);
-  REGISTER_TRANS_1 (RectLine);
-  REGISTER_TRANS_1 (RLCG);
-  REGISTER_TRANS_1 (Substrate);
-  REGISTER_TRANS_1 (MSline);
-  REGISTER_TRANS_1 (MScoupled);
-  REGISTER_TRANS_1 (MSlange);
-  REGISTER_TRANS_1 (MScorner);
-  REGISTER_TRANS_1 (MSmbend);
-  REGISTER_TRANS_1 (MSstep);
-  REGISTER_TRANS_1 (MStee);
-  REGISTER_TRANS_1 (MScross);
-  REGISTER_TRANS_1 (MSopen);
-  REGISTER_TRANS_1 (MSgap);
-  REGISTER_TRANS_1 (MSvia);
-  REGISTER_TRANS_1 (MSrstub);
-  REGISTER_TRANS_1 (Coplanar);
-  REGISTER_TRANS_1 (CPWopen);
-  REGISTER_TRANS_1 (CPWshort);
-  REGISTER_TRANS_1 (CPWgap);
-  REGISTER_TRANS_1 (CPWstep);
-  REGISTER_TRANS_1 (BondWire);
-*/
 
   // nonlinear components
-/*
+
   REGISTER_NONLINEAR_1 (Diode);
   REGISTER_NONLINEAR_2 (BJT, info, info_pnp);
   REGISTER_NONLINEAR_2 (BJTsub, info, info_pnp);
@@ -315,10 +325,10 @@ void Module::registerModules (void) {
   REGISTER_NONLINEAR_1 (Triac);
   REGISTER_NONLINEAR_1 (Thyristor);
   REGISTER_NONLINEAR_1 (TunnelDiode);
-*/
+
 
   // verilog-a devices
-/*
+
   REGISTER_VERILOGA_1 (hicumL2V2p1);
   REGISTER_VERILOGA_1 (HBT_X);
   REGISTER_VERILOGA_1 (mod_amp);
@@ -342,9 +352,9 @@ void Module::registerModules (void) {
   REGISTER_VERILOGA_1 (phototransistor);
   REGISTER_VERILOGA_1 (nigbt);
   REGISTER_VERILOGA_1 (vcresistor);
-*/
+
   // digital components
-/*
+
   REGISTER_DIGITAL_1 (Digi_Source);
   REGISTER_DIGITAL_1 (Logical_Inv);
   REGISTER_DIGITAL_1 (Logical_OR);
@@ -366,8 +376,6 @@ void Module::registerModules (void) {
   REGISTER_DIGITAL_1 (ha1b);
   REGISTER_DIGITAL_1 (fa1b);
   REGISTER_DIGITAL_1 (fa2b);
-  REGISTER_DIGITAL_1 (RS_FlipFlop);
-  REGISTER_DIGITAL_1 (D_FlipFlop);
   REGISTER_DIGITAL_1 (dff_SR);
   REGISTER_DIGITAL_1 (JK_FlipFlop);
   REGISTER_DIGITAL_1 (jkff_SR);
@@ -389,7 +397,7 @@ void Module::registerModules (void) {
   REGISTER_DIGITAL_1 (VHDL_File);
   REGISTER_DIGITAL_1 (Verilog_File);
   REGISTER_DIGITAL_1 (Digi_Sim);
-*/
+
 
   // file components
 /*
@@ -412,16 +420,20 @@ void Module::registerModules (void) {
 
   // diagrams
   REGISTER_DIAGRAM_1 (RectDiagram);
-//  REGISTER_DIAGRAM_1 (PolarDiagram);
+  REGISTER_DIAGRAM_1 (PolarDiagram);
   REGISTER_DIAGRAM_1 (TabDiagram);
-//  REGISTER_DIAGRAM_2 (SmithDiagram, info, info_y);
-//  REGISTER_DIAGRAM_2 (PSDiagram, info, info_sp);
-//  REGISTER_DIAGRAM_1 (Rect3DDiagram);
-//  REGISTER_DIAGRAM_1 (CurveDiagram);
-//  REGISTER_DIAGRAM_1 (TimingDiagram);
-//  REGISTER_DIAGRAM_1 (TruthDiagram);
+  REGISTER_DIAGRAM_2 (SmithDiagram, info, info_y);
+  REGISTER_DIAGRAM_2 (PSDiagram, info, info_sp);
+  REGISTER_DIAGRAM_1 (Rect3DDiagram);
+  REGISTER_DIAGRAM_1 (CurveDiagram);
+  REGISTER_DIAGRAM_1 (TimingDiagram);
+  REGISTER_DIAGRAM_1 (TruthDiagram);
   REGISTER_DIAGRAM_1 (RichDiagram);
   REGISTER_DIAGRAM_1 (AnimateDiagram);
+
+
+
+
 
   // external simulation
 //  REGISTER_EXTERNAL_1 (ETR_Sim);

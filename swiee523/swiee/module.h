@@ -26,6 +26,8 @@ typedef Element * (* pInfoFunc) (QString&, char * &, bool);
 typedef Element * (* pInfoVAFunc) (QString&, QString&, bool, QString);
 typedef Component * (* pCreatorFunc) ();
 
+#define GB2312(string) QTextCodec::codecForName("gb2312")->toUnicode((string))
+
 class Module
 {
  public:
