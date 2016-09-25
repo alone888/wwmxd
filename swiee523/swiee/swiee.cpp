@@ -45,6 +45,9 @@
 
 #include "swieeLabel.h"
 
+
+
+
 //#include <cmath>
 //int round(double arg);
 #define round(arg) ((arg > 0)?floor(arg + 0.5) : ceil(arg - 0.5))
@@ -266,21 +269,21 @@ void SwieeApp::initView()
 #endif
 
   //dock = new VTabbedDockWidget(Q3DockWindow::InDock, this);
-  dock = new QDockWidget(this);
-  dock->setAllowedAreas(Qt::AllDockWidgetAreas); 
-  dock->setVisible(false);
+  //dock = new QDockWidget(this);
+  //dock->setAllowedAreas(Qt::AllDockWidgetAreas); 
+  //dock->setVisible(false);
 
-
+  //昨天的qq工具栏
   //TabView = new VTabWidget(VTabInterface::TabLeft,dock);  // tabs on the left side
   TabView = new QTabWidget();
   TabView->setTabPosition(QTabWidget::West);
   TabView->setTabPosition(QTabWidget::North);
   TabView->setAutoFillBackground(true);
-  TabView->setStyleSheet("TabView::tab-bar {background-color: rgb(255, 0, 0)}");
+  //TabView->setStyleSheet("TabView::tab-bar {background-color: rgb(255, 0, 0)}");
 
   TabView->setFont(QFont("SimSun",9));
 
-  connect(dock, SIGNAL(visibilityChanged(bool)), SLOT(slotToggleDock(bool)));
+  //connect(dock, SIGNAL(visibilityChanged(bool)), SLOT(slotToggleDock(bool)));
 
   view = new MouseActions(this);
  
@@ -318,7 +321,7 @@ void SwieeApp::initView()
 
   // added by xuliang to control background color
   ProjGroup->setAutoFillBackground(true);
-  ProjGroup->setStyleSheet("background-color: rgb(255, 230, 255);");
+  ProjGroup->setStyleSheet(BACKCOLOR_STYLE);//界面
   // add end
 
   QHBoxLayout *ProjButtsLayout = new QHBoxLayout();//水平按钮布局
@@ -371,15 +374,10 @@ void SwieeApp::initView()
 	  SLOT(slotSelectSubcircuit(QTreeWidgetItem*)));
 
 
-
-
   ProjGroupLayout->setStretchFactor(ProjGroupbox,1);
   ProjGroupLayout->setStretchFactor(Content,2);
   
   ProjGroup->setLayout(ProjGroupLayout);
-
-
-
 
 
   //增加“工程”选项卡
@@ -388,42 +386,6 @@ void SwieeApp::initView()
 
   connect(Projects, SIGNAL(itemDoubleClicked(QListWidgetItem*)), SLOT(slotOpenProject(QListWidgetItem*)));
   
-
-
-
-
-  //QStringList headers;
-  //// ----------------------------------------------------------
-  //// "Content" Tab of the left QTabWidget
-  //// 内容选项卡
-  ////Content = new QTreeWidget(this);
-  //Content = new QTreeWidget();
-
-  //Content->setColumnCount(2);
-  //headers << tr("Content of") << tr("Note");
-  //Content->setHeaderLabels(headers);
-  //Content->setSortingEnabled(false);
-  //Content->setColumnWidth(0,150);
-
-  //// added by xuliang to control background color
-  //Content->setAutoFillBackground(true);
-  //Content->setStyleSheet("background-color: rgb(255, 230, 255);");
-  //Content->hide(); //setVisible (false); // hide
-  //// add end
-
-  //// allow for a custom context menu
-  //Content->setContextMenuPolicy(Qt::CustomContextMenu);
-
-  //initContentListView();
-
-  //TabView->addTab(Content,tr("Content")); // commented out by xuliang
-  //TabView->setTabToolTip(TabView->indexOf(Content), tr("content of current project"));
-
-  //connect(Content, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)),
-		//   SLOT(slotOpenContent(QTreeWidgetItem*)));
-
-  //connect(Content, SIGNAL(itemPressed(QTreeWidgetItem*, int)),
-  //         SLOT(slotSelectSubcircuit(QTreeWidgetItem*)));
 
   // ----------------------------------------------------------
   // "Component" Tab of the left QTabWidget
@@ -439,9 +401,10 @@ void SwieeApp::initView()
   CompComps->setFont(QFont("SimSum",9)); // added by xuliang to control font size
 
   // added by xuliang to control display color
-  CompGroup->setAutoFillBackground(true);
-  CompGroup->setBackgroundColor(QColor(255,230,255));
-  CompComps->setStyleSheet("background-color:transparent");
+  //CompGroup->setAutoFillBackground(true);
+  //CompGroup->setBackgroundColor(QColor(BACKCOLOR));//界面
+  //CompComps->setStyleSheet(BACKCOLOR_STYLE);
+  CompGroup->setStyleSheet(BACKCOLOR_STYLE);//界面
   // add end
 
   CompGroupLayout->addWidget(CompChoose);
@@ -469,7 +432,7 @@ void SwieeApp::initView()
 
   // added by xuliang to control background color
   LibGroup->setAutoFillBackground(true);
-  LibGroup->setStyleSheet("background-color: rgb(255, 230, 255);");
+  LibGroup->setStyleSheet(BACKCOLOR_STYLE);//界面
   // add end
 
   QHBoxLayout *LibButtsLayout = new QHBoxLayout();
@@ -501,12 +464,13 @@ void SwieeApp::initView()
   // ----------------------------------------------------------
   // put the tab widget in the dock
   // 用qq抽屉式替代 就不用这个了
-  dock->setWidget(TabView);
-  dock->setAllowedAreas(Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea);
-  this->addDockWidget(Qt::RightDockWidgetArea, dock);//把dock 放左边
-  this->removeDockWidget(dock);
-  dock->close();
-  TabView->setCurrentPage(0);
+
+  //dock->setWidget(TabView);
+  //dock->setAllowedAreas(Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea);
+  //this->addDockWidget(Qt::RightDockWidgetArea, dock);//把dock 放左边
+  //this->removeDockWidget(dock);
+  //dock->close();
+  //TabView->setCurrentPage(0);
 
   // ----------------------------------------------------------
   // Octave docking window
@@ -534,16 +498,21 @@ void SwieeApp::initView()
 	QQTabDock->setAllowedAreas(Qt::LeftDockWidgetArea); //
 	//把dock 放左边
 	this->addDockWidget(Qt::LeftDockWidgetArea, QQTabDock);
+
 	QToolBox *test = new  QToolBox(QQTabDock);
+
 	QQTabDock->setWidget(test);
 
-	
+	QWidget* lEmptyWidget = new QWidget(); 
+	QQTabDock->setTitleBarWidget(lEmptyWidget);
+
+
 	test->addItem(ProjGroup,tr("Projects"));
 	//test->addItem(Content,tr("Content"));
 	test->addItem(CompGroup,tr("Components"));
 	test->addItem(LibGroup, tr("Libraries"));
 
-	test->layout()->setSpacing(2);//抽屉之间的缝隙 
+	test->layout()->setSpacing(3);//抽屉之间的缝隙 
 
 	//// 加载CSS文件
 	QString strPath = QCoreApplication::applicationDirPath();  

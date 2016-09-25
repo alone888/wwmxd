@@ -51,7 +51,7 @@ bool loadSettings()
     if(settings.contains("NodeWiring"))SwieeSettings.NodeWiring=settings.value("NodeWiring").toInt();
     if(settings.contains("BGColor"))SwieeSettings.BGColor.setNamedColor(settings.value("BGColor").toString());
 	//SwieeSettings.BGColor.setNamedColor(QString("#FFE6FF"));
-	SwieeSettings.BGColor.setRgb(255, 230, 255);
+	SwieeSettings.BGColor.setRgb(SCH_BACKCOLOR);//原理图颜色
     if(settings.contains("Editor"))SwieeSettings.Editor=settings.value("Editor").toString();
     if(settings.contains("FileTypes"))SwieeSettings.FileTypes=settings.value("FileTypes").toStringList();
     if(settings.contains("Language"))SwieeSettings.Language=settings.value("Language").toString();
@@ -780,7 +780,7 @@ int main(int argc, char *argv[])
   loadSettings();
 
   if(!SwieeSettings.BGColor.isValid())
-    SwieeSettings.BGColor.setRgb(255, 250, 225);
+    SwieeSettings.BGColor.setRgb(255, 255, 255);//貌似没什么用
 
 //  SwieeSettings.BGColor.setRgb(220, 220, 220);
 
@@ -887,8 +887,20 @@ int main(int argc, char *argv[])
 
 	//
   
-  
-  a.setStyleSheet ("QMainWindow {background-color:rgb(43, 60, 89)}");
+  //主界面样式
+  a.setStyleSheet ("QMainWindow {background-color:rgb(250, 250, 250);}\
+					 QStatusBar {background: rgb(232, 232, 232);}\
+					 QStatusBar::item {border: none;border-right: 1px solid rgb(100, 100, 100);}");
+
+  /**********状态栏**********/
+//  QStatusBar {
+//background: rgb(57, 58, 60);
+//  }
+//  QStatusBar::item {
+//border: none;
+//	  border-right: 1px solid rgb(100, 100, 100);
+//  }
+//
 	//a.setStyleSheet ("QDialog {background-color:rgb(250, 250, 0)}");
 	//a.setPalette(QPalette(QColor("#F0F0F0")));
 

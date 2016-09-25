@@ -19,6 +19,10 @@ class Component;
 #ifndef M_PI
 #define M_PI     3.1415926535897932384626433832795029
 #endif
+//title {background: rgb(0, 255, 255);} 
+#define BACKCOLOR_STYLE "background-color: rgb(255, 255, 255);"
+#define BACKCOLOR 255,255,255
+#define SCH_BACKCOLOR BACKCOLOR
 
 struct tSwieeSettings {
   int x, y, dx, dy;    // position and size of main window

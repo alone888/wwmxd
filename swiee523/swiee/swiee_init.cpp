@@ -804,103 +804,103 @@ void SwieeApp::setButPropts(QToolButton *ToolBut,
 }
 
 
-void SwieeApp::initQQTabDock()
-{
-
-
-	QGroupBox *groupBox1 = new QGroupBox();
-
-
-	QVBoxLayout *layout1 = new QVBoxLayout(groupBox1);
-	layout1->setMargin(0);
-	layout1->setAlignment(Qt::AlignHCenter);    
-	layout1->addWidget(toolButton1_1);
-	layout1->addWidget(toolButton1_2);
-	layout1->addWidget(toolButton1_3);
-	layout1->addWidget(toolButton1_4);
-	layout1->addWidget(toolButton1_5);  
-	layout1->addStretch();        
-
-	QGroupBox *groupBox2 = new QGroupBox();
-
-	toolButton2_1 = new QToolButton( );
-	toolButton2_1->setText( tr( "pizicai" ) );
-	toolButton2_1->setIcon( QPixmap( ":/images/1.png" ) );
-	toolButton2_1->setIconSize( QPixmap( ":/images/1.png").size() );
-	toolButton2_1->setAutoRaise( TRUE );
-	toolButton2_1->setToolButtonStyle( Qt::ToolButtonTextUnderIcon);
-
-	toolButton2_2 = new QToolButton();
-	toolButton2_2->setText( tr( "feiyang" ) );
-	toolButton2_2->setIcon( QPixmap( ":/images/2.png") );
-	toolButton2_2->setIconSize( QPixmap( ":/images/2.png").size() );
-	toolButton2_2->setAutoRaise( TRUE );
-	toolButton2_2->setToolButtonStyle( Qt::ToolButtonTextUnderIcon);
-
-	QVBoxLayout *layout2 = new QVBoxLayout(groupBox2);
-	layout2->setMargin(0);
-	layout2->setAlignment(Qt::AlignHCenter);    
-	layout2->addWidget(toolButton2_1);
-	layout2->addWidget(toolButton2_2);
-	layout2->addStretch();       
-
-	QGroupBox *groupBox3 = new QGroupBox();
-
-	toolButton3_1 = new QToolButton( );
-	toolButton3_1->setText( tr( "QQ" ) );
-	toolButton3_1->setIcon( QPixmap( ":/images/3.png" ) );
-	toolButton3_1->setIconSize( QPixmap( ":/images/3.png").size() );
-	toolButton3_1->setAutoRaise( TRUE );
-	toolButton3_1->setToolButtonStyle( Qt::ToolButtonTextUnderIcon);
-
-	toolButton3_2 = new QToolButton();
-	toolButton3_2->setText( tr( "angel" ) );
-	toolButton3_2->setIcon( QPixmap( ":/images/4.png") );
-	toolButton3_2->setIconSize( QPixmap( ":/images/4.png").size() );
-	toolButton3_2->setAutoRaise( TRUE );
-	toolButton3_2->setToolButtonStyle( Qt::ToolButtonTextUnderIcon);
-
-	QVBoxLayout *layout3 = new QVBoxLayout(groupBox3);
-	layout3->setMargin(0);
-	layout3->setAlignment(Qt::AlignHCenter);    
-	layout3->addWidget(toolButton3_1);
-	layout3->addWidget(toolButton3_2);     
-	layout3->addStretch();         
-
-	QQTabDock = new QDockWidget(this);
-	QQTabDock->setAllowedAreas(Qt::RightDockWidgetArea); //
-	//把dock 放右边
-	this->addDockWidget(Qt::RightDockWidgetArea, QQTabDock);
-	QToolBox *test = new  QToolBox(QQTabDock);
-	QQTabDock->setWidget(test);
-
-	
-
-	test->addItem( ( QWidget* )groupBox1 , tr("my friends" ));
-	test->addItem( ( QWidget* )groupBox2 , tr("stranger" ));
-	test->addItem( ( QWidget* )groupBox3 , tr("blacklist" ));
-
-	test->setMargin(0);
-
-	/* spacing between items in the tool bar */
-	//test->setStyleSheet("  QToolBar {background: red;spacing: 3px;}");
-	
-
-	//// 加载CSS文件
-	QString strPath = QCoreApplication::applicationDirPath();  
-	qDebug()<<strPath;  
-	QString strCssFile = strPath + "/QQ.css";  
-	QFile fCss(strCssFile);  
-	if( !fCss.open(QFile::ReadOnly))  
-	{  
-		qDebug("css File %s load false",strCssFile);  
-	//        return;  
-	}  
-	QString strCssContent(fCss.readAll());  
-	QQTabDock->setStyleSheet(strCssContent);  
-	fCss.close(); 
-
-}
+//void SwieeApp::initQQTabDock()
+//{
+//
+//
+//	QGroupBox *groupBox1 = new QGroupBox();
+//
+//
+//	QVBoxLayout *layout1 = new QVBoxLayout(groupBox1);
+//	layout1->setMargin(0);
+//	layout1->setAlignment(Qt::AlignHCenter);    
+//	layout1->addWidget(toolButton1_1);
+//	layout1->addWidget(toolButton1_2);
+//	layout1->addWidget(toolButton1_3);
+//	layout1->addWidget(toolButton1_4);
+//	layout1->addWidget(toolButton1_5);  
+//	layout1->addStretch();        
+//
+//	QGroupBox *groupBox2 = new QGroupBox();
+//
+//	toolButton2_1 = new QToolButton( );
+//	toolButton2_1->setText( tr( "pizicai" ) );
+//	toolButton2_1->setIcon( QPixmap( ":/images/1.png" ) );
+//	toolButton2_1->setIconSize( QPixmap( ":/images/1.png").size() );
+//	toolButton2_1->setAutoRaise( TRUE );
+//	toolButton2_1->setToolButtonStyle( Qt::ToolButtonTextUnderIcon);
+//
+//	toolButton2_2 = new QToolButton();
+//	toolButton2_2->setText( tr( "feiyang" ) );
+//	toolButton2_2->setIcon( QPixmap( ":/images/2.png") );
+//	toolButton2_2->setIconSize( QPixmap( ":/images/2.png").size() );
+//	toolButton2_2->setAutoRaise( TRUE );
+//	toolButton2_2->setToolButtonStyle( Qt::ToolButtonTextUnderIcon);
+//
+//	QVBoxLayout *layout2 = new QVBoxLayout(groupBox2);
+//	layout2->setMargin(0);
+//	layout2->setAlignment(Qt::AlignHCenter);    
+//	layout2->addWidget(toolButton2_1);
+//	layout2->addWidget(toolButton2_2);
+//	layout2->addStretch();       
+//
+//	QGroupBox *groupBox3 = new QGroupBox();
+//
+//	toolButton3_1 = new QToolButton( );
+//	toolButton3_1->setText( tr( "QQ" ) );
+//	toolButton3_1->setIcon( QPixmap( ":/images/3.png" ) );
+//	toolButton3_1->setIconSize( QPixmap( ":/images/3.png").size() );
+//	toolButton3_1->setAutoRaise( TRUE );
+//	toolButton3_1->setToolButtonStyle( Qt::ToolButtonTextUnderIcon);
+//
+//	toolButton3_2 = new QToolButton();
+//	toolButton3_2->setText( tr( "angel" ) );
+//	toolButton3_2->setIcon( QPixmap( ":/images/4.png") );
+//	toolButton3_2->setIconSize( QPixmap( ":/images/4.png").size() );
+//	toolButton3_2->setAutoRaise( TRUE );
+//	toolButton3_2->setToolButtonStyle( Qt::ToolButtonTextUnderIcon);
+//
+//	QVBoxLayout *layout3 = new QVBoxLayout(groupBox3);
+//	layout3->setMargin(0);
+//	layout3->setAlignment(Qt::AlignHCenter);    
+//	layout3->addWidget(toolButton3_1);
+//	layout3->addWidget(toolButton3_2);     
+//	layout3->addStretch();         
+//
+//	QQTabDock = new QDockWidget(this);
+//	QQTabDock->setAllowedAreas(Qt::RightDockWidgetArea); //
+//	//把dock 放右边
+//	this->addDockWidget(Qt::RightDockWidgetArea, QQTabDock);
+//	QToolBox *test = new  QToolBox(QQTabDock);
+//	QQTabDock->setWidget(test);
+//
+//	
+//
+//	test->addItem( ( QWidget* )groupBox1 , tr("my friends" ));
+//	test->addItem( ( QWidget* )groupBox2 , tr("stranger" ));
+//	test->addItem( ( QWidget* )groupBox3 , tr("blacklist" ));
+//
+//	test->setMargin(0);
+//
+//	/* spacing between items in the tool bar */
+//	//test->setStyleSheet("  QToolBar {background: red;spacing: 3px;}");
+//	
+//
+//	//// 加载CSS文件
+//	QString strPath = QCoreApplication::applicationDirPath();  
+//	qDebug()<<strPath;  
+//	QString strCssFile = strPath + "/QQ.css";  
+//	QFile fCss(strCssFile);  
+//	if( !fCss.open(QFile::ReadOnly))  
+//	{  
+//		qDebug("css File %s load false",strCssFile);  
+//	//        return;  
+//	}  
+//	QString strCssContent(fCss.readAll());  
+//	QQTabDock->setStyleSheet(strCssContent);  
+//	fCss.close(); 
+//
+//}
 
 void SwieeApp::initProptsDock()
 {		
@@ -910,7 +910,21 @@ void SwieeApp::initProptsDock()
 	this->addDockWidget(Qt::RightDockWidgetArea, propertyDock);
 	propertyDock->setWindowTitle(GB2312("属性"));
 	
-	propertyDock->setStyleSheet("background-color: rgb(240, 240, 240);");
+	// 加载CSS文件
+	QString strPath = QCoreApplication::applicationDirPath();  
+	qDebug()<<strPath;  
+	QString strCssFile = strPath + "/Dock.css";  
+	QFile fCss(strCssFile);  
+	if( !fCss.open(QFile::ReadOnly))  
+	{  
+		qDebug("css File %s load false",strCssFile);  
+		//        return;  
+	}  
+	QString strCssContent(fCss.readAll());  
+	propertyDock->setStyleSheet(strCssContent);  
+	fCss.close(); 
+
+	//propertyDock->setStyleSheet(" ");//界面
 	
 	//设置box布局
 	QWidget *dockWidgetContents = new QWidget();
@@ -918,10 +932,7 @@ void SwieeApp::initProptsDock()
 
 	propertyDock->setWidget(dockWidgetContents);
 	propertyDock->setLayout(all);
-
-
-
-	
+		
 	ValInteger = new QIntValidator(1, 1000000, this);
 
 	Expr.setPattern("[^\"=]*");  // valid expression for property 'edit'
@@ -945,7 +956,7 @@ void SwieeApp::initProptsDock()
 	// ...........................................................
 	//gp1->addMultiCellWidget(new QLabel(Comp->Description, myParent), 0,0,0,1);
 	QWidget *myParent = propertyDock;
-	gp1->addMultiCellWidget(new QLabel(GB2312("属性"), myParent), 0,0,0,1);
+	//gp1->addMultiCellWidget(new QLabel(GB2312("属性"), myParent), 0,0,0,1);
 
 	Q3HBox *h5 = new Q3HBox(myParent);
 	h5->setSpacing(5);
@@ -1197,7 +1208,25 @@ void SwieeApp::initExtAppDock(){
 	//把dock 放右边
 	this->addDockWidget(Qt::RightDockWidgetArea, extAppDock);
 	extAppDock->setWindowTitle(GB2312("外部工具窗口"));
-	extAppDock->setStyleSheet("background-color: rgb(240, 240, 240);");
+
+	//******************************************
+	//加载CSS文件
+	//******************************************
+	QString strPath = QCoreApplication::applicationDirPath();  
+	qDebug()<<strPath;  
+	QString strCssFile = strPath + "/Dock.css";  
+	QFile fCss(strCssFile);  
+	if( !fCss.open(QFile::ReadOnly))  
+	{  
+		qDebug("css File %s load false",strCssFile);  
+		//        return;  
+	}  
+	QString strCssContent(fCss.readAll());  
+	extAppDock->setStyleSheet(strCssContent);  
+	fCss.close(); 
+	//******************************************
+	//加载CSS结束
+	//******************************************
 
 
 	//创建网格布局
@@ -1363,8 +1392,27 @@ void SwieeApp::initNavigateDock(){
 	//把dock 放右边
 	this->addDockWidget(Qt::RightDockWidgetArea, navigateDock);
 	navigateDock->setWindowTitle(GB2312("导航窗口"));
+
+	//******************************************
+	//加载CSS文件
+	//******************************************
+	QString strPath = QCoreApplication::applicationDirPath();  
+	qDebug()<<strPath;  
+	QString strCssFile = strPath + "/Dock.css";  
+	QFile fCss(strCssFile);  
+	if( !fCss.open(QFile::ReadOnly))  
+	{  
+		qDebug("css File %s load false",strCssFile);  
+		//        return;  
+	}  
+	QString strCssContent(fCss.readAll());  
+	navigateDock->setStyleSheet(strCssContent);  
+	fCss.close(); 
+	//******************************************
+	//加载CSS结束
+	//******************************************
 	
-	navigateDock->setStyleSheet("background-color: rgb(240, 240, 240);");
+	//navigateDock->setStyleSheet(BACKCOLOR_STYLE);//界面
 	
 	
     
@@ -1837,20 +1885,21 @@ void SwieeApp::initMenuBarRibbon()
 	//QDockWidget     *propertyDock;//属性导航停靠栏
 	/*********************************************************************/
 	menuDock = new QDockWidget(this);
-	menuDock->setAllowedAreas(Qt::TopDockWidgetArea); //
+	menuDock->setAllowedAreas(Qt::TopDockWidgetArea); 
+	
+	
 	menuTabView = new QTabWidget(menuDock);
-	menuDock->setWidget(menuTabView);
-
+	menuTabView->setFont(QFont("SimSun",9));	
 	menuTabView->setTabPosition(QTabWidget::North);
-	menuTabView->setFont(QFont("SimSun",9));
 
-
+	menuDock->setWidget(menuTabView);
 	//把dock 放上边
 	this->addDockWidget(Qt::TopDockWidgetArea, menuDock);
 	//去掉menuDock的边框
-	menuDock->setFeatures(QDockWidget::NoDockWidgetFeatures);
-	QWidget *wu = new QWidget;
-	menuDock->setTitleBarWidget(wu);	
+	//menuDock->setFeatures(QDockWidget::NoDockWidgetFeatures);
+	QWidget* lEmptyWidget = new QWidget(); 
+	menuDock->setTitleBarWidget(lEmptyWidget);
+
 
 				QHBoxLayout *FileMenuButtsLayout = new QHBoxLayout();//水平按钮布局
 				FileMenuButtsLayout->addWidget(fileNew1);
@@ -2101,8 +2150,8 @@ void SwieeApp::initMenuBarRibbon()
 	QString strCssContent(fCss.readAll());  
 	menuDock->setStyleSheet(strCssContent);  
 
-	QPalette pll = menuTabView->palette();
-	pll.setBrush(QPalette::Base,QBrush(QColor(0,255,255,0)));
+	//QPalette pll = menuTabView->palette();
+	//pll.setBrush(QPalette::Base,QBrush(QColor(0,255,255,0)));
 	fCss.close(); 
 }
 
@@ -2528,10 +2577,10 @@ void SwieeApp::slotViewStatusBar(bool toggle)
 // turn Brwose Dock Window on or off
 void SwieeApp::slotViewBrowseDock(bool toggle)
 {
-	if (toggle == false)
-		dock->hide();
-	else
-		dock->show();
+//	if (toggle == false)
+//		dock->hide();
+//	else
+//		dock->show();
 }
 
 // ----------------------------------------------------------

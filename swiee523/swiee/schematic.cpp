@@ -101,6 +101,84 @@ Schematic::Schematic(SwieeApp *App_, const QString& Name_)
     Frame_Text2 = tr("Date:");
     Frame_Text3 = tr("Revision:");
 
+
+	//QString strPath = QCoreApplication::applicationDirPath();  
+	//QString strCssFile = strPath + "/scrollbar.css"; 
+	QString strCssFile = "./scrollbar.css";
+	QFile fCss(strCssFile); 
+	if( !fCss.open( QIODevice::ReadOnly ))  
+	{  
+		qDebug("css File %s load false",strCssFile);  
+		//        return;  
+	} 
+
+	
+	horizontalScrollBar()->setStyleSheet(fCss.readAll());
+	fCss.close();
+
+
+	QString strCssFileV = "./Vscrollbar.css";
+	QFile fCssV(strCssFileV); 
+	if( !fCssV.open( QIODevice::ReadOnly ))  
+	{  
+		qDebug("css File %s load false",strCssFile);  
+		//        return;  
+	} 
+	verticalScrollBar()->setStyleSheet(fCssV.readAll());
+	fCssV.close();
+
+	/*verticalScrollBar()->setStyleSheet("QScrollBar:vertical"
+		"{"
+		"width:8px;"
+		"background:rgba(0,0,0,0%);"
+		"margin:0px,0px,0px,0px;"
+		"padding-top:9px;"
+		"padding-bottom:9px;"
+		"}"
+		"QScrollBar::handle:vertical"
+		"{"
+		"width:8px;"
+		"background:rgba(0,0,0,25%);"
+		" border-radius:4px;"
+		"min-height:20;"
+		"}"
+		"QScrollBar::handle:vertical:hover"
+		"{"
+		"width:8px;"
+		"background:rgba(0,0,0,50%);"
+		" border-radius:4px;"
+		"min-height:20;"
+		"}"
+		"QScrollBar::add-line:vertical"
+		"{"
+		"height:9px;width:8px;"
+		"border-image:url(:/images/a/3.png);"
+		"subcontrol-position:bottom;"
+		"}"
+		"QScrollBar::sub-line:vertical"
+		"{"
+		"height:9px;width:8px;"
+		"border-image:url(:/images/a/1.png);"
+		"subcontrol-position:top;"
+		"}"
+		"QScrollBar::add-line:vertical:hover"
+		"{"
+		"height:9px;width:8px;"
+		"border-image:url(:/images/a/4.png);"
+		"subcontrol-position:bottom;"
+		"}"
+		"QScrollBar::sub-line:vertical:hover"
+		"{"
+		"height:9px;width:8px;"
+		"border-image:url(:/images/a/2.png);"
+		"subcontrol-position:top;"
+		"}"
+		"QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical"
+		"{"
+		"background:rgba(0,0,0,10%);"
+		"border-radius:4px;"
+		"}"
+		);*/
     setVScrollBarMode(Q3ScrollView::AlwaysOn);
     setHScrollBarMode(Q3ScrollView::AlwaysOn);
     viewport()->setPaletteBackgroundColor(SwieeSettings.BGColor);

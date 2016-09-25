@@ -187,15 +187,18 @@ private:
   QPrinter  *Printer; // printer is global (to remember the user settings)
 
 // ********* Widgets on the main area **********************************
-  QDockWidget     *dock;
+  //QDockWidget     *dock;
   QDockWidget     *menuDock;//²Ëµ¥Í£¿¿À¸
   QTabWidget      *menuTabView;//²Ëµ¥Ñ¡Ïî¿¨
 
   QDockWidget     *QQTabDock;//²Ëµ¥Í£¿¿À¸
+
+
+
  // QTabWidget      *menuTabView;//²Ëµ¥Ñ¡Ïî¿¨
-  QToolButton *toolButton1_1,*toolButton1_2, *toolButton1_3, *toolButton1_4,*toolButton1_5, 
-				*toolButton2_1, *toolButton2_2,
-				*toolButton3_1, *toolButton3_2; 
+  //QToolButton *toolButton1_1,*toolButton1_2, *toolButton1_3, *toolButton1_4,*toolButton1_5, 
+		//		*toolButton2_1, *toolButton2_2,
+		//		*toolButton3_1, *toolButton3_2; 
 
 
 

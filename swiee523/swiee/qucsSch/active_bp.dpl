@@ -1,0 +1,25 @@
+<Swiee Schematic 0.0.18>
+<Properties>
+  <View=0,0,800,800,1,0,0>
+  <Grid=10,10,0>
+  <DataSet=active_bp.dat>
+  <DataDisplay=active_bp.sch>
+  <OpenDisplay=1>
+  <Script=active_bp.m>
+  <RunScript=0>
+  <showFrame=0>
+  <FrameText0=头衔>
+  <FrameText1=作者:>
+  <FrameText2=日期:>
+  <FrameText3=修订:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+</Diagrams>
+<Paintings>
+</Paintings>
