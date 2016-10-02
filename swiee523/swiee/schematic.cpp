@@ -103,8 +103,7 @@ Schematic::Schematic(SwieeApp *App_, const QString& Name_)
 
 
 	//QString strPath = QCoreApplication::applicationDirPath();  
-	//QString strCssFile = strPath + "/scrollbar.css"; 
-	QString strCssFile = "./scrollbar.css";
+	QString strCssFile = "./qss/scrollbar.css";
 	QFile fCss(strCssFile); 
 	if( !fCss.open( QIODevice::ReadOnly ))  
 	{  
@@ -117,7 +116,7 @@ Schematic::Schematic(SwieeApp *App_, const QString& Name_)
 	fCss.close();
 
 
-	QString strCssFileV = "./Vscrollbar.css";
+	QString strCssFileV = "./qss/Vscrollbar.css";
 	QFile fCssV(strCssFileV); 
 	if( !fCssV.open( QIODevice::ReadOnly ))  
 	{  

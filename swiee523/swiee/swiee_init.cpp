@@ -31,7 +31,7 @@ void SwieeApp::initActions()
 	// note: first argument of QAction() for backward compatibility Qt < 3.2
 	//QResource::registerResource ("qucs.rcc");
 	//fileNew = new QAction(QIcon((":/bitmaps/filenew.png")), GB2312("新建电路[&n]"), this); //tr("&New"), this);
-	fileNew = new QAction(QIcon(("pc18.png")), GB2312("新建电路[&n]"), this); //tr("&New"), this);
+	fileNew = new QAction(QIcon(("./pc18.png")), GB2312("新建电路[&n]"), this); //tr("&New"), this);
 	fileNew->setShortcut(Qt::CTRL+Qt::Key_N);
 	fileNew->setStatusTip(tr("Creates a new document"));
 	fileNew->setWhatsThis(tr("New\n\nCreates a new schematic or data display document"));
@@ -804,104 +804,6 @@ void SwieeApp::setButPropts(QToolButton *ToolBut,
 }
 
 
-//void SwieeApp::initQQTabDock()
-//{
-//
-//
-//	QGroupBox *groupBox1 = new QGroupBox();
-//
-//
-//	QVBoxLayout *layout1 = new QVBoxLayout(groupBox1);
-//	layout1->setMargin(0);
-//	layout1->setAlignment(Qt::AlignHCenter);    
-//	layout1->addWidget(toolButton1_1);
-//	layout1->addWidget(toolButton1_2);
-//	layout1->addWidget(toolButton1_3);
-//	layout1->addWidget(toolButton1_4);
-//	layout1->addWidget(toolButton1_5);  
-//	layout1->addStretch();        
-//
-//	QGroupBox *groupBox2 = new QGroupBox();
-//
-//	toolButton2_1 = new QToolButton( );
-//	toolButton2_1->setText( tr( "pizicai" ) );
-//	toolButton2_1->setIcon( QPixmap( ":/images/1.png" ) );
-//	toolButton2_1->setIconSize( QPixmap( ":/images/1.png").size() );
-//	toolButton2_1->setAutoRaise( TRUE );
-//	toolButton2_1->setToolButtonStyle( Qt::ToolButtonTextUnderIcon);
-//
-//	toolButton2_2 = new QToolButton();
-//	toolButton2_2->setText( tr( "feiyang" ) );
-//	toolButton2_2->setIcon( QPixmap( ":/images/2.png") );
-//	toolButton2_2->setIconSize( QPixmap( ":/images/2.png").size() );
-//	toolButton2_2->setAutoRaise( TRUE );
-//	toolButton2_2->setToolButtonStyle( Qt::ToolButtonTextUnderIcon);
-//
-//	QVBoxLayout *layout2 = new QVBoxLayout(groupBox2);
-//	layout2->setMargin(0);
-//	layout2->setAlignment(Qt::AlignHCenter);    
-//	layout2->addWidget(toolButton2_1);
-//	layout2->addWidget(toolButton2_2);
-//	layout2->addStretch();       
-//
-//	QGroupBox *groupBox3 = new QGroupBox();
-//
-//	toolButton3_1 = new QToolButton( );
-//	toolButton3_1->setText( tr( "QQ" ) );
-//	toolButton3_1->setIcon( QPixmap( ":/images/3.png" ) );
-//	toolButton3_1->setIconSize( QPixmap( ":/images/3.png").size() );
-//	toolButton3_1->setAutoRaise( TRUE );
-//	toolButton3_1->setToolButtonStyle( Qt::ToolButtonTextUnderIcon);
-//
-//	toolButton3_2 = new QToolButton();
-//	toolButton3_2->setText( tr( "angel" ) );
-//	toolButton3_2->setIcon( QPixmap( ":/images/4.png") );
-//	toolButton3_2->setIconSize( QPixmap( ":/images/4.png").size() );
-//	toolButton3_2->setAutoRaise( TRUE );
-//	toolButton3_2->setToolButtonStyle( Qt::ToolButtonTextUnderIcon);
-//
-//	QVBoxLayout *layout3 = new QVBoxLayout(groupBox3);
-//	layout3->setMargin(0);
-//	layout3->setAlignment(Qt::AlignHCenter);    
-//	layout3->addWidget(toolButton3_1);
-//	layout3->addWidget(toolButton3_2);     
-//	layout3->addStretch();         
-//
-//	QQTabDock = new QDockWidget(this);
-//	QQTabDock->setAllowedAreas(Qt::RightDockWidgetArea); //
-//	//把dock 放右边
-//	this->addDockWidget(Qt::RightDockWidgetArea, QQTabDock);
-//	QToolBox *test = new  QToolBox(QQTabDock);
-//	QQTabDock->setWidget(test);
-//
-//	
-//
-//	test->addItem( ( QWidget* )groupBox1 , tr("my friends" ));
-//	test->addItem( ( QWidget* )groupBox2 , tr("stranger" ));
-//	test->addItem( ( QWidget* )groupBox3 , tr("blacklist" ));
-//
-//	test->setMargin(0);
-//
-//	/* spacing between items in the tool bar */
-//	//test->setStyleSheet("  QToolBar {background: red;spacing: 3px;}");
-//	
-//
-//	//// 加载CSS文件
-//	QString strPath = QCoreApplication::applicationDirPath();  
-//	qDebug()<<strPath;  
-//	QString strCssFile = strPath + "/QQ.css";  
-//	QFile fCss(strCssFile);  
-//	if( !fCss.open(QFile::ReadOnly))  
-//	{  
-//		qDebug("css File %s load false",strCssFile);  
-//	//        return;  
-//	}  
-//	QString strCssContent(fCss.readAll());  
-//	QQTabDock->setStyleSheet(strCssContent);  
-//	fCss.close(); 
-//
-//}
-
 void SwieeApp::initProptsDock()
 {		
 	propertyDock = new QDockWidget(this);
@@ -913,7 +815,7 @@ void SwieeApp::initProptsDock()
 	// 加载CSS文件
 	QString strPath = QCoreApplication::applicationDirPath();  
 	qDebug()<<strPath;  
-	QString strCssFile = strPath + "/Dock.css";  
+	QString strCssFile = strPath + "/qss/Dock.css";  
 	QFile fCss(strCssFile);  
 	if( !fCss.open(QFile::ReadOnly))  
 	{  
@@ -1214,7 +1116,7 @@ void SwieeApp::initExtAppDock(){
 	//******************************************
 	QString strPath = QCoreApplication::applicationDirPath();  
 	qDebug()<<strPath;  
-	QString strCssFile = strPath + "/Dock.css";  
+	QString strCssFile = strPath + "/qss/Dock.css";  
 	QFile fCss(strCssFile);  
 	if( !fCss.open(QFile::ReadOnly))  
 	{  
@@ -1267,7 +1169,7 @@ void SwieeApp::initExtAppDock(){
 	//QFile f(prog); 
 
 	//打开外部程序按钮配置文件  先提取一次exe文件的图标
-	QFile f("./extApp.ini");  
+	QFile f("./qss/extApp.ini");  
 
 	if(!f.open(QIODevice::ReadOnly | QIODevice::Text))  
 	{  
@@ -1380,12 +1282,6 @@ void SwieeApp::SlotExtAppBut(int butId)
 	SwieeExtApp->start(prog,QStringList());
 }
 
-
-
-
-
-
-
 void SwieeApp::initNavigateDock(){
 	navigateDock = new QDockWidget(this);
 	navigateDock->setAllowedAreas(Qt::RightDockWidgetArea); //
@@ -1398,7 +1294,7 @@ void SwieeApp::initNavigateDock(){
 	//******************************************
 	QString strPath = QCoreApplication::applicationDirPath();  
 	qDebug()<<strPath;  
-	QString strCssFile = strPath + "/Dock.css";  
+	QString strCssFile = strPath + "/qss/Dock.css"; //三个dock的样式 
 	QFile fCss(strCssFile);  
 	if( !fCss.open(QFile::ReadOnly))  
 	{  
@@ -1571,11 +1467,15 @@ void SwieeApp::updateNavigateDock(Schematic *Doc){
 /**
 * @brief SwieeApp::initRibbon Initializes all Ribbon QToolButton of the application
 */
+//******************************************
+//初始化菜单 qss样式设置
+//******************************************
 void SwieeApp::initRibbon()
 {
-	QSize butSize = QSize(70,70);
+	QSize butSize = QSize(70,75);
+
 	
-	fileNew1 = new QToolButton();
+	fileNew1 = new QToolButton();	
 	textNew1 = new QToolButton();
 	fileOpen1 = new QToolButton();
 	fileClose1 = new QToolButton();
@@ -1593,88 +1493,72 @@ void SwieeApp::initRibbon()
 	refreshSchPath1 = new QToolButton();
 	fileQuit1 = new QToolButton();
 
+	fileNew1->setObjectName("fileNew1");
+	textNew1->setObjectName("textNew1");
+	fileOpen1->setObjectName("fileOpen1");;
+	fileClose1->setObjectName("fileClose1");;
+	recentfilesMenu1->setObjectName("recentfilesMenu1");;
+	fileSave1->setObjectName("fileSave1");;
+	fileSaveAll1->setObjectName("fileSaveAll1");;
+	fileSaveAs1->setObjectName("fileSaveAs1");;
+	exportAsImage1->setObjectName("exportAsImage1");;
+	filePrint1->setObjectName("filePrint1");;
+	filePrintFit1->setObjectName("filePrintFit1");;
+	fileExamples1->setObjectName("fileExamples1");;
+	fileSettings1->setObjectName("fileSettings1");;
+	symEdit1->setObjectName("symEdit1");;
+	applSettings1->setObjectName("applSettings1");;
+	refreshSchPath1->setObjectName("refreshSchPath1");;
+	fileQuit1->setObjectName("fileQuit1");;
+
 /*************************************************************/
 // file menu 添加按钮 
 /*************************************************************/
 
 
 	setButPropts(fileNew1,butSize,Qt::CTRL+Qt::Key_N,tr("fileNew"),tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
-	fileNew1->setStyleSheet("QToolButton{border-image: url(pc18.png);}"
-		"QToolButton:hover{border-image: url(pc18.png);}"
-		"QToolButton:pressed{border-image: url(pc18.png);}");	
+
 	
 	setButPropts(textNew1,butSize,Qt::CTRL+Qt::Key_N,tr("textNew1"),tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
-	textNew1->setStyleSheet("QToolButton{border-image: url(pc19.png);}"
-		"QToolButton:hover{border-image: url(pc19.png);}"
-		"QToolButton:pressed{border-image: url(pc19.png);}");	
+
 
 	setButPropts(fileOpen1,butSize,Qt::CTRL+Qt::Key_N,tr("fileOpen1"),tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
-	fileOpen1->setStyleSheet("QToolButton{border-image: url(pc20.png);}"
-		"QToolButton:hover{border-image: url(pc20.png);}"
-		"QToolButton:pressed{border-image: url(pc20.png);}");	
+
 
 	setButPropts(fileClose1,butSize,Qt::CTRL+Qt::Key_N,tr("fileClose1"),tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
-	fileClose1->setStyleSheet("QToolButton{border-image: url(pc21.png);}"
-		"QToolButton:hover{border-image: url(pc21.png);}"
-		"QToolButton:pressed{border-image: url(pc21.png);}");	
+
 
 	setButPropts(recentfilesMenu1,butSize,Qt::CTRL+Qt::Key_N,tr("recentfilesMenu1"),tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
-	recentfilesMenu1->setStyleSheet("QToolButton{border-image: url(pc22.png);}"
-		"QToolButton:hover{border-image: url(pc22.png);}"
-		"QToolButton:pressed{border-image: url(pc22.png);}");	
+
 
 	setButPropts(fileSave1,butSize,Qt::CTRL+Qt::Key_N,tr("fileSave1"),tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
-	fileSave1->setStyleSheet("QToolButton{border-image: url(pc28.png);}"
-		"QToolButton:hover{border-image: url(pc28.png);}"
-		"QToolButton:pressed{border-image: url(pc28.png);}");	
+
 
 	setButPropts(fileSaveAll1,butSize,Qt::CTRL+Qt::Key_N,tr("fileSaveAll1"),tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
-	fileSaveAll1->setStyleSheet("QToolButton{border-image: url(pc29.png);}"
-		"QToolButton:hover{border-image: url(pc29.png);}"
-		"QToolButton:pressed{border-image: url(pc29.png);}");	
+
 
 	setButPropts(fileSaveAs1,butSize,Qt::CTRL+Qt::Key_N,tr("fileSaveAs1"),tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
-	fileSaveAs1->setStyleSheet("QToolButton{border-image: url(pc32.png);}"
-		"QToolButton:hover{border-image: url(pc32.png);}"
-		"QToolButton:pressed{border-image: url(pc32.png);}");	
+
 
 	setButPropts(exportAsImage1,butSize,Qt::CTRL+Qt::Key_N,tr("exportAsImage1"),tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
-	exportAsImage1->setStyleSheet("QToolButton{border-image: url(pc33.png);}"
-		"QToolButton:hover{border-image: url(pc33.png);}"
-		"QToolButton:pressed{border-image: url(pc33.png);}");
+
 
 	setButPropts(filePrint1,butSize,Qt::CTRL+Qt::Key_N,tr("filePrint1"),tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
-	filePrint1->setStyleSheet("QToolButton{border-image: url(:/bitmaps/1textEdit.png);}"
-		"QToolButton:hover{border-image: url(:/bitmaps/1textEdit.png);}"
-		"QToolButton:pressed{border-image: url(:/bitmaps/1textEdit.png);}");	
+	
 	setButPropts(filePrintFit1,butSize,Qt::CTRL+Qt::Key_N,tr("filePrintFit1"),tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
-	filePrintFit1->setStyleSheet("QToolButton{border-image: url(:/bitmaps/1textSetting.png);}"
-		"QToolButton:hover{border-image: url(:/bitmaps/1textSetting.png);}"
-		"QToolButton:pressed{border-image: url(:/bitmaps/1textSetting.png);}");	
+
 	setButPropts(fileExamples1,butSize,Qt::CTRL+Qt::Key_N,tr("fileExamples1"),tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
-	fileExamples1->setStyleSheet("QToolButton{border-image: url(:/bitmaps/1library.png);}"
-		"QToolButton:hover{border-image: url(:/bitmaps/1library.png);}"
-		"QToolButton:pressed{border-image: url(:/bitmaps/1library.png);}");	
+
 	setButPropts(fileSettings1,butSize,Qt::CTRL+Qt::Key_N,tr("fileSettings1"),tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
-	fileSettings1->setStyleSheet("QToolButton{border-image: url(:/bitmaps/1Print.png);}"
-		"QToolButton:hover{border-image: url(:/bitmaps/1Print.png);}"
-		"QToolButton:pressed{border-image: url(:/bitmaps/1Print.png);}");	
+
 	setButPropts(symEdit1,butSize,Qt::CTRL+Qt::Key_N,tr("symEdit1"),tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
-	symEdit1->setStyleSheet("QToolButton{border-image: url(:/bitmaps/1moveText.png);}"
-		"QToolButton:hover{border-image: url(:/bitmaps/1moveText.png);}"
-		"QToolButton:pressed{border-image: url(:/bitmaps/1moveText.png);}");	
+	
 	setButPropts(applSettings1,butSize,Qt::CTRL+Qt::Key_N,tr("applSettings1"),tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));	
-	applSettings1->setStyleSheet("QToolButton{border-image: url(:/bitmaps/1recent.png);}"
-		"QToolButton:hover{border-image: url(:/bitmaps/1recent.png);}"
-		"QToolButton:pressed{border-image: url(:/bitmaps/1recent.png);}");	
+
 	setButPropts(refreshSchPath1,butSize,Qt::CTRL+Qt::Key_N,tr("refreshSchPath1"),tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
-	refreshSchPath1->setStyleSheet("QToolButton{border-image: url(:/bitmaps/1Print.png);}"
-		"QToolButton:hover{border-image: url(:/bitmaps/1Print.png);}"
-		"QToolButton:pressed{border-image: url(:/bitmaps/1Print.png);}");	
+
 	setButPropts(fileQuit1,butSize,Qt::CTRL+Qt::Key_N,tr("fileQuit1"),tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
-	fileQuit1->setStyleSheet("QToolButton{border-image: url(:/bitmaps/1textEdit.png);}"
-		"QToolButton:hover{border-image: url(:/bitmaps/1textEdit.png);}"
-		"QToolButton:pressed{border-image: url(:/bitmaps/1textEdit.png);}");				
+			
 
 
 
@@ -1701,6 +1585,27 @@ void SwieeApp::initRibbon()
 	editActivate1 = new QToolButton();
 	intoH1 = new QToolButton();
 	popH1 = new QToolButton();
+
+	undo1->setObjectName("undo1");;
+	redo1->setObjectName("redo1");;
+	editCut1->setObjectName("editCut1");;
+	editCopy1->setObjectName("editCopy1");;
+	editPaste1->setObjectName("editPaste1");;
+	editDelete1->setObjectName("editDelete1");;
+
+	select1->setObjectName("select1");
+	selectAll1->setObjectName("selectAll1");
+	selectMarker1->setObjectName("selectMarker1");
+	editFind1->setObjectName("editFind1");
+	editFindAgain1->setObjectName("editFindAgain1");
+	changeProps1->setObjectName("changeProps1");//replace
+
+	editRotate1->setObjectName("editRotate1");
+	editMirror1->setObjectName("editMirror1");
+	editMirrorY1->setObjectName("editMirrorY1");
+	editActivate1->setObjectName("editActivate1");
+	intoH1->setObjectName("intoH1");
+	popH1->setObjectName("popH1");
 
 	setButPropts(undo1,butSize,Qt::CTRL+Qt::Key_N,"undo1",tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
 	setButPropts(redo1,butSize,Qt::CTRL+Qt::Key_N,"redo1",tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
@@ -1741,6 +1646,18 @@ void SwieeApp::initRibbon()
 	distrHor1 = new QToolButton();
 	distrVert1 = new QToolButton();
 
+	moveText1->setObjectName("moveText1");
+	onGrid1->setObjectName("onGrid1");
+	centerHor1->setObjectName("centerHor1");
+	centerVert1->setObjectName("centerVert1");
+	alignTop1->setObjectName("alignTop1");
+	alignBottom1->setObjectName("alignBottom1");
+
+	alignLeft1->setObjectName("alignLeft1");
+	alignRight1->setObjectName("alignRight1");
+	distrHor1->setObjectName("distrHor1");
+	distrVert1->setObjectName("distrVert1");
+
 	setButPropts(moveText1,butSize,Qt::CTRL+Qt::Key_N,"moveText1",tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
 	setButPropts(onGrid1,butSize,Qt::CTRL+Qt::Key_N,"onGrid1",tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
 	setButPropts(centerHor1,butSize,Qt::CTRL+Qt::Key_N,"centerHor1",tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
@@ -1765,6 +1682,14 @@ void SwieeApp::initRibbon()
 	insPort1 = new QToolButton();
 	setMarker1 = new QToolButton();
 	insEntity1 = new QToolButton();
+
+	insWire1->setObjectName("insWire1");
+	insLabel1->setObjectName("insLabel1");
+	insEquation1->setObjectName("insEquation1");
+	insGround1->setObjectName("insGround1");
+	insPort1->setObjectName("insPort1");
+	setMarker1->setObjectName("setMarker1");
+	insEntity1->setObjectName("insEntity1");
 
 	setButPropts(insWire1,butSize,Qt::CTRL+Qt::Key_N,"insWire1",tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
 	setButPropts(insLabel1,butSize,Qt::CTRL+Qt::Key_N,"insLabel1",tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
@@ -1792,6 +1717,20 @@ void SwieeApp::initRibbon()
 	buildModule1 = new QToolButton();
 	loadModule1 = new QToolButton();
 
+	projNew1->setObjectName("projNew1");
+	projOpen1->setObjectName("projOpen1");
+	addToProj1->setObjectName("addToProj1");
+	projDel1->setObjectName("projDel1");
+	projClose1->setObjectName("projClose1");
+	createLib1->setObjectName("createLib1");
+
+	createPkg1->setObjectName("createPkg1");
+	extractPkg1->setObjectName("extractPkg1");
+	importData1->setObjectName("importData1");
+	graph2csv1->setObjectName("graph2csv1");
+	buildModule1->setObjectName("buildModule1");
+	loadModule1->setObjectName("loadModule1");
+
 	setButPropts(projNew1,butSize,Qt::CTRL+Qt::Key_N,"projNew1",tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
 	setButPropts(projOpen1,butSize,Qt::CTRL+Qt::Key_N,"projOpen1",tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
 	setButPropts(addToProj1,butSize,Qt::CTRL+Qt::Key_N,"addToProj1",tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
@@ -1817,6 +1756,14 @@ void SwieeApp::initRibbon()
 	callAtt1 = new QToolButton();
 	callRes1 = new QToolButton();
 
+	callEditor1->setObjectName("callEditor1");
+	callFilter1->setObjectName("callFilter1");
+	callLine1->setObjectName("callLine1");
+	callLib1->setObjectName("callLib1");
+	callMatch1->setObjectName("callMatch1");
+	callAtt1->setObjectName("callAtt1");
+	callRes1->setObjectName("callRes1");
+
 	setButPropts(callEditor1,butSize,Qt::CTRL+Qt::Key_N,"callEditor1",tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
 	setButPropts(callFilter1,butSize,Qt::CTRL+Qt::Key_N,"callFilter1",tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
 	setButPropts(callLine1,butSize,Qt::CTRL+Qt::Key_N,"callLine1",tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
@@ -1833,6 +1780,12 @@ void SwieeApp::initRibbon()
 	dcbias1 = new QToolButton();
 	showMsg1 = new QToolButton();
 	showNet1 = new QToolButton();
+
+	simulate1->setObjectName("simulate1");
+	dpl_sch1->setObjectName("dpl_sch1");
+	dcbias1->setObjectName("dcbias1");
+	showMsg1->setObjectName("showMsg1");
+	showNet1->setObjectName("showNet1");
 
 	setButPropts(simulate1,butSize,Qt::CTRL+Qt::Key_N,"simulate1",tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
 	setButPropts(dpl_sch1,butSize,Qt::CTRL+Qt::Key_N,"dpl_sch1",tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
@@ -1852,6 +1805,15 @@ void SwieeApp::initRibbon()
 	viewBrowseDock1 = new QToolButton();
 	viewOctaveDock1 = new QToolButton();
 
+	magAll1->setObjectName("magAll1");
+	magOne1->setObjectName("magOne1");
+	magPlus1->setObjectName("magPlus1");
+	magMinus1->setObjectName("magMinus1");
+	viewToolBar1->setObjectName("viewToolBar1");
+	viewStatusBar1->setObjectName("viewStatusBar1");
+	viewBrowseDock1->setObjectName("viewBrowseDock1");
+	viewOctaveDock1->setObjectName("viewOctaveDock1");
+
 	setButPropts(magAll1,butSize,Qt::CTRL+Qt::Key_N,"magAll1",tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
 	setButPropts(magOne1,butSize,Qt::CTRL+Qt::Key_N,"magOne1",tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
 	setButPropts(magPlus1,butSize,Qt::CTRL+Qt::Key_N,"magPlus1",tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
@@ -1867,6 +1829,11 @@ void SwieeApp::initRibbon()
 	helpGetStart1 = new QToolButton();
 	helpAboutApp1 = new QToolButton();
 	helpAboutQt1 = new QToolButton();
+
+	helpIndex1->setObjectName("helpIndex1");
+	helpGetStart1->setObjectName("helpGetStart1");
+	helpAboutApp1->setObjectName("helpAboutApp1");
+	helpAboutQt1->setObjectName("helpAboutQt1");
 
 	setButPropts(helpIndex1,butSize,Qt::CTRL+Qt::Key_N,"helpIndex1",tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
 	setButPropts(helpGetStart1,butSize,Qt::CTRL+Qt::Key_N,"helpGetStart1",tr("Creates a new document"),tr("New\n\nCreates a new schematic or data display document"));
@@ -1911,15 +1878,16 @@ void SwieeApp::initMenuBarRibbon()
 				FileMenuButtsLayout->addWidget(fileSaveAs1);
 				FileMenuButtsLayout->addWidget(filePrint1);
 				FileMenuButtsLayout->addWidget(filePrintFit1);
-				FileMenuButtsLayout->addWidget(fileExamples1);
+				//FileMenuButtsLayout->addWidget(fileExamples1);
 				FileMenuButtsLayout->addWidget(applSettings1);
-				FileMenuButtsLayout->addWidget(refreshSchPath1);
+				//FileMenuButtsLayout->addWidget(refreshSchPath1);
 				FileMenuButtsLayout->addWidget(fileQuit1);
 
 				FileMenuButtsLayout->setSpacing(0);
 				FileMenuButtsLayout->addStretch();
 				FileMenuButtsLayout->setAlignment(Qt::AlignLeft);
 				FileMenuButtsLayout->setContentsMargins(0,0,0,0);
+
 			//QWidget *FileMenuButts = new QWidget();//按钮们
 			//FileMenuButts->setLayout(FileMenuButtsLayout);//把这个layout放进去butts的widget中
 
@@ -1949,7 +1917,7 @@ void SwieeApp::initMenuBarRibbon()
 				EditMenuButtsLayout->addWidget(selectMarker1);
 				EditMenuButtsLayout->addWidget(editFind1);
 				EditMenuButtsLayout->addWidget(editFindAgain1);
-				EditMenuButtsLayout->addWidget(changeProps1);
+				//EditMenuButtsLayout->addWidget(changeProps1);
 				EditMenuButtsLayout->addWidget(editRotate1);
 				EditMenuButtsLayout->addWidget(editMirror1);
 				EditMenuButtsLayout->addWidget(editMirrorY1);
@@ -1995,7 +1963,7 @@ void SwieeApp::initMenuBarRibbon()
 				InsertMenuButtsLayout->addWidget(insGround1);
 				InsertMenuButtsLayout->addWidget(insPort1);
 				InsertMenuButtsLayout->addWidget(setMarker1);
-				InsertMenuButtsLayout->addWidget(insEntity1);
+				//InsertMenuButtsLayout->addWidget(insEntity1);
 
 				InsertMenuButtsLayout->setSpacing(0);
 				InsertMenuButtsLayout->addStretch();
@@ -2012,13 +1980,13 @@ void SwieeApp::initMenuBarRibbon()
 				ProjectMenuButtsLayout->addWidget(addToProj1);
 				ProjectMenuButtsLayout->addWidget(projDel1);
 				ProjectMenuButtsLayout->addWidget(projClose1);
-				ProjectMenuButtsLayout->addWidget(createLib1);
-				ProjectMenuButtsLayout->addWidget(createPkg1);
-				ProjectMenuButtsLayout->addWidget(extractPkg1);
-				ProjectMenuButtsLayout->addWidget(importData1);
-				ProjectMenuButtsLayout->addWidget(graph2csv1);
-				ProjectMenuButtsLayout->addWidget(buildModule1);
-				ProjectMenuButtsLayout->addWidget(loadModule1);
+				//ProjectMenuButtsLayout->addWidget(createLib1);
+				//ProjectMenuButtsLayout->addWidget(createPkg1);
+				//ProjectMenuButtsLayout->addWidget(extractPkg1);
+				//ProjectMenuButtsLayout->addWidget(importData1);
+				//ProjectMenuButtsLayout->addWidget(graph2csv1);
+				//ProjectMenuButtsLayout->addWidget(buildModule1);
+				//ProjectMenuButtsLayout->addWidget(loadModule1);
 
 				ProjectMenuButtsLayout->setSpacing(0);
 				ProjectMenuButtsLayout->addStretch();
@@ -2029,12 +1997,12 @@ void SwieeApp::initMenuBarRibbon()
 				/*************************************************************/
 				QHBoxLayout *ToolsMenuButtsLayout = new QHBoxLayout();//水平按钮布局
 				ToolsMenuButtsLayout->addWidget(callEditor1);
-				ToolsMenuButtsLayout->addWidget(callFilter1);
-				ToolsMenuButtsLayout->addWidget(callLine1);
+				//ToolsMenuButtsLayout->addWidget(callFilter1);
+				//ToolsMenuButtsLayout->addWidget(callLine1);
 				ToolsMenuButtsLayout->addWidget(callLib1);
-				ToolsMenuButtsLayout->addWidget(callMatch1);
-				ToolsMenuButtsLayout->addWidget(callAtt1);
-				ToolsMenuButtsLayout->addWidget(callRes1);
+				//ToolsMenuButtsLayout->addWidget(callMatch1);
+				//ToolsMenuButtsLayout->addWidget(callAtt1);
+				//ToolsMenuButtsLayout->addWidget(callRes1);
 
 				ToolsMenuButtsLayout->setSpacing(0);
 				ToolsMenuButtsLayout->addStretch();
@@ -2045,10 +2013,10 @@ void SwieeApp::initMenuBarRibbon()
 				/*************************************************************/
 				QHBoxLayout *SimuMenuButtsLayout = new QHBoxLayout();//水平按钮布局
 				SimuMenuButtsLayout->addWidget(simulate1);
-				SimuMenuButtsLayout->addWidget(dpl_sch1);
-				SimuMenuButtsLayout->addWidget(dcbias1);
-				SimuMenuButtsLayout->addWidget(showMsg1);
-				SimuMenuButtsLayout->addWidget(showNet1);
+				//SimuMenuButtsLayout->addWidget(dpl_sch1);
+				//SimuMenuButtsLayout->addWidget(dcbias1);
+				//SimuMenuButtsLayout->addWidget(showMsg1);
+				//SimuMenuButtsLayout->addWidget(showNet1);
 
 				SimuMenuButtsLayout->setSpacing(0);
 				SimuMenuButtsLayout->addStretch();
@@ -2062,10 +2030,10 @@ void SwieeApp::initMenuBarRibbon()
 				ViewMenuButtsLayout->addWidget(magOne1);
 				ViewMenuButtsLayout->addWidget(magPlus1);
 				ViewMenuButtsLayout->addWidget(magMinus1);
-				ViewMenuButtsLayout->addWidget(viewToolBar1);
-				ViewMenuButtsLayout->addWidget(viewStatusBar1);
-				ViewMenuButtsLayout->addWidget(viewBrowseDock1);
-				ViewMenuButtsLayout->addWidget(viewOctaveDock1);
+				//ViewMenuButtsLayout->addWidget(viewToolBar1);
+				//ViewMenuButtsLayout->addWidget(viewStatusBar1);
+				//ViewMenuButtsLayout->addWidget(viewBrowseDock1);
+				//ViewMenuButtsLayout->addWidget(viewOctaveDock1);
 
 				ViewMenuButtsLayout->setSpacing(0);
 				ViewMenuButtsLayout->addStretch();
@@ -2122,6 +2090,24 @@ void SwieeApp::initMenuBarRibbon()
 		HelpMenu->setLayout(HelpMenuButtsLayout);
 		HelpMenu->setContentsMargins(0,0,0,0);
 
+	
+	//******************************************
+	//加载memu CSS文件
+	//****************************************** 
+	QString strCssFile1 = "./qss/Menu.css"; //三个dock的样式 
+	QFile fCss1(strCssFile1);  
+	if( !fCss1.open(QFile::ReadOnly))  
+	{  
+		qDebug("css File %s load false",strCssFile1);  
+	}  
+	QString strCssContent1(fCss1.readAll());  
+
+	//******************************************
+	//加载memu CSS文件 结束
+	//******************************************	
+	menuTabView->setStyleSheet(strCssContent1);
+
+
 
 	menuTabView->addTab(FileMenu, tr("&File"));
 	menuTabView->addTab(EditMenu, tr("&Edit"));
@@ -2131,7 +2117,7 @@ void SwieeApp::initMenuBarRibbon()
 	menuTabView->addTab(ToolsMenu, tr("&Tools"));
 	menuTabView->addTab(SimuMenu, tr("&Simulation"));
 	menuTabView->addTab(ViewMenu, tr("&View"));
-	menuTabView->addTab(HelpMenu, tr("&Help"));
+	//menuTabView->addTab(HelpMenu, tr("&Help"));
 	menuTabView->setContentsMargins(0,0,0,0);
 
 
@@ -2140,7 +2126,7 @@ void SwieeApp::initMenuBarRibbon()
 	// 加载CSS文件
 	QString strPath = QCoreApplication::applicationDirPath();  
 	qDebug()<<strPath;  
-	QString strCssFile = strPath + "/default.css";  
+	QString strCssFile = strPath + "/qss/default.css";  
 	QFile fCss(strCssFile);  
 	if( !fCss.open(QFile::ReadOnly))  
 	{  

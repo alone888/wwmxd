@@ -21,7 +21,7 @@
 #include <QValidator>
 #include <QPushButton>
 
-
+//
 SettingsDialog::SettingsDialog(Schematic *Doc_)
     : QDialog(Doc_) //, 0, TRUE, Qt::WDestructiveClose)
 {

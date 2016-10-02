@@ -171,56 +171,7 @@
     <ClCompile Include="wire.cpp" />
     <ClCompile Include="wirelabel.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="octave_window.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC%27ing octave_window.h ...</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC%27ing octave_window.h ...</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="swiee.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC%27ing swiee.h ...</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC%27ing swiee.h ...</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="schematic.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC%27ing schematic.h ...</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC%27ing schematic.h ...</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="textdoc.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC%27ing textdoc.h ...</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC%27ing textdoc.h ...</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="messagedock.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC%27ing messagedock.h ...</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC%27ing messagedock.h ...</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="swieelabel.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC%27ing swieelabel.h ...</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%QTDIR%\bin\moc -o %(Filename).moc.cpp %(Filename).h</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC%27ing swieelabel.h ...</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(InputName).moc.cpp;%(Outputs)</Outputs>
-    </CustomBuild>
-  </ItemGroup>
+
   <ItemGroup>
     <ClInclude Include="messagedock.h" />
     <ClInclude Include="resource.h" />

@@ -517,7 +517,7 @@ void SwieeApp::initView()
 	//// ╪стьCSSнд╪Ч
 	QString strPath = QCoreApplication::applicationDirPath();  
 	qDebug()<<strPath;  
-	QString strCssFile = strPath + "/QQ.css";  
+	QString strCssFile = strPath + "/qss/QQ.css";  
 	QFile fCss(strCssFile);  
 	if( !fCss.open(QFile::ReadOnly))  
 	{  
